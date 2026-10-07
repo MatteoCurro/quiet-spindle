@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "appBase": "https://www.unlockvenice.com/trasporti",
+  "operationalBase": "https://www.unlockvenice.com/trasporti/go",
+  "locales": [
+    "it",
+    "en",
+    "fr",
+    "de"
+  ],
+  "sourceSchemaVersions": {
+    "entities": 1,
+    "routes": 1
+  },
+  "strings": {
+    "it": {
+      "findRoute": "Trova percorso",
+      "destination": "Destinazione",
+      "route": "Percorso"
+    },
+    "en": {
+      "findRoute": "Find route",
+      "destination": "Destination",
+      "route": "Route"
+    },
+    "fr": {
+      "findRoute": "Trouver un itinéraire",
+      "destination": "Destination",
+      "route": "Itinéraire"
+    },
+    "de": {
+      "findRoute": "Route suchen",
+      "destination": "Ziel",
+      "route": "Route"
+    }
+  },
+  "entities": {
+    "airport:uv_treviso": {
+      "id": "airport:uv_treviso",
+      "token": "uv_treviso",
+      "type": "airport",
+      "names": {
+        "it": "Aeroporto di Treviso Antonio Canova",
+        "en": "Treviso Airport",
+        "fr": "Aéroport de Trévise",
+        "de": "Flughafen Treviso"
+      }
+    },
+    "airport:uv_venice_marco_polo": {
+      "id": "airport:uv_venice_marco_polo",
+      "token": "uv_venice_marco_polo",
+      "type": "airport",
+      "names": {
+        "it": "Aeroporto Marco Polo di Venezia",
+        "en": "Venice Marco Polo Airport",
+        "fr": "Aéroport de Venise-Marco-Polo",
+        "de": "Flughafen Venedig-Tessera"
+      }
+    },
+    "hub:uv_burano": {
+      "id": "hub:uv_burano",
+      "token": "uv_burano",
+      "type": "transport_hub",
+      "names": {
+        "it": "Burano · fermata vaporetti",
+        "en": "Burano vaporetto stop",
+        "fr": "Burano · arrêt vaporetto",
+        "de": "Burano · Vaporetto-Haltestelle"
+      }
+    },
+    "hub:uv_fondamente_nove": {
+      "id": "hub:uv_fondamente_nove",
+      "token": "uv_fondamente_nove",
+      "type": "transport_hub",
+      "names": {
+        "it": "Fondamente Nove",
+        "en": "Fondamente Nove",
+        "fr": "Fondamente Nove",
+        "de": "Fondamente Nove"
+      }
+    },
+    "hub:uv_lido_sme": {
+      "id": "hub:uv_lido_sme",
+      "token": "uv_lido_sme",
+      "type": "transport_hub",
+      "names": {
+        "it": "Lido Santa Maria Elisabetta",
+        "en": "Lido Santa Maria Elisabetta",
+        "fr": "Lido Santa Maria Elisabetta",
+        "de": "Lido Santa Maria Elisabetta"
+      }
+    },
+    "hub:uv_mestre_station": {
+      "id": "hub:uv_mestre_station",
+      "token": "uv_mestre_station",
+      "type": "transport_hub",
+      "names": {
+        "it": "Stazione Venezia Mestre",
+        "en": "Venezia Mestre Station",
+        "fr": "Gare de Venezia Mestre",
+        "de": "Bahnhof Venezia Mestre"
+      }
+    },
+    "hub:uv_murano_faro": {
+      "id": "hub:uv_murano_faro",
+      "token": "uv_murano_faro",
+      "type": "transport_hub",
+      "names": {
+        "it": "Murano Faro",
+        "en": "Murano Faro",
+        "fr": "Murano Faro",
+        "de": "Murano Faro"
+      }
+    },
+    "hub:uv_venice_piazzale_roma": {
+      "id": "hub:uv_venice_piazzale_roma",
+      "token": "uv_venice_piazzale_roma",
+      "type": "transport_hub",
+      "names": {
+        "it": "Piazzale Roma",
+        "en": "Piazzale Roma",
+        "fr": "Piazzale Roma",
+        "de": "Piazzale Roma"
+      }
+    },
+    "hub:uv_venice_santa_lucia": {
+      "id": "hub:uv_venice_santa_lucia",
+      "token": "uv_venice_santa_lucia",
+      "type": "transport_hub",
+      "names": {
+        "it": "Stazione Venezia Santa Lucia",
+        "en": "Venezia Santa Lucia Station",
+        "fr": "Gare de Venise-Santa-Lucia",
+        "de": "Bahnhof Venezia Santa Lucia"
+      }
+    },
+    "poi:uv_mestre_piazza_ferretto": {
+      "id": "poi:uv_mestre_piazza_ferretto",
+      "token": "uv_mestre_piazza_ferretto",
+      "type": "poi",
+      "names": {
+        "it": "Piazza Ferretto",
+        "en": "Piazza Ferretto",
+        "fr": "Piazza Ferretto",
+        "de": "Piazza Ferretto"
+      }
+    },
+    "poi:uv_murano_glass_museum": {
+      "id": "poi:uv_murano_glass_museum",
+      "token": "uv_murano_glass_museum",
+      "type": "poi",
+      "names": {
+        "it": "Museo del Vetro di Murano",
+        "en": "Murano Glass Museum",
+        "fr": "Musée du Verre de Murano",
+        "de": "Glasmuseum Murano"
+      }
+    },
+    "poi:uv_venice_accademia_bridge": {
+      "id": "poi:uv_venice_accademia_bridge",
+      "token": "uv_venice_accademia_bridge",
+      "type": "poi",
+      "names": {
+        "it": "Ponte dell'Accademia",
+        "en": "Accademia Bridge",
+        "fr": "Pont de l'Académie",
+        "de": "Accademia-Brücke"
+      }
+    },
+    "poi:uv_venice_accademia_galleries": {
+      "id": "poi:uv_venice_accademia_galleries",
+      "token": "uv_venice_accademia_galleries",
+      "type": "poi",
+      "names": {
+        "it": "Gallerie dell'Accademia",
+        "en": "Gallerie dell'Accademia",
+        "fr": "Galeries de l'Académie de Venise",
+        "de": "Gallerie dell'Accademia"
+      }
+    },
+    "poi:uv_venice_arsenale": {
+      "id": "poi:uv_venice_arsenale",
+      "token": "uv_venice_arsenale",
+      "type": "poi",
+      "names": {
+        "it": "Arsenale di Venezia",
+        "en": "Venetian Arsenal",
+        "fr": "Arsenal de Venise",
+        "de": "Arsenal von Venedig"
+      }
+    },
+    "poi:uv_venice_biennale_giardini": {
+      "id": "poi:uv_venice_biennale_giardini",
+      "token": "uv_venice_biennale_giardini",
+      "type": "poi",
+      "names": {
+        "it": "Giardini della Biennale",
+        "en": "Giardini della Biennale",
+        "fr": "Giardini della Biennale",
+        "de": "Giardini della Biennale"
+      }
+    },
+    "poi:uv_venice_burano": {
+      "id": "poi:uv_venice_burano",
+      "token": "uv_venice_burano",
+      "type": "poi",
+      "names": {
+        "it": "Burano",
+        "en": "Burano",
+        "fr": "Burano",
+        "de": "Burano"
+      }
+    },
+    "poi:uv_venice_ca_doro": {
+      "id": "poi:uv_venice_ca_doro",
+      "token": "uv_venice_ca_doro",
+      "type": "poi",
+      "names": {
+        "it": "Ca' d'Oro",
+        "en": "Ca' d'Oro",
+        "fr": "Ca' d'Oro",
+        "de": "Ca' d'Oro"
+      }
+    },
+    "poi:uv_venice_ca_pesaro": {
+      "id": "poi:uv_venice_ca_pesaro",
+      "token": "uv_venice_ca_pesaro",
+      "type": "poi",
+      "names": {
+        "it": "Ca' Pesaro",
+        "en": "Ca' Pesaro",
+        "fr": "Ca' Pesaro",
+        "de": "Ca' Pesaro"
+      }
+    },
+    "poi:uv_venice_ca_rezzonico": {
+      "id": "poi:uv_venice_ca_rezzonico",
+      "token": "uv_venice_ca_rezzonico",
+      "type": "poi",
+      "names": {
+        "it": "Ca' Rezzonico",
+        "en": "Ca' Rezzonico",
+        "fr": "Ca' Rezzonico",
+        "de": "Ca' Rezzonico"
+      }
+    },
+    "poi:uv_venice_doges_palace": {
+      "id": "poi:uv_venice_doges_palace",
+      "token": "uv_venice_doges_palace",
+      "type": "poi",
+      "names": {
+        "it": "Palazzo Ducale",
+        "en": "Doge's Palace",
+        "fr": "Palais des Doges",
+        "de": "Dogenpalast"
+      }
+    },
+    "poi:uv_venice_frari": {
+      "id": "poi:uv_venice_frari",
+      "token": "uv_venice_frari",
+      "type": "poi",
+      "names": {
+        "it": "Basilica dei Frari",
+        "en": "Frari Basilica",
+        "fr": "Basilique des Frari",
+        "de": "Frari-Kirche"
+      }
+    },
+    "poi:uv_venice_giudecca": {
+      "id": "poi:uv_venice_giudecca",
+      "token": "uv_venice_giudecca",
+      "type": "poi",
+      "names": {
+        "it": "Giudecca",
+        "en": "Giudecca",
+        "fr": "Giudecca",
+        "de": "Giudecca"
+      }
+    },
+    "poi:uv_venice_jewish_ghetto": {
+      "id": "poi:uv_venice_jewish_ghetto",
+      "token": "uv_venice_jewish_ghetto",
+      "type": "poi",
+      "names": {
+        "it": "Ghetto Ebraico di Venezia",
+        "en": "Venetian Ghetto",
+        "fr": "Ghetto de Venise",
+        "de": "Jüdisches Ghetto von Venedig"
+      }
+    },
+    "poi:uv_venice_la_fenice": {
+      "id": "poi:uv_venice_la_fenice",
+      "token": "uv_venice_la_fenice",
+      "type": "poi",
+      "names": {
+        "it": "Teatro La Fenice",
+        "en": "La Fenice Opera House",
+        "fr": "Opéra La Fenice",
+        "de": "Teatro La Fenice"
+      }
+    },
+    "poi:uv_venice_libreria_acqua_alta": {
+      "id": "poi:uv_venice_libreria_acqua_alta",
+      "token": "uv_venice_libreria_acqua_alta",
+      "type": "poi",
+      "names": {
+        "it": "Libreria Acqua Alta",
+        "en": "Libreria Acqua Alta",
+        "fr": "Librairie Acqua Alta",
+        "de": "Libreria Acqua Alta"
+      }
+    },
+    "poi:uv_venice_lido": {
+      "id": "poi:uv_venice_lido",
+      "token": "uv_venice_lido",
+      "type": "poi",
+      "names": {
+        "it": "Lido di Venezia",
+        "en": "Venice Lido",
+        "fr": "Lido de Venise",
+        "de": "Lido von Venedig"
+      }
+    },
+    "poi:uv_venice_murano": {
+      "id": "poi:uv_venice_murano",
+      "token": "uv_venice_murano",
+      "type": "poi",
+      "names": {
+        "it": "Murano",
+        "en": "Murano",
+        "fr": "Murano",
+        "de": "Murano"
+      }
+    },
+    "poi:uv_venice_museo_correr": {
+      "id": "poi:uv_venice_museo_correr",
+      "token": "uv_venice_museo_correr",
+      "type": "poi",
+      "names": {
+        "it": "Museo Correr",
+        "en": "Museo Correr",
+        "fr": "Musée Correr",
+        "de": "Museo Correr"
+      }
+    },
+    "poi:uv_venice_peggy_guggenheim": {
+      "id": "poi:uv_venice_peggy_guggenheim",
+      "token": "uv_venice_peggy_guggenheim",
+      "type": "poi",
+      "names": {
+        "it": "Collezione Peggy Guggenheim",
+        "en": "Peggy Guggenheim Collection",
+        "fr": "Collection Peggy Guggenheim",
+        "de": "Peggy Guggenheim Collection"
+      }
+    },
+    "poi:uv_venice_punta_dogana": {
+      "id": "poi:uv_venice_punta_dogana",
+      "token": "uv_venice_punta_dogana",
+      "type": "poi",
+      "names": {
+        "it": "Punta della Dogana",
+        "en": "Punta della Dogana",
+        "fr": "Punta della Dogana",
+        "de": "Punta della Dogana"
+      }
+    },
+    "poi:uv_venice_rialto_bridge": {
+      "id": "poi:uv_venice_rialto_bridge",
+      "token": "uv_venice_rialto_bridge",
+      "type": "poi",
+      "names": {
+        "it": "Ponte di Rialto",
+        "en": "Rialto Bridge",
+        "fr": "Pont du Rialto",
+        "de": "Rialtobrücke"
+      }
+    },
+    "poi:uv_venice_san_giorgio_maggiore": {
+      "id": "poi:uv_venice_san_giorgio_maggiore",
+      "token": "uv_venice_san_giorgio_maggiore",
+      "type": "poi",
+      "names": {
+        "it": "Basilica di San Giorgio Maggiore",
+        "en": "Church of San Giorgio Maggiore",
+        "fr": "Église San Giorgio Maggiore",
+        "de": "Kirche San Giorgio Maggiore"
+      }
+    },
+    "poi:uv_venice_san_marco": {
+      "id": "poi:uv_venice_san_marco",
+      "token": "uv_venice_san_marco",
+      "type": "poi",
+      "names": {
+        "it": "Piazza San Marco",
+        "en": "St Mark's Square",
+        "fr": "Place Saint-Marc",
+        "de": "Markusplatz"
+      }
+    },
+    "poi:uv_venice_san_rocco": {
+      "id": "poi:uv_venice_san_rocco",
+      "token": "uv_venice_san_rocco",
+      "type": "poi",
+      "names": {
+        "it": "Scuola Grande di San Rocco",
+        "en": "Scuola Grande di San Rocco",
+        "fr": "Scuola Grande di San Rocco",
+        "de": "Scuola Grande di San Rocco"
+      }
+    },
+    "poi:uv_venice_santa_maria_salute": {
+      "id": "poi:uv_venice_santa_maria_salute",
+      "token": "uv_venice_santa_maria_salute",
+      "type": "poi",
+      "names": {
+        "it": "Basilica di Santa Maria della Salute",
+        "en": "Basilica of Santa Maria della Salute",
+        "fr": "Basilique Santa Maria della Salute",
+        "de": "Basilika Santa Maria della Salute"
+      }
+    },
+    "poi:uv_venice_santi_giovanni_paolo": {
+      "id": "poi:uv_venice_santi_giovanni_paolo",
+      "token": "uv_venice_santi_giovanni_paolo",
+      "type": "poi",
+      "names": {
+        "it": "Basilica dei Santi Giovanni e Paolo",
+        "en": "Basilica of Santi Giovanni e Paolo",
+        "fr": "Basilique Santi Giovanni e Paolo",
+        "de": "Basilika Santi Giovanni e Paolo"
+      }
+    },
+    "poi:uv_venice_scala_bovolo": {
+      "id": "poi:uv_venice_scala_bovolo",
+      "token": "uv_venice_scala_bovolo",
+      "type": "poi",
+      "names": {
+        "it": "Scala Contarini del Bovolo",
+        "en": "Scala Contarini del Bovolo",
+        "fr": "Escalier Contarini del Bovolo",
+        "de": "Scala Contarini del Bovolo"
+      }
+    },
+    "poi:uv_venice_scalzi_bridge": {
+      "id": "poi:uv_venice_scalzi_bridge",
+      "token": "uv_venice_scalzi_bridge",
+      "type": "poi",
+      "names": {
+        "it": "Ponte degli Scalzi",
+        "en": "Ponte degli Scalzi",
+        "fr": "Ponte degli Scalzi",
+        "de": "Ponte degli Scalzi"
+      }
+    },
+    "poi:uv_venice_st_marks_basilica": {
+      "id": "poi:uv_venice_st_marks_basilica",
+      "token": "uv_venice_st_marks_basilica",
+      "type": "poi",
+      "names": {
+        "it": "Basilica di San Marco",
+        "en": "St Mark's Basilica",
+        "fr": "Basilique Saint-Marc",
+        "de": "Markusdom"
+      }
+    },
+    "poi:uv_venice_torcello": {
+      "id": "poi:uv_venice_torcello",
+      "token": "uv_venice_torcello",
+      "type": "poi",
+      "names": {
+        "it": "Torcello",
+        "en": "Torcello",
+        "fr": "Torcello",
+        "de": "Torcello"
+      }
+    }
+  },
+  "routes": {
+    "uv_marco_polo_mestre_station": {
+      "id": "uv_marco_polo_mestre_station",
+      "from": "airport:uv_venice_marco_polo",
+      "to": "hub:uv_mestre_station",
+      "mode": "all",
+      "names": {
+        "it": "Aeroporto Marco Polo → Stazione Mestre",
+        "en": "Marco Polo Airport → Mestre Station",
+        "fr": "Aéroport Marco Polo → Gare de Mestre",
+        "de": "Flughafen Marco Polo → Bahnhof Mestre"
+      }
+    },
+    "uv_marco_polo_san_marco": {
+      "id": "uv_marco_polo_san_marco",
+      "from": "airport:uv_venice_marco_polo",
+      "to": "poi:uv_venice_san_marco",
+      "mode": "all",
+      "names": {
+        "it": "Aeroporto Marco Polo → Piazza San Marco",
+        "en": "Marco Polo Airport → St Mark's Square",
+        "fr": "Aéroport Marco Polo → Place Saint-Marc",
+        "de": "Flughafen Marco Polo → Markusplatz"
+      }
+    },
+    "uv_mestre_station_san_marco": {
+      "id": "uv_mestre_station_san_marco",
+      "from": "hub:uv_mestre_station",
+      "to": "poi:uv_venice_san_marco",
+      "mode": "all",
+      "names": {
+        "it": "Stazione Mestre → Piazza San Marco",
+        "en": "Mestre Station → St Mark's Square",
+        "fr": "Gare de Mestre → Place Saint-Marc",
+        "de": "Bahnhof Mestre → Markusplatz"
+      }
+    },
+    "uv_piazzale_roma_san_marco": {
+      "id": "uv_piazzale_roma_san_marco",
+      "from": "hub:uv_venice_piazzale_roma",
+      "to": "poi:uv_venice_san_marco",
+      "mode": "all",
+      "names": {
+        "it": "Piazzale Roma → Piazza San Marco",
+        "en": "Piazzale Roma → St Mark's Square",
+        "fr": "Piazzale Roma → Place Saint-Marc",
+        "de": "Piazzale Roma → Markusplatz"
+      }
+    },
+    "uv_san_marco_rialto": {
+      "id": "uv_san_marco_rialto",
+      "from": "poi:uv_venice_san_marco",
+      "to": "poi:uv_venice_rialto_bridge",
+      "mode": "all",
+      "names": {
+        "it": "Piazza San Marco → Ponte di Rialto",
+        "en": "St Mark's Square → Rialto Bridge",
+        "fr": "Place Saint-Marc → Pont du Rialto",
+        "de": "Markusplatz → Rialtobrücke"
+      }
+    },
+    "uv_santa_lucia_san_marco": {
+      "id": "uv_santa_lucia_san_marco",
+      "from": "hub:uv_venice_santa_lucia",
+      "to": "poi:uv_venice_san_marco",
+      "mode": "all",
+      "names": {
+        "it": "Venezia Santa Lucia → Piazza San Marco",
+        "en": "Venezia Santa Lucia → St Mark's Square",
+        "fr": "Venise-Santa-Lucia → Place Saint-Marc",
+        "de": "Venezia Santa Lucia → Markusplatz"
+      }
+    },
+    "uv_treviso_mestre_station": {
+      "id": "uv_treviso_mestre_station",
+      "from": "airport:uv_treviso",
+      "to": "hub:uv_mestre_station",
+      "mode": "all",
+      "names": {
+        "it": "Aeroporto Treviso → Stazione Mestre",
+        "en": "Treviso Airport → Mestre Station",
+        "fr": "Aéroport de Trévise → Gare de Mestre",
+        "de": "Flughafen Treviso → Bahnhof Mestre"
+      }
+    },
+    "uv_treviso_san_marco": {
+      "id": "uv_treviso_san_marco",
+      "from": "airport:uv_treviso",
+      "to": "poi:uv_venice_san_marco",
+      "mode": "all",
+      "names": {
+        "it": "Aeroporto Treviso → Piazza San Marco",
+        "en": "Treviso Airport → St Mark's Square",
+        "fr": "Aéroport de Trévise → Place Saint-Marc",
+        "de": "Flughafen Treviso → Markusplatz"
+      }
+    }
+  }
+}

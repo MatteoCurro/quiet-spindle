@@ -1,0 +1,215 @@
+{
+  "schema": 1,
+  "reviewed_at": "2026-10-04",
+  "policy": {
+    "allowed_direct_licenses": [
+      "MIT",
+      "Apache-2.0"
+    ],
+    "review_required_for": [
+      "parser",
+      "validator",
+      "storage"
+    ],
+    "rule": "Before adding a custom parser, validator or storage layer, review at least one mature permissively licensed upstream candidate and record the decision here.",
+    "decision_values": [
+      "adopt",
+      "adapt",
+      "defer",
+      "reject_runtime",
+      "reference_only"
+    ],
+    "managed_path_patterns": [
+      "^js/core/gtfs-rt\\.js$",
+      "^js/core/.*(?:parser|decoder|archive|history|storage|validator).*\\.js$",
+      "^api/lib/.*(?:archive|storage|validator).*\\.php$",
+      "^server/.*(?:build_transit_data|gtfs.*(?:parser|validator|storage)).*\\.py$",
+      "^server/netex_to_gtfs\\.py$"
+    ]
+  },
+  "candidates": [
+    {
+      "id": "mobilitydata-gtfs-validator",
+      "category": "validator",
+      "repository": "MobilityData/gtfs-validator",
+      "commit": "f14b5beb21728c666fdf019fb06c0286e178dc05",
+      "license": "Apache-2.0",
+      "runtime": "Java 17+ CLI/Docker/web",
+      "decision": "adopt",
+      "scope": "release_or_ingest_gate",
+      "reason": "Canonical static GTFS validator. Use as an external validation gate at meaningful release/data-ingest checkpoints; do not embed in browser/shared-host runtime."
+    },
+    {
+      "id": "mobilitydata-gtfs-realtime-validator",
+      "category": "validator",
+      "repository": "MobilityData/gtfs-realtime-validator",
+      "commit": "7041fa3fcaf674bf730e17325c179d329cdff6f2",
+      "license": "Apache-2.0",
+      "runtime": "Java 11+ CLI/library/Docker",
+      "decision": "adopt",
+      "scope": "diagnostic_or_staging_gate",
+      "reason": "Mature GTFS-RT rule set and batch processor. Keep outside request path; use selectively for diagnostics/staging because upstream still describes the project as early alpha."
+    },
+    {
+      "id": "mobilitydata-gtfs-realtime-bindings",
+      "category": "parser",
+      "repository": "MobilityData/gtfs-realtime-bindings",
+      "commit": "0483f2eb16c2c7e26a1f2b94eb5394bd6ad7226f",
+      "license": "Apache-2.0",
+      "runtime": "JavaScript package; Node 22+; protobufjs",
+      "decision": "defer",
+      "scope": "future_bundled_or_server_runtime",
+      "reason": "Official generated GTFS-RT bindings are the preferred replacement candidate if U.Venice gains a bundler or Node service. Current browser-native decoder stays because adding protobufjs/Node-oriented bindings would materially enlarge the static runtime for a small field subset."
+    },
+    {
+      "id": "blinktag-node-gtfs",
+      "category": "storage",
+      "repository": "BlinkTagInc/node-gtfs",
+      "commit": "007de4ffe73dcf4e816932f3a12ffaad0f1aaaf2",
+      "license": "MIT",
+      "runtime": "Node 22+; SQLite/PostgreSQL/MySQL; better-sqlite3/Kysely",
+      "decision": "reject_runtime",
+      "scope": "offline_or_future_backend_only",
+      "reason": "Excellent import/query stack, but its database/runtime model conflicts with the current static browser + Python stdlib builder + shared-host deployment. Re-evaluate if a persistent Node/database backend is introduced."
+    },
+    {
+      "id": "mbta-concentrate",
+      "category": "state_merge",
+      "repository": "mbta/concentrate",
+      "commit": "6f29a1a5198ec723a81e396cedc8f831bc31e983",
+      "license": "MIT",
+      "runtime": "Elixir",
+      "decision": "adapt",
+      "scope": "snapshot_merge_pattern",
+      "reason": "Already used as a permissively licensed architectural pattern for immutable incoming feed updates versus derived current-state snapshots; no Elixir dependency is bundled."
+    },
+    {
+      "id": "onebusaway-application-modules",
+      "category": "prediction",
+      "repository": "OneBusAway/onebusaway-application-modules",
+      "commit": "fed9494e4b3ff345efabcd17b9b21fbf2a9dab7e",
+      "license": "Apache-2.0",
+      "runtime": "Java",
+      "decision": "adapt",
+      "scope": "schedule_deviation_projection_pattern",
+      "reason": "Existing MotionState logic selectively adapts schedule-deviation interpolation ideas without introducing the Java runtime."
+    },
+    {
+      "id": "mobilitydata-tods",
+      "category": "schema",
+      "repository": "MobilityData/transit-operational-data-standard",
+      "commit": "cefcf4b35033072721717f24dcb5b5a5b01382d8",
+      "license": "Apache-2.0/CC-BY-4.0",
+      "runtime": "specification/schema",
+      "decision": "adapt",
+      "scope": "operational_schema_compatibility",
+      "reason": "OperationalModel follows TODS 2.1.0 concepts and field semantics while keeping an independent provider-neutral implementation."
+    },
+    {
+      "id": "viaggia-treno-gtfs",
+      "category": "parser",
+      "repository": "fophillips/viaggia-treno-gtfs",
+      "commit": "f81d61832835705cb446296313f28c8586bcd450",
+      "license": "MIT",
+      "runtime": "Go",
+      "decision": "adapt",
+      "scope": "gtfs_writer_and_validation_patterns",
+      "reason": "Permissively licensed Italian rail GTFS producer. Reused as reference for GTFS output invariants such as >24h times, ordered stop_times and producer-side validation; no Go runtime is bundled."
+    },
+    {
+      "id": "cciss-gtfs-reference",
+      "category": "parser",
+      "repository": "gwabbey/cciss-gtfs",
+      "commit": "9f30e4ec91593ad412d3838cca452c4109f73650",
+      "license": "NOASSERTION",
+      "runtime": "Python/lxml",
+      "decision": "reference_only",
+      "scope": "italian_netex_mapping_reference",
+      "reason": "Maps the same CCISS/Italian NeTEx feed and documents key entity relationships, but no explicit software license is present; used only to cross-check mappings, not as copied source."
+    },
+    {
+      "id": "entur-netex-gtfs",
+      "category": "parser",
+      "repository": "entur/netex-gtfs-converter-java",
+      "commit": "a9807a1e6ab4250e0f348bf2d92f4a1952500033",
+      "license": "EUPL-1.2",
+      "runtime": "Java",
+      "decision": "reference_only",
+      "scope": "general_netex_converter_architecture",
+      "reason": "Mature general converter and useful architecture reference, but not embedded in U.Venice due license/runtime/profile mismatch."
+    },
+    {
+      "id": "theoremus-netex-gtfs",
+      "category": "parser",
+      "repository": "theoremus-urban-solutions/netex-gtfs-converter",
+      "commit": "ff94cd83b189d849d1183a8cf9d58f04b1ef65fd",
+      "license": "AMBIGUOUS-MIT-EUPL-DERIVATION",
+      "runtime": "Go",
+      "decision": "reference_only",
+      "scope": "streaming_converter_reference",
+      "reason": "Repository contains an MIT LICENSE but README states it builds on Entur and is licensed under the same terms as the original Java implementation; provenance is ambiguous, so code is not copied."
+    }
+  ],
+  "custom_components": [
+    {
+      "path": "js/core/gtfs-rt.js",
+      "category": "parser",
+      "reviewed_candidates": [
+        "mobilitydata-gtfs-realtime-bindings"
+      ],
+      "decision": "retain_custom",
+      "reason": "Minimal browser decoder only handles fields used by U.Venice and keeps zero runtime dependencies. Replace with official bindings if a browser bundler or Node transit service becomes part of the architecture."
+    },
+    {
+      "path": "server/build_transit_data.py",
+      "category": "parser",
+      "reviewed_candidates": [
+        "blinktag-node-gtfs",
+        "mobilitydata-gtfs-validator"
+      ],
+      "decision": "retain_custom",
+      "reason": "Streaming Python-stdlib builder is tailored to shared hosting and immutable runtime chunks. Canonical validator should validate inputs at release/ingest gates instead of replacing the builder."
+    },
+    {
+      "path": "api/lib/transit-archive.php",
+      "category": "storage",
+      "reviewed_candidates": [
+        "blinktag-node-gtfs",
+        "mbta-concentrate"
+      ],
+      "decision": "retain_custom",
+      "reason": "Bounded sampled raw protobuf archive must run in existing PHP shared hosting with no database. Database/Elixir stacks are disproportionate for six-hour diagnostic retention."
+    },
+    {
+      "path": "js/core/observation-history.js",
+      "category": "storage",
+      "reviewed_candidates": [
+        "blinktag-node-gtfs",
+        "mbta-concentrate"
+      ],
+      "decision": "retain_custom",
+      "reason": "Short-lived in-memory normalized history is intentionally bounded and browser-local; persistent database semantics are neither required nor desirable here."
+    },
+    {
+      "path": "server/build_transit_data.py::validate_zip",
+      "category": "validator",
+      "reviewed_candidates": [
+        "mobilitydata-gtfs-validator"
+      ],
+      "decision": "retain_custom",
+      "reason": "Local check remains only a cheap structural preflight. It must not be treated as specification validation; canonical MobilityData validator is the preferred full validation gate."
+    },
+    {
+      "path": "server/netex_to_gtfs.py",
+      "category": "parser",
+      "reviewed_candidates": [
+        "viaggia-treno-gtfs",
+        "cciss-gtfs-reference",
+        "entur-netex-gtfs",
+        "theoremus-netex-gtfs"
+      ],
+      "decision": "retain_custom",
+      "reason": "Small Python-stdlib bridge targets only Italian NeTEx entities required by the existing runtime builder. It avoids AGPL/EUPL/ambiguous converter dependencies while reusing documented mapping and GTFS validation patterns."
+    }
+  ]
+}

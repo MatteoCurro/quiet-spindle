@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "scope": "first-tranche",
+  "publication": {
+    "requireEnabled": true,
+    "requireReadyManifestForPublic": true,
+    "requireReadyCopyForPublic": true,
+    "requireAllDeclaredLocalesReadyAsCluster": true
+  },
+  "thinContent": {
+    "minWords": {
+      "it": {
+        "place": 320,
+        "route": 380
+      },
+      "en": {
+        "place": 280,
+        "route": 330
+      },
+      "fr": {
+        "place": 280,
+        "route": 330
+      },
+      "de": {
+        "place": 270,
+        "route": 320
+      }
+    },
+    "minFaq": {
+      "place": 3,
+      "route": 4
+    },
+    "minRelatedReading": 3,
+    "minRelatedTransport": 2
+  },
+  "uniqueness": {
+    "exactUniqueFields": [
+      "seoTitle",
+      "metaDescription",
+      "h1"
+    ],
+    "nearDuplicate": {
+      "sameLanguageOnly": true,
+      "sameKindOnly": true,
+      "shingleSize": 5,
+      "maxJaccard": 0.55
+    },
+    "repeatedParagraph": {
+      "minWords": 20,
+      "failAcrossDifferentPages": true
+    }
+  },
+  "render": {
+    "exactlyOneH1": true,
+    "canonicalRequired": true,
+    "hreflangLocales": [
+      "it",
+      "en",
+      "fr",
+      "de",
+      "x-default"
+    ],
+    "unresolvedTokensForbidden": true,
+    "publicJavascriptRequired": false,
+    "candidateMustRemainNoindex": true,
+    "publicMustBeIndexFollow": true
+  }
+}

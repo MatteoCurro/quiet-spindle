@@ -1,0 +1,25 @@
+PASS release title
+PASS interactive viewport meta
+PASS all local js/css versioned
+PASS mobile toolbar has reserved height
+PASS app viewport variable
+PASS short viewport mode
+PASS visualViewport manager
+PASS iframe short-height fallback
+PASS pageshow/orientation recovery
+PASS diagnostic report omits coordinates by construction
+PASS physical max remains 24 m/s
+PASS visual correction raised independently
+PASS large-gap snap configured
+PASS source timestamp duplicate handling
+PASS present-time projected anchor
+PASS elastic cadence state wired
+PASS stop-aware projection wired
+PASS real frame delta retained
+PASS long RAF pause reanchors
+PASS selectedByFilters contract preserved
+PASS vehicle layer contract preserved
+PASS direction id propagated into vehicle state
+PASS direction shades do not alter route polylines
+RESULT: 23 static checks passed.
+PASS direction colors { base: '#137a59', light: '#398f74', dark: '#10664b' }

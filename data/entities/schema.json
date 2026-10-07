@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://unlockvenice.com/schemas/u-venice-entity-registry-v1.json",
+  "title": "U.Venice Entity Registry v1",
+  "type": "object",
+  "required": ["schemaVersion", "locales", "entities"],
+  "properties": {
+    "schemaVersion": {"const": 1},
+    "generatedAt": {"type": ["string", "null"]},
+    "locales": {
+      "type": "array",
+      "prefixItems": [{"const":"it"},{"const":"en"},{"const":"fr"},{"const":"de"}],
+      "items": false
+    },
+    "entities": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id","type","category","priority","location","names","aliases","seo","editorial","hubs","external"],
+        "properties": {
+          "id": {"type":"string","pattern":"^(poi|hub|airport):uv_[a-z0-9_]+$"},
+          "type": {"enum":["poi","transport_hub","airport"]},
+          "category": {"type":"string","minLength":1},
+          "priority": {"type":"number","minimum":0,"maximum":100},
+          "location": {
+            "type":"object",
+            "required":["lat","lon"],
+            "properties":{
+              "lat":{"type":"number","minimum":-90,"maximum":90},
+              "lon":{"type":"number","minimum":-180,"maximum":180}
+            },
+            "additionalProperties":false
+          },
+          "names":{"$ref":"#/$defs/localizedString"},
+          "aliases":{"$ref":"#/$defs/localizedArray"},
+          "seo":{
+            "type":"object",
+            "required":["slugs"],
+            "properties":{"slugs":{"$ref":"#/$defs/localizedSlug"}},
+            "additionalProperties":false
+          },
+          "editorial":{
+            "type":"object",
+            "required":["queries"],
+            "properties":{"queries":{"$ref":"#/$defs/localizedNonEmptyArray"}},
+            "additionalProperties":true
+          },
+          "hubs":{"type":"array","items":{"type":"string"}},
+          "external":{"type":"object"}
+        },
+        "additionalProperties":true
+      }
+    }
+  },
+  "$defs": {
+    "localizedString": {
+      "type":"object","required":["it","en","fr","de"],
+      "properties":{"it":{"type":"string","minLength":1},"en":{"type":"string","minLength":1},"fr":{"type":"string","minLength":1},"de":{"type":"string","minLength":1}}
+    },
+    "localizedArray": {
+      "type":"object","required":["it","en","fr","de"],
+      "properties":{"it":{"type":"array","items":{"type":"string"}},"en":{"type":"array","items":{"type":"string"}},"fr":{"type":"array","items":{"type":"string"}},"de":{"type":"array","items":{"type":"string"}}}
+    },
+    "localizedNonEmptyArray": {
+      "type":"object","required":["it","en","fr","de"],
+      "properties":{"it":{"type":"array","minItems":1,"items":{"type":"string"}},"en":{"type":"array","minItems":1,"items":{"type":"string"}},"fr":{"type":"array","minItems":1,"items":{"type":"string"}},"de":{"type":"array","minItems":1,"items":{"type":"string"}}}
+    },
+    "localizedSlug": {
+      "type":"object","required":["it","en","fr","de"],
+      "properties":{"it":{"type":"string","pattern":"^[a-z0-9]+(?:-[a-z0-9]+)*$"},"en":{"type":"string","pattern":"^[a-z0-9]+(?:-[a-z0-9]+)*$"},"fr":{"type":"string","pattern":"^[a-z0-9]+(?:-[a-z0-9]+)*$"},"de":{"type":"string","pattern":"^[a-z0-9]+(?:-[a-z0-9]+)*$"}}
+    }
+  }
+}

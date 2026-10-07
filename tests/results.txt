@@ -1,0 +1,19 @@
+v8.5.4 validation — 2026-09-14
+
+MOTION: 22/22 PASS
+STATIC CONTRACTS: 21/21 PASS
+JS SYNTAX: PASS (all js files)
+DOM INTEGRATION: NOT RUN — linkedom missing in environment
+REAL DEVICE: PENDING user field test
+
+Key validated behaviors:
+- adaptive elastic lag from fix cadence
+- marker behind new raw fix
+- catch/cross raw fix during cycle
+- visible acceleration then easing within cycle
+- no reverse motion
+- catch-up on real positive debt
+- stale decay
+- tram stop-aware slowdown
+- bus stop-aware slowdown
+- STOPPED_AT anchors to stop

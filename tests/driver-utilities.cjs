@@ -1,0 +1,151 @@
+const fs=require('fs'),path=require('path'),vm=require('vm'),assert=require('assert');
+const root=path.join(__dirname,'..');
+
+const catalogue=fs.readFileSync(path.join(root,'js/driver/display-codes.js'),'utf8');
+const sandbox={window:{}};sandbox.window.window=sandbox.window;vm.runInNewContext(catalogue,sandbox,{filename:'display-codes.js'});
+const C=sandbox.window.UVTransitDriverCodes;
+assert(C,'driver catalogue missing');
+assert(C.routes().includes('8AE'),'8AE missing');
+assert(C.routes().includes('80'),'80 missing');
+const code2205=C.search('2205','8AE');
+assert(code2205.length&&code2205[0].text.includes('CASALE'),'2205 mapping missing');
+assert.equal(code2205[0].source,'extra-nord-2026','newer 2026 source should win duplicate');
+const code1232=C.search('1232','80');
+assert(code1232.length&&/VENEZIA/i.test(code1232[0].text),'urban 80 mapping missing');
+const best=C.suggest('8AE','MOGLIANO FS prosegue per CASALE')[0];
+assert(best&&best.entry.code==='2205'&&best.score>=90,'headsign suggestion should identify 2205');
+assert.equal(C.sources['extra-sud-2014'].status,'legacy-pending');
+
+const index=fs.readFileSync(path.join(root,'index.html'),'utf8');
+for(const id of ['driverToolsBtn','view-driver-home','view-driver-codes','view-driver-guide','view-driver-upload','driverUploadForm']){
+  assert(index.includes('id="'+id+'"'),id+' missing from index');
+}
+assert(index.includes('js/driver/display-codes.js')&&index.includes('js/driver/ui.js'),'driver scripts missing');
+assert(index.includes('js/driver/route-deviation.js'),'driver deviation detector script missing');
+assert(index.includes('id="driverOffRouteWarning"'),'shared off-route warning missing');
+assert(/Verifica il percorso/.test(index)&&/fuori dalla traccia/.test(index),'off-route warning copy missing');
+assert(index.includes('class="profile-card driver-profile-card"'),'direct driver profile card missing');
+assert(index.includes('id="driverUploadBtn" type="button" class="driver-menu-card" hidden'),'production-safe hidden upload button missing');
+assert(!index.includes('id="developerMenu"'),'nested developer menu should be removed');
+assert(!index.includes('id="driverSources"'),'source sheet list should be removed');
+assert(!index.includes('id="driverGuideSelection"'),'duplicate selected-veil summary should be removed');
+assert(!/foglio|fogli|Aesys|Ameli|Plurimus|Extraurbano Nord|Extraurbano Sud|Urbano Mestre/i.test(index),'source-sheet references should not be visible in UI');
+assert(index.includes('js/core/driver-state-adapter.js'),'shared DriverStateAdapter core missing');
+assert(index.indexOf('js/core/transit-state-engine.js')<index.indexOf('js/core/driver-state-adapter.js'),'DriverStateAdapter must load after TransitState');
+assert(index.indexOf('js/core/driver-state-adapter.js')<index.indexOf('js/provider-actv.js'),'DriverStateAdapter must load before provider');
+
+const app=fs.readFileSync(path.join(root,'js/app.js'),'utf8');
+assert(!app.includes('UVTransitDriverData'),'legacy DriverData bridge should be removed');
+assert(!app.includes('driverTripRows'),'legacy driver realtime trip bridge should be removed');
+assert(!app.includes('async function driverShape'),'legacy driver shape bridge should be removed');
+
+const driverUi=fs.readFileSync(path.join(root,'js/driver/ui.js'),'utf8');
+assert(driverUi.includes('startGuideForCode'),'veil-first guide entry missing');
+assert(driverUi.includes('async function driverCore'),'shared driver core loader missing');
+assert(driverUi.includes('const read=g.UVTransitRead')&&driverUi.includes("read.driver.core('aut')"),'Driver Utility must consume shared driver state through TransitRead');
+assert(driverUi.includes('driverCoreRead!==read')&&driverUi.includes('driverCorePromise=null'),'Driver core cache must invalidate when TransitRead/provider changes');
+assert(driverUi.includes('candidateTripIds'),'display-code hint domain missing');
+assert(driverUi.includes('adapter.resolve({gps:p'),'initial GPS must resolve through DriverStateAdapter');
+assert(driverUi.includes('selectedTripInstanceId:session.trip?.tripInstanceId'),'active session must lock canonical TripInstance');
+assert(driverUi.includes('session.driverState?.delay?.value'),'cockpit delay must come from TransitState');
+assert(driverUi.includes('session.driverState=state'),'GPS updates must replace canonical driver state');
+assert(!driverUi.includes('async function staticTrips'),'parallel static schedule loader must be removed');
+assert(!driverUi.includes('chooseTripAutomatically'),'parallel automatic trip scoring must be removed');
+assert(!driverUi.includes('tripAlignment'),'parallel GPS/time alignment must be removed');
+assert(!driverUi.includes('expectedTimeAtPosition'),'parallel punctuality estimator must be removed');
+assert(!driverUi.includes('UVTransitSchedule'),'Driver Utility must not instantiate Journey Schedule');
+assert(!driverUi.includes('UVTransitDriverData'),'Driver Utility must not use legacy realtime bridge');
+assert(!driverUi.includes('Scegli la tratta che stai effettuando'),'GTFS variants should not be exposed as a second selection');
+assert(!driverUi.includes('sourceLine('),'source/date metadata should not be rendered');
+assert(driverUi.includes('Ritardo ~')&&driverUi.includes('Anticipo ~')&&driverUi.includes('In orario'),'punctuality states missing');
+assert(driverUi.includes('startGPS();'),'driver guide must start GPS automatically');
+assert(driverUi.includes("setGuideView('map')"),'driver alternate map view hook missing');
+assert(driverUi.includes('M()?.update?.(session)'),'driver GPS must update map mode');
+assert(driverUi.includes('checkRouteDeviation(state,p.accuracy,p.timestamp)'),'off-route UX must consume canonical route distance');
+assert(driverUi.includes('renderOffRouteWarning'),'shared route warning renderer missing');
+assert(!driverUi.includes('devEnabled'),'driver profile entry must not depend on development flag');
+assert(driverUi.includes("upload.hidden=!/\\/t-sand"),'photo upload must stay staging-only in frontend');
+assert(index.includes('id="driverScheduledTime"')&&index.includes('id="driverDelayStatus"')&&index.includes('id="driverClock"'),'timetable/GPS cockpit elements missing');
+assert(index.includes('id="driverCockpitView"')&&index.includes('id="driverMapView"'),'driver view switch missing');
+assert(index.includes('id="driverMapHud"')&&index.includes('id="driverMapCanvas"'),'driver map HUD/surface missing');
+assert(index.includes('id="driverMapRoute"')&&index.includes('id="driverMapScheduled"')&&index.includes('id="driverMapDelayStatus"'),'driver map cockpit hierarchy missing');
+assert(!index.includes('id="driverMapRecenter"'),'always-follow driver map should not expose redundant recenter control');
+assert(index.includes('js/driver/map.js'),'driver map module missing from index');
+assert(!index.includes('id="driverReached"'),'manual reached button should be removed');
+assert(!index.includes('id="driverPrevStop"')&&!index.includes('id="driverNextStop"'),'manual stop navigation should be removed');
+
+const css=fs.readFileSync(path.join(root,'assets/app-8.11.css'),'utf8');
+assert(css.includes('[data-panel^="driver-"] #drawer.drawer'),'driver full-height geometry missing');
+assert(css.includes('.driver-code-now>strong'),'large driver code styling missing');
+assert(css.includes('.driver-start-guide'),'veil guide CTA styling missing');
+assert(css.includes('.driver-gps-live'),'automatic GPS indicator styling missing');
+assert(css.includes('.driver-profile-card'),'direct profile entry styling missing');
+assert(css.includes('.driver-clock'),'driver clock styling missing');
+assert(css.includes('.driver-delay-status.late')&&css.includes('.driver-delay-status.early'),'driver delay/early styling missing');
+assert(css.includes('.driver-hero-stop'),'glance-first next-stop hero styling missing');
+assert(css.includes('.driver-following-row'),'compact following-stop row missing');
+assert(css.includes('.driver-veil-strip'),'compact veil strip missing');
+assert(css.includes('.driver-cockpit-status'),'compact GPS status row missing');
+assert(css.includes('.uv-driver-map-mode'),'driver map panel geometry missing');
+assert(css.includes('.driver-view-switch'),'driver view switch styling missing');
+assert(css.includes('#driverMapCanvas'),'dedicated driver map surface styling missing');
+assert(css.includes('.uv-driver-vehicle'),'Unlock Venice driver arrow styling missing');
+assert(css.includes('.driver-map-timing'),'driver map timing hierarchy missing');
+assert(css.includes('.driver-off-route-warning'),'driver off-route warning styling missing');
+assert(index.includes('class="driver-next-stop driver-hero-stop driver-cockpit-only"'),'driver hero stop markup missing');
+assert(index.includes('class="driver-following-row driver-cockpit-only"'),'following stop markup missing');
+
+const driverMap=fs.readFileSync(path.join(root,'js/driver/map.js'),'utf8');
+assert.doesNotThrow(()=>new vm.Script(driverMap,{filename:'driver-map.js'}),'driver map syntax invalid');
+assert(driverMap.includes('UVTransitDriverMap'),'driver map module export missing');
+assert(driverMap.includes('function shapeForSession')&&driverMap.includes('session?.driverState?.geometry?.shape'),'driver map must consume canonical ExpectedPosition geometry');
+assert(driverMap.includes('function applyState(session)'),'driver map canonical-state adapter missing');
+assert(driverMap.includes('state.motion?.shapeProgress?.value??state.shapeProgress'),'driver map must consume canonical motion progress');
+assert(!driverMap.includes('routeShapeCache'),'driver map must not keep a parallel GTFS shape cache');
+assert(!driverMap.includes('projectToShape'),'driver map must not map-match GPS independently');
+assert(!driverMap.includes('distanceToRoute'),'driver map must not own off-route distance');
+assert(!driverMap.includes('predictionWindow'),'driver map must not extrapolate a second operational position');
+assert(driverMap.includes("runtime-data/driver-map/driver-basemap.pmtiles"),'driver map must use local PMTiles archive');
+const sharedMapRuntime=fs.readFileSync(path.join(root,'js/navigation/maplibre-runtime.js'),'utf8');
+assert(driverMap.includes('UVMapLibreRuntime.ensure()'),'driver renderer must use shared lazy MapLibre runtime');
+assert(sharedMapRuntime.includes("assetUrl('maplibre-gl.js')")&&sharedMapRuntime.includes("assetUrl('pmtiles.js')"),'shared renderer runtime must lazy-load local MapLibre/PMTiles assets');
+assert(driverMap.includes("new g.maplibregl.Map"),'driver map must use dedicated MapLibre renderer');
+assert(driverMap.includes("interactive:false"),'driver map must stay non-interactive while driving');
+assert(driverMap.includes("pitch:44"),'driver map must use navigation-like pitch');
+assert(driverMap.includes("directionAt(progress)"),'driver map must orient from canonical shape direction');
+assert(driverMap.includes("requestAnimationFrame(renderFrame)"),'driver map must continuously smooth presentation');
+assert(driverMap.includes("rotationAlignment:'viewport'"),'driver vehicle arrow must remain heading-up');
+assert(driverMap.includes("restoreDefaultBase"),'driver map must restore normal basemap on exit');
+assert(!driverMap.includes("map.on('click'")&&!driverMap.includes('map.on("click"'),'driver stops/map must not open normal app flows');
+assert(!driverMap.includes('cartocdn.com'),'driver map must never fall back to CARTO');
+
+const deviationCode=fs.readFileSync(path.join(root,'js/driver/route-deviation.js'),'utf8');
+const deviationSandbox={window:{}};deviationSandbox.window.window=deviationSandbox.window;
+vm.runInNewContext(deviationCode,deviationSandbox,{filename:'route-deviation.js'});
+const Deviation=deviationSandbox.window.UVTransitDriverDeviation;
+assert(Deviation&&Deviation.createDetector,'driver deviation detector missing');
+
+const noisy=Deviation.createDetector();
+assert.equal(noisy.sample({distance:300,accuracy:120,timestamp:1000}).warned,false,'poor GPS must not trigger off-route warning');
+assert.equal(noisy.sample({distance:320,accuracy:110,timestamp:7000}).warned,false,'repeated poor GPS must stay ignored');
+
+const off=Deviation.createDetector();
+assert.equal(off.sample({distance:150,accuracy:20,timestamp:1000}).warned,false,'one off-route fix must not warn');
+assert.equal(off.sample({distance:160,accuracy:18,timestamp:5000}).warned,false,'two off-route fixes must not warn');
+assert.equal(off.sample({distance:170,accuracy:22,timestamp:8000}).warned,true,'three persistent reliable off-route fixes should warn');
+assert.equal(off.sample({distance:25,accuracy:15,timestamp:10000}).warned,true,'one recovered fix must not clear warning');
+assert.equal(off.sample({distance:30,accuracy:15,timestamp:12000}).warned,false,'two recovered reliable fixes should clear warning');
+
+const pkg=JSON.parse(fs.readFileSync(path.join(root,'package.json'),'utf8'));
+assert(pkg.devDependencies['maplibre-gl']&&pkg.devDependencies.pmtiles,'local MapLibre/PMTiles dependencies missing');
+assert(!pkg.devDependencies['protomaps-leaflet'],'legacy Leaflet driver renderer should be removed');
+
+const php=fs.readFileSync(path.join(root,'api/driver-code-photo.php'),'utf8');
+assert(php.includes("'/t-sand/'")&&php.includes('UV_DRIVER_UPLOAD_ENABLED'),'upload environment guard missing');
+assert(php.includes("12 * 1024 * 1024"),'upload size cap missing');
+assert(php.includes("image/jpeg")&&php.includes("image/heic"),'image MIME allow-list missing');
+assert(php.includes("'reviewStatus' => 'pending'"),'manual review status missing');
+assert(php.includes('Require all denied'),'upload directory access guard missing');
+assert(fs.existsSync(path.join(root,'api/driver-code-submissions/.htaccess')),'private upload directory is not precreated');
+
+console.log('RESULT: driver utility contracts passed.');

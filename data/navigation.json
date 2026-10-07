@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "remoteEnabled": false,
+  "routeUrl": "",
+  "healthUrl": "",
+  "timeoutMs": 6500,
+  "localFallback": true,
+  "note": "Enable only after a controlled CORS-enabled Valhalla endpoint is available. Browser calls it directly; Gandi PHP is not used."
+}

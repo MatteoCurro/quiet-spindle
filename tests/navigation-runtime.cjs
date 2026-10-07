@@ -1,0 +1,12 @@
+const assert=require('assert'),fs=require('fs'),path=require('path');
+const root=path.join(__dirname,'..');
+const runtime=fs.readFileSync(path.join(root,'js/navigation/maplibre-runtime.js'),'utf8');
+const driver=fs.readFileSync(path.join(root,'js/driver/map.js'),'utf8');
+const index=fs.readFileSync(path.join(root,'index.html'),'utf8');
+assert(runtime.includes("g.UVMapLibreRuntime=Object.freeze"));
+assert(runtime.includes("g.maplibregl.addProtocol('pmtiles'"));
+assert(driver.includes("g.UVMapLibreRuntime.ensure()"));
+assert(!driver.includes("function loadRenderer("));
+assert(!driver.includes("function loadScript("));
+assert(index.indexOf('js/navigation/maplibre-runtime.js')<index.indexOf('js/driver/map.js'));
+console.log('navigation-runtime tests passed');

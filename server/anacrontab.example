@@ -1,0 +1,4 @@
+# Unlock Venice Transit 8.8 — Gandi Web Hosting / Anacron
+# Una volta al giorno. Gandi ignora il timeout ma richiede il valore 0.
+# Il builder gira fuori dal web root; il log resta privato.
+@daily 0 unlock_transit_build cd /srv/data/home/transit-builder && /usr/bin/python3 /srv/data/home/transit-builder/build_transit_data.py --config /srv/data/home/transit-builder/builder-config.json >> /srv/data/home/transit-builder/builder.log 2>&1

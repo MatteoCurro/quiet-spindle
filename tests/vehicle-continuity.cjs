@@ -1,0 +1,23 @@
+const fs=require('fs'),vm=require('vm'),assert=require('assert');
+const window={};window.window=window;const ctx=vm.createContext({window,Date,Map,Object,Array,Number,String,Math,Error});
+vm.runInContext(fs.readFileSync(__dirname+'/../js/core/vehicle-continuity.js','utf8'),ctx);
+const C=window.UVTransitVehicleContinuity;let n=0;function check(name,fn){fn();n++;console.log('PASS '+name)}
+const store=C.createVehicleContinuityStore({retentionTtlSec:600,correlationTtlSec:180,maxHistory:3,maxTransitions:2});
+const snap=(at,entries)=>({provider:'p',network:'n',generatedAt:at,entries});
+const matched=(id,trip,route,at)=>({vehicleId:id,externalVehicleId:id,anonymous:false,status:'matched',tripInstanceId:trip,routeId:route,lastSeenAt:at,position:{lat:45,lon:12},strongestResolution:{confidence:.95}});
+const routeOnly=(id,route,at)=>({vehicleId:id,externalVehicleId:id,anonymous:false,status:'route_only',tripInstanceId:null,routeId:route,lastSeenAt:at,position:{lat:45.1,lon:12.1},strongestResolution:{confidence:.8}});
+store.ingest(snap(1000,[matched('BUS','T1','R1',1000)]),{now:1000});
+check('matched vehicle creates continuity record',()=>{const v=store.snapshot('p','n',{now:1000}).vehicle('BUS');assert(v);assert.equal(v.lastMatchedTripInstanceId,'T1');assert.equal(v.presentInLatestFeed,true)});
+check('recent matched history is available for correlation',()=>{const c=store.correlation('BUS',{provider:'p',network:'n',now:1100});assert(c);assert.equal(c.tripInstanceId,'T1');assert(c.confidence<.95&&c.confidence>.7)});
+store.ingest(snap(1060,[routeOnly('BUS','R1',1060)]),{now:1060});
+check('route-only frame preserves prior matched identity without calling it matched',()=>{const v=store.snapshot('p','n',{now:1060}).vehicle('BUS');assert.equal(v.status,'route_only');assert.equal(v.lastMatchedTripInstanceId,'T1');assert.equal(v.history.length,2)});
+store.ingest(snap(1120,[]),{now:1120});
+check('omitted vehicle is retained but explicitly not current',()=>{const v=store.snapshot('p','n',{now:1120}).vehicle('BUS');assert(v);assert.equal(v.presentInLatestFeed,false);assert.equal(store.snapshot('p','n',{now:1120}).current().length,0)});
+check('correlation expires before diagnostic retention',()=>{assert(store.correlation('BUS',{provider:'p',network:'n',now:1170}));assert.equal(store.correlation('BUS',{provider:'p',network:'n',now:1190}),null);assert(store.snapshot('p','n',{now:1190}).vehicle('BUS'))});
+store.ingest(snap(1200,[matched('BUS','T2','R1',1200)]),{now:1200});
+check('trip change is recorded as transition',()=>{const v=store.snapshot('p','n',{now:1200}).vehicle('BUS');assert.equal(v.lastMatchedTripInstanceId,'T2');assert.equal(v.transitions.length,1);assert.equal(v.transitions[0].fromTripInstanceId,'T1');assert.equal(v.transitions[0].toTripInstanceId,'T2')});
+store.ingest(snap(1210,[matched('BUS','T2','R1',1210)]),{now:1210});store.ingest(snap(1220,[matched('BUS','T2','R1',1220)]),{now:1220});store.ingest(snap(1230,[matched('BUS','T2','R1',1230)]),{now:1230});
+check('history is bounded',()=>assert.equal(store.snapshot('p','n',{now:1230}).vehicle('BUS').history.length,3));
+check('anonymous entries never become continuity identities',()=>{store.ingest(snap(1240,[{vehicleId:'anonymous:o',externalVehicleId:null,anonymous:true,status:'unknown',lastSeenAt:1240}]),{now:1240});assert.equal(store.snapshot('p','n',{now:1240}).vehicle('anonymous:o'),null)});
+check('retention TTL prunes stale records',()=>{store.prune(2000);assert.equal(store.snapshot('p','n',{now:2000}).entries.length,0)});
+console.log('RESULT: '+n+' vehicle-continuity checks passed.');

@@ -1,0 +1,399 @@
+{
+  "schemaVersion": 1,
+  "currency": "EUR",
+  "audience": "visitor",
+  "lastReviewed": "2026-10-05",
+  "groups": {
+    "venice-urban": [
+      "actv-road-75",
+      "actv-network-75",
+      "actv-day-1",
+      "actv-day-2",
+      "actv-day-3",
+      "actv-day-7"
+    ],
+    "mestre-venice": [
+      "trenitalia-mestre-santalucia",
+      "actv-road-75",
+      "mestre-daily-pass",
+      "actv-network-75"
+    ],
+    "airport-venice": [
+      "actv-airport-oneway",
+      "actv-airport-return",
+      "actv-airport-water-90",
+      "alilaguna-airport-venice-oneway",
+      "alilaguna-airport-venice-return",
+      "alilaguna-airport-murano-oneway"
+    ],
+    "waterbus": [
+      "actv-network-75",
+      "actv-day-1",
+      "actv-day-2",
+      "actv-day-3",
+      "actv-day-7"
+    ],
+    "murano": [
+      "actv-network-75",
+      "actv-day-1",
+      "actv-day-2",
+      "actv-day-3",
+      "actv-day-7",
+      "alilaguna-airport-murano-oneway"
+    ],
+    "airport-mestre": [
+      "actv-airport-oneway",
+      "actv-airport-return",
+      "atvo-marco-polo-oneway",
+      "atvo-marco-polo-return"
+    ],
+    "airport-treviso": [
+      "atvo-treviso-oneway",
+      "atvo-treviso-return"
+    ]
+  },
+  "fares": [
+    {
+      "id": "actv-road-75",
+      "operator": "ACTV",
+      "mode": "bus-tram-people-mover",
+      "price": 1.5,
+      "priceType": "fixed",
+      "labels": {
+        "it": "Bus/tram urbano ACTV 75 minuti",
+        "en": "ACTV urban bus/tram 75 minutes",
+        "fr": "Bus/tram urbain ACTV 75 minutes",
+        "de": "ACTV Stadtbus/Tram 75 Minuten"
+      },
+      "notes": {
+        "it": "Valido sulla rete automobilistica/tranviaria urbana e People Mover; non include la navigazione e non vale per i viaggi da/per l’aeroporto Marco Polo.",
+        "en": "Valid on the urban road/tram network and People Mover; waterbus services and Marco Polo Airport trips are excluded.",
+        "fr": "Valable sur le réseau urbain bus/tram et le People Mover ; le vaporetto et les trajets depuis/vers l’aéroport Marco Polo ne sont pas inclus.",
+        "de": "Gültig im städtischen Bus-/Tramnetz und im People Mover; Vaporetti und Fahrten vom/zum Flughafen Marco Polo sind nicht enthalten."
+      },
+      "lastVerified": "2026-09-26",
+      "sourceType": "official",
+      "sourceUrl": "https://actv.avmspa.it/en/node/5153"
+    },
+    {
+      "id": "actv-network-75",
+      "operator": "ACTV",
+      "mode": "waterbus-bus-tram",
+      "price": 9.5,
+      "priceType": "fixed",
+      "labels": {
+        "it": "ACTV rete unica 75 minuti (vaporetto incluso)",
+        "en": "ACTV 75-minute network ticket (waterbus included)",
+        "fr": "Billet ACTV 75 minutes réseau complet (vaporetto inclus)",
+        "de": "ACTV 75-Minuten-Netzticket (Vaporetto inklusive)"
+      },
+      "notes": {
+        "it": "Biglietto ordinario per visitatori: include navigazione ACTV, bus/tram e People Mover; esclude i viaggi da/per l’aeroporto Marco Polo e le linee escluse dalla tariffa ordinaria.",
+        "en": "Standard visitor ticket including ACTV waterbus, bus/tram and People Mover; Marco Polo Airport trips and excluded routes are not covered.",
+        "fr": "Billet standard pour visiteurs incluant vaporetto ACTV, bus/tram et People Mover ; les trajets depuis/vers l’aéroport Marco Polo et les lignes exclues ne sont pas compris.",
+        "de": "Standardticket für Besucher mit ACTV-Vaporetto, Bus/Tram und People Mover; Fahrten vom/zum Flughafen Marco Polo und ausgeschlossene Linien sind nicht enthalten."
+      },
+      "lastVerified": "2026-09-26",
+      "sourceType": "official",
+      "sourceUrl": "https://actv.avmspa.it/en/node/4578"
+    },
+    {
+      "id": "actv-day-1",
+      "operator": "ACTV",
+      "mode": "network-pass",
+      "price": 25,
+      "priceType": "from",
+      "labels": {
+        "it": "ACTV pass 1 giorno",
+        "en": "ACTV 1-day pass",
+        "fr": "Pass ACTV 1 jour",
+        "de": "ACTV 1-Tages-Pass"
+      },
+      "lastVerified": "2026-09-26",
+      "sourceType": "official",
+      "sourceUrl": "https://www.veneziaunica.it/it/acquista-i-biglietti/trasporto-pubblico-a-venezia"
+    },
+    {
+      "id": "actv-day-2",
+      "operator": "ACTV",
+      "mode": "network-pass",
+      "price": 35,
+      "priceType": "from",
+      "labels": {
+        "it": "ACTV pass 2 giorni",
+        "en": "ACTV 2-day pass",
+        "fr": "Pass ACTV 2 jours",
+        "de": "ACTV 2-Tage-Pass"
+      },
+      "lastVerified": "2026-09-26",
+      "sourceType": "official",
+      "sourceUrl": "https://www.veneziaunica.it/it/acquista-i-biglietti/trasporto-pubblico-a-venezia"
+    },
+    {
+      "id": "actv-day-3",
+      "operator": "ACTV",
+      "mode": "network-pass",
+      "price": 45,
+      "priceType": "from",
+      "labels": {
+        "it": "ACTV pass 3 giorni",
+        "en": "ACTV 3-day pass",
+        "fr": "Pass ACTV 3 jours",
+        "de": "ACTV 3-Tage-Pass"
+      },
+      "lastVerified": "2026-09-26",
+      "sourceType": "official",
+      "sourceUrl": "https://www.veneziaunica.it/it/acquista-i-biglietti/trasporto-pubblico-a-venezia"
+    },
+    {
+      "id": "actv-day-7",
+      "operator": "ACTV",
+      "mode": "network-pass",
+      "price": 65,
+      "priceType": "from",
+      "labels": {
+        "it": "ACTV pass 7 giorni",
+        "en": "ACTV 7-day pass",
+        "fr": "Pass ACTV 7 jours",
+        "de": "ACTV 7-Tage-Pass"
+      },
+      "lastVerified": "2026-09-26",
+      "sourceType": "official",
+      "sourceUrl": "https://www.veneziaunica.it/it/acquista-i-biglietti/trasporto-pubblico-a-venezia"
+    },
+    {
+      "id": "mestre-daily-pass",
+      "operator": "AVM/ACTV + Trenitalia",
+      "mode": "integrated-pass",
+      "price": 5,
+      "priceType": "fixed",
+      "labels": {
+        "it": "Mestre Daily Pass 24 ore",
+        "en": "Mestre Daily Pass 24 hours",
+        "fr": "Mestre Daily Pass 24 heures",
+        "de": "Mestre Daily Pass 24 Stunden"
+      },
+      "notes": {
+        "it": "Include bus/tram sulla terraferma del Comune di Venezia e treni regionali nell’area urbana fino a Venezia Santa Lucia; non include i vaporetti né i viaggi da/per l’aeroporto.",
+        "en": "Includes mainland bus/tram and regional trains within Venice’s urban area to Venezia Santa Lucia; waterbuses and airport trips are excluded.",
+        "fr": "Comprend bus/tram sur la terre ferme et trains régionaux dans la zone urbaine jusqu’à Venezia Santa Lucia ; les vaporetti et trajets aéroport ne sont pas inclus.",
+        "de": "Enthält Bus/Tram auf dem Festland und Regionalzüge im Stadtgebiet bis Venezia Santa Lucia; Vaporetti und Flughafenfahrten sind nicht enthalten."
+      },
+      "lastVerified": "2026-09-26",
+      "sourceType": "official",
+      "sourceUrl": "https://www.trenitalia.com/it/regionale/i-nostri-partner/veneto-daily-pass.html"
+    },
+    {
+      "id": "trenitalia-mestre-santalucia",
+      "operator": "Trenitalia / regional rail",
+      "mode": "train",
+      "price": 1.5,
+      "priceType": "from",
+      "labels": {
+        "it": "Treno Venezia Mestre → Venezia Santa Lucia",
+        "en": "Train Venezia Mestre → Venezia Santa Lucia",
+        "fr": "Train Venezia Mestre → Venezia Santa Lucia",
+        "de": "Zug Venezia Mestre → Venezia Santa Lucia"
+      },
+      "notes": {
+        "it": "Prezzo indicativo minimo rilevato online; verifica la tariffa effettiva nel canale di vendita Trenitalia per la data scelta.",
+        "en": "Indicative minimum price found online; verify the actual fare in Trenitalia’s sales channel for your travel date.",
+        "fr": "Prix minimum indicatif relevé en ligne ; vérifiez le tarif réel dans le canal de vente Trenitalia pour la date choisie.",
+        "de": "Online ermittelter Mindest-Richtpreis; prüfe den tatsächlichen Tarif für dein Reisedatum im Trenitalia-Verkaufskanal."
+      },
+      "lastVerified": "2026-09-26",
+      "sourceType": "indicative-third-party",
+      "sourceUrl": "https://www.thetrainline.com/it/orari-treni/venezia-mestre-a-venezia-santa-lucia"
+    },
+    {
+      "id": "actv-airport-oneway",
+      "operator": "ACTV",
+      "mode": "airport-bus",
+      "price": 10,
+      "priceType": "fixed",
+      "labels": {
+        "it": "Bus ACTV Aeroporto Marco Polo, corsa singola",
+        "en": "ACTV Marco Polo Airport bus, one way",
+        "fr": "Bus ACTV Aéroport Marco Polo, aller simple",
+        "de": "ACTV Bus Flughafen Marco Polo, einfache Fahrt"
+      },
+      "lastVerified": "2026-09-26",
+      "sourceType": "official",
+      "sourceUrl": "https://www.veneziaunica.it/it/acquista-i-biglietti/transfer-aeroporti-marco-polo-e-canova/actv-transfer-aeroporto-marco-polo-corsa-singola-da-75"
+    },
+    {
+      "id": "actv-airport-return",
+      "operator": "ACTV",
+      "mode": "airport-bus",
+      "price": 18,
+      "priceType": "fixed",
+      "labels": {
+        "it": "Bus ACTV Aeroporto Marco Polo, andata e ritorno",
+        "en": "ACTV Marco Polo Airport bus, return",
+        "fr": "Bus ACTV Aéroport Marco Polo, aller-retour",
+        "de": "ACTV Bus Flughafen Marco Polo, Hin- und Rückfahrt"
+      },
+      "lastVerified": "2026-09-26",
+      "sourceType": "official",
+      "sourceUrl": "https://www.veneziaunica.it/it/cosa-fare-a-venezia/come-arrivare-a-venezia/aeroporto-marco-polo"
+    },
+    {
+      "id": "actv-airport-water-90",
+      "operator": "ACTV",
+      "mode": "airport-bus-plus-waterbus",
+      "price": 18,
+      "priceType": "fixed",
+      "labels": {
+        "it": "ACTV Aerobus + vaporetto, 90 minuti",
+        "en": "ACTV Aerobus + waterbus, 90 minutes",
+        "fr": "ACTV Aerobus + vaporetto, 90 minutes",
+        "de": "ACTV Aerobus + Vaporetto, 90 Minuten"
+      },
+      "notes": {
+        "it": "Titolo combinato per aeroporto e navigazione ACTV; verifica sempre condizioni e validità al momento dell’acquisto.",
+        "en": "Combined airport and ACTV waterbus ticket; always verify conditions and validity at purchase.",
+        "fr": "Titre combiné aéroport + navigation ACTV ; vérifiez toujours les conditions et la durée de validité au moment de l’achat.",
+        "de": "Kombiniertes Ticket für Flughafen und ACTV-Wasserverkehr; prüfe beim Kauf immer Bedingungen und Gültigkeit."
+      },
+      "lastVerified": "2026-09-26",
+      "sourceType": "official",
+      "sourceUrl": "https://tripplanner.veneziaunica.it/en/content/vaporetto"
+    },
+    {
+      "id": "alilaguna-airport-venice-oneway",
+      "operator": "Alilaguna",
+      "mode": "airport-water",
+      "price": 18,
+      "priceType": "fixed",
+      "labels": {
+        "it": "Alilaguna Aeroporto Marco Polo ↔ Venezia, corsa singola",
+        "en": "Alilaguna Marco Polo Airport ↔ Venice, one way",
+        "fr": "Alilaguna Aéroport Marco Polo ↔ Venise, aller simple",
+        "de": "Alilaguna Flughafen Marco Polo ↔ Venedig, einfache Fahrt"
+      },
+      "lastVerified": "2026-09-26",
+      "sourceType": "official",
+      "sourceUrl": "https://www.veneziaunica.it/it/acquista-i-biglietti/transfer-aeroporti-marco-polo-e-canova/alilaguna-transfer-acqueo-aeroporto-marco-polo-venezia"
+    },
+    {
+      "id": "alilaguna-airport-venice-return",
+      "operator": "Alilaguna",
+      "mode": "airport-water",
+      "price": 32,
+      "priceType": "fixed",
+      "labels": {
+        "it": "Alilaguna Aeroporto Marco Polo ↔ Venezia, andata e ritorno",
+        "en": "Alilaguna Marco Polo Airport ↔ Venice, return",
+        "fr": "Alilaguna Aéroport Marco Polo ↔ Venise, aller-retour",
+        "de": "Alilaguna Flughafen Marco Polo ↔ Venedig, Hin- und Rückfahrt"
+      },
+      "lastVerified": "2026-09-26",
+      "sourceType": "official",
+      "sourceUrl": "https://www.veneziaunica.it/it/acquista-i-biglietti/transfer-aeroporti-marco-polo-e-canova/alilaguna-transfer-acqueo-aeroporto-marco-polo-venezia"
+    },
+    {
+      "id": "alilaguna-airport-murano-oneway",
+      "operator": "Alilaguna",
+      "mode": "airport-water",
+      "price": 10,
+      "priceType": "fixed",
+      "labels": {
+        "it": "Alilaguna Aeroporto Marco Polo ↔ Murano, corsa singola",
+        "en": "Alilaguna Marco Polo Airport ↔ Murano, one way",
+        "fr": "Alilaguna Aéroport Marco Polo ↔ Murano, aller simple",
+        "de": "Alilaguna Flughafen Marco Polo ↔ Murano, einfache Fahrt"
+      },
+      "lastVerified": "2026-09-26",
+      "sourceType": "official",
+      "sourceUrl": "https://www.veneziaunica.it/it/acquista-i-biglietti/transfer-aeroporti-marco-polo-e-canova/alilaguna-transfer-acqueo-aeroporto-marco-polo-murano"
+    },
+    {
+      "id": "atvo-marco-polo-oneway",
+      "operator": "ATVO",
+      "mode": "airport-bus",
+      "price": 12,
+      "priceType": "fixed",
+      "labels": {
+        "it": "ATVO Marco Polo ↔ Mestre/Venezia, corsa singola",
+        "en": "ATVO Marco Polo ↔ Mestre/Venice, one way",
+        "fr": "ATVO Marco Polo ↔ Mestre/Venise, aller simple",
+        "de": "ATVO Marco Polo ↔ Mestre/Venedig, einfache Fahrt"
+      },
+      "notes": {
+        "it": "Tariffa aeroporto ATVO riportata nell’orario ufficiale 2026; bagaglio incluso. Verifica il prezzo corrente prima dell’acquisto.",
+        "en": "ATVO airport fare shown in the official 2026 timetable; luggage included. Check the current fare before purchase.",
+        "fr": "Tarif aéroport ATVO indiqué dans l’horaire officiel 2026 ; bagage inclus. Vérifiez le tarif actuel avant l’achat.",
+        "de": "ATVO-Flughafentarif im offiziellen Fahrplan 2026; Gepäck inklusive. Aktuellen Preis vor dem Kauf prüfen."
+      },
+      "lastVerified": "2026-10-05",
+      "sourceType": "official",
+      "sourceUrl": "https://www.atvo.it/assets/bus_routes/035_01.02.26-.pdf"
+    },
+    {
+      "id": "atvo-marco-polo-return",
+      "operator": "ATVO",
+      "mode": "airport-bus",
+      "price": 20,
+      "priceType": "fixed",
+      "labels": {
+        "it": "ATVO Marco Polo ↔ Mestre/Venezia, andata e ritorno",
+        "en": "ATVO Marco Polo ↔ Mestre/Venice, return",
+        "fr": "ATVO Marco Polo ↔ Mestre/Venise, aller-retour",
+        "de": "ATVO Marco Polo ↔ Mestre/Venedig, Hin- und Rückfahrt"
+      },
+      "notes": {
+        "it": "Tariffa A/R aeroporto ATVO riportata nell’orario ufficiale 2026; bagaglio incluso. Verifica condizioni e prezzo corrente.",
+        "en": "ATVO airport return fare shown in the official 2026 timetable; luggage included. Check current conditions and fare.",
+        "fr": "Tarif aller-retour aéroport ATVO indiqué dans l’horaire officiel 2026 ; bagage inclus. Vérifiez les conditions actuelles.",
+        "de": "ATVO-Flughafen-Rückfahrpreis im offiziellen Fahrplan 2026; Gepäck inklusive. Aktuelle Bedingungen prüfen."
+      },
+      "lastVerified": "2026-10-05",
+      "sourceType": "official",
+      "sourceUrl": "https://www.atvo.it/assets/bus_routes/035_01.02.26-.pdf"
+    },
+    {
+      "id": "atvo-treviso-oneway",
+      "operator": "ATVO",
+      "mode": "airport-bus",
+      "price": 14,
+      "priceType": "fixed",
+      "labels": {
+        "it": "ATVO Treviso Canova ↔ Mestre/Venezia, corsa singola",
+        "en": "ATVO Treviso Canova ↔ Mestre/Venice, one way",
+        "fr": "ATVO Trévise Canova ↔ Mestre/Venise, aller simple",
+        "de": "ATVO Treviso Canova ↔ Mestre/Venedig, einfache Fahrt"
+      },
+      "notes": {
+        "it": "Ultima tariffa aeroportuale esplicita individuata in un orario ufficiale ATVO 2026; bagaglio incluso. Verifica sempre il prezzo al momento dell’acquisto.",
+        "en": "Latest explicit airport fare found in an official ATVO 2026 timetable; luggage included. Always check the fare at purchase.",
+        "fr": "Dernier tarif aéroport explicite trouvé dans un horaire officiel ATVO 2026 ; bagage inclus. Vérifiez toujours le prix lors de l’achat.",
+        "de": "Letzter ausdrücklich angegebener Flughafentarif in einem offiziellen ATVO-Fahrplan 2026; Gepäck inklusive. Preis beim Kauf prüfen."
+      },
+      "lastVerified": "2026-10-05",
+      "sourceType": "official",
+      "sourceUrl": "https://www.atvo.it/assets/bus_routes/venezia_261025_280326.pdf"
+    },
+    {
+      "id": "atvo-treviso-return",
+      "operator": "ATVO",
+      "mode": "airport-bus",
+      "price": 24,
+      "priceType": "fixed",
+      "labels": {
+        "it": "ATVO Treviso Canova ↔ Mestre/Venezia, andata e ritorno",
+        "en": "ATVO Treviso Canova ↔ Mestre/Venice, return",
+        "fr": "ATVO Trévise Canova ↔ Mestre/Venise, aller-retour",
+        "de": "ATVO Treviso Canova ↔ Mestre/Venedig, Hin- und Rückfahrt"
+      },
+      "notes": {
+        "it": "Ultima tariffa A/R esplicita individuata in un orario ufficiale ATVO 2026; bagaglio incluso. Verifica sempre il prezzo corrente.",
+        "en": "Latest explicit return fare found in an official ATVO 2026 timetable; luggage included. Always check the current fare.",
+        "fr": "Dernier tarif aller-retour explicite trouvé dans un horaire officiel ATVO 2026 ; bagage inclus. Vérifiez toujours le tarif actuel.",
+        "de": "Letzter ausdrücklich angegebener Rückfahrpreis in einem offiziellen ATVO-Fahrplan 2026; Gepäck inklusive. Aktuellen Preis prüfen."
+      },
+      "lastVerified": "2026-10-05",
+      "sourceType": "official",
+      "sourceUrl": "https://www.atvo.it/assets/bus_routes/venezia_261025_280326.pdf"
+    }
+  ]
+}

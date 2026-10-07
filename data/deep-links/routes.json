@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 1,
+  "locales": [
+    "it",
+    "en",
+    "fr",
+    "de"
+  ],
+  "routes": [
+    {
+      "id": "uv_mestre_station_san_marco",
+      "from": "hub:uv_mestre_station",
+      "to": "poi:uv_venice_san_marco",
+      "mode": "all",
+      "names": {
+        "it": "Stazione Mestre → Piazza San Marco",
+        "en": "Mestre Station → St Mark's Square",
+        "fr": "Gare de Mestre → Place Saint-Marc",
+        "de": "Bahnhof Mestre → Markusplatz"
+      }
+    },
+    {
+      "id": "uv_marco_polo_san_marco",
+      "from": "airport:uv_venice_marco_polo",
+      "to": "poi:uv_venice_san_marco",
+      "mode": "all",
+      "names": {
+        "it": "Aeroporto Marco Polo → Piazza San Marco",
+        "en": "Marco Polo Airport → St Mark's Square",
+        "fr": "Aéroport Marco Polo → Place Saint-Marc",
+        "de": "Flughafen Marco Polo → Markusplatz"
+      }
+    },
+    {
+      "id": "uv_piazzale_roma_san_marco",
+      "from": "hub:uv_venice_piazzale_roma",
+      "to": "poi:uv_venice_san_marco",
+      "mode": "all",
+      "names": {
+        "it": "Piazzale Roma → Piazza San Marco",
+        "en": "Piazzale Roma → St Mark's Square",
+        "fr": "Piazzale Roma → Place Saint-Marc",
+        "de": "Piazzale Roma → Markusplatz"
+      }
+    },
+    {
+      "id": "uv_santa_lucia_san_marco",
+      "from": "hub:uv_venice_santa_lucia",
+      "to": "poi:uv_venice_san_marco",
+      "mode": "all",
+      "names": {
+        "it": "Venezia Santa Lucia → Piazza San Marco",
+        "en": "Venezia Santa Lucia → St Mark's Square",
+        "fr": "Venise-Santa-Lucia → Place Saint-Marc",
+        "de": "Venezia Santa Lucia → Markusplatz"
+      }
+    },
+    {
+      "id": "uv_san_marco_rialto",
+      "from": "poi:uv_venice_san_marco",
+      "to": "poi:uv_venice_rialto_bridge",
+      "mode": "all",
+      "names": {
+        "it": "Piazza San Marco → Ponte di Rialto",
+        "en": "St Mark's Square → Rialto Bridge",
+        "fr": "Place Saint-Marc → Pont du Rialto",
+        "de": "Markusplatz → Rialtobrücke"
+      }
+    },
+    {
+      "id": "uv_marco_polo_mestre_station",
+      "from": "airport:uv_venice_marco_polo",
+      "to": "hub:uv_mestre_station",
+      "mode": "all",
+      "names": {
+        "it": "Aeroporto Marco Polo → Stazione Mestre",
+        "en": "Marco Polo Airport → Mestre Station",
+        "fr": "Aéroport Marco Polo → Gare de Mestre",
+        "de": "Flughafen Marco Polo → Bahnhof Mestre"
+      }
+    },
+    {
+      "id": "uv_treviso_mestre_station",
+      "from": "airport:uv_treviso",
+      "to": "hub:uv_mestre_station",
+      "mode": "all",
+      "names": {
+        "it": "Aeroporto Treviso → Stazione Mestre",
+        "en": "Treviso Airport → Mestre Station",
+        "fr": "Aéroport de Trévise → Gare de Mestre",
+        "de": "Flughafen Treviso → Bahnhof Mestre"
+      }
+    },
+    {
+      "id": "uv_treviso_san_marco",
+      "from": "airport:uv_treviso",
+      "to": "poi:uv_venice_san_marco",
+      "mode": "all",
+      "names": {
+        "it": "Aeroporto Treviso → Piazza San Marco",
+        "en": "Treviso Airport → St Mark's Square",
+        "fr": "Aéroport de Trévise → Place Saint-Marc",
+        "de": "Flughafen Treviso → Markusplatz"
+      }
+    }
+  ]
+}

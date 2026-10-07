@@ -1,0 +1,252 @@
+PASS release title
+PASS interactive viewport meta
+PASS all local js/css versioned
+PASS mobile toolbar has reserved height
+PASS app viewport variable
+PASS short viewport mode
+PASS visualViewport manager
+PASS iframe height belongs to host
+PASS explicit map grid placement
+PASS pageshow/orientation recovery
+PASS diagnostic report omits coordinates by construction
+PASS physical max remains 24 m/s
+PASS visual correction raised independently
+PASS large-gap snap configured
+PASS source timestamp duplicate handling
+PASS present-time projected anchor
+PASS elastic cadence state wired
+PASS stop-aware projection wired
+PASS real frame delta retained
+PASS long RAF pause reanchors
+PASS selectedByFilters contract preserved
+PASS vehicle layer contract preserved
+PASS shape parsing uses shared promise
+PASS static index no longer waits for geometry
+PASS startup geometry and realtime run independently
+PASS bootstrap metrics exposed
+PASS direction id propagated into vehicle state
+PASS direction shades do not alter route polylines
+PASS runtime manifest provider wired
+PASS normal page startup does not synchronously load JSZip
+PASS legacy JSZip is lazy fallback only
+PASS automotive runtime index preferred with legacy GTFS fallback
+PASS runtime shapes feed geometry without CSV parsing
+PASS Journey runtime schedule preferred with legacy fallback
+PASS Journey worker does not eagerly import JSZip
+PASS runtime schedule engine loader wired
+PASS chunked schedule index provider wired
+PASS chunked schedule engine wired
+PASS unknown bearing does not render a false arrow
+PASS water realtime and UI modules loaded separately
+PASS provider exposes separate nav realtime endpoints
+PASS legacy automotive provider calls remain backward compatible
+PASS water realtime keeps diagnostics while exposing render model
+PASS water snap threshold protects outliers
+PASS ferry classification is conservative
+PASS water UI has separate land/water mode
+PASS water line 1 is default and selection is independent
+PASS water markers use hex vaporetto and conservative ferry square
+PASS water motion reuses prediction with separate parameters
+PASS water outlier fallback stays on raw GPS
+PASS land map stays intact and is only hidden in water mode
+PASS water Point 7 does not alter land physical defaults
+PASS water UI preserves Journey network separation
+PASS water mode clears land canvas routes and restores them on return
+PASS water animation loop sleeps while land mode is active
+PASS static water route list is not rebuilt on every realtime tick
+PASS water probe still starts after load/idle
+PASS water realtime throttles nav feed work
+RESULT: 58 static checks passed.
+PASS physical max unchanged
+PASS visual catch-up separated
+PASS elastic lag follows fix cadence
+PASS elastic lag collapses then grows inside fix cycle
+PASS duplicate timestamp does not alter speed
+PASS older packet rejected
+PASS new fix updates speed and cadence from source time
+PASS fresh elastic anchor begins behind raw fix
+PASS elastic anchor crosses raw fix during normal interval
+PASS elastic anchor remains moving while feed is fresh
+PASS marker catches a real positive debt quickly
+PASS prediction never reverses marker
+PASS large debt snaps to elastic anchor
+PASS 5 FPS and 60 FPS stay close
+PASS resume reanchors to elastic estimate after RAF pause
+PASS elastic cycle visibly accelerates then eases off
+PASS periodic fixes create behind-then-ahead visual cycle
+PASS stale extrapolation decays instead of running forever
+PASS tram prediction slows materially near next stop
+PASS bus prediction also slows near next stop but uses bus profile
+PASS elastic projection itself respects stop slowdown
+PASS stopped vehicle anchors exactly to GPS stop
+RESULT: 22 motion checks passed.
+PASS direction colors { base: '#137a59', light: '#398f74', dark: '#10664b' }
+PASS portrait to keyboard and back retains typed text
+PASS resizes-content keyboard uses pre-focus height
+PASS short portrait remains valid without a forced minimum
+PASS landscape does not require width below 760
+PASS no parent iframe mutation
+PASS normal small iframe is not obscured by warning
+PASS unusable iframe exposes standalone link
+PASS keyboard suppresses iframe warning
+PASS resize events coalesce into one map invalidation
+PASS focused field restores internal scroll only
+PASS closed drawer does not scroll input
+PASS pinch zoom does not resize application
+RESULT: 12 simulated viewport checks passed.
+PASS runtime without errors
+PASS baseline startup self-test
+PASS embed mode
+PASS T1 and T2 markers
+PASS 9 available buses
+PASS lines opens
+PASS one panel at a time
+PASS close drawer
+PASS eight-bus limit
+PASS limit notice visible text
+PASS bus preferences persisted
+PASS empty search
+PASS favorite route persisted
+PASS nearby renders
+PASS reopening does not toggle GPS
+PASS nearby states straight-line distance
+PASS favorite stop persisted
+PASS vehicle detail
+PASS route focus
+PASS route focus restored
+PASS saved stop opens timetable board without search
+PASS feed warning persistent
+PASS success compact
+PASS explicit GPS stop
+PASS GPS denied retry
+PASS activate favorite route
+PASS T2 filtered from map
+PASS compact drawer
+PASS expand drawer
+PASS no asynchronous errors
+PASS 44px vehicle geometry
+PASS profile opens without account requirement
+PASS profile options keep explicit back action
+PASS back restores profile
+PASS saved screen exposes routes and existing favorites
+PASS map navigation closes panel
+PASS hero GPS publishes precision
+PASS recenter never toggles off GPS
+PASS saved route rendered safely
+PASS same grouped route not duplicated
+PASS saved route removed independently of line favorites
+PASS existing favorite preserved
+PASS storage error is surfaced, not silently reported saved
+RESULT: 43 checks passed. Simulated DOM and Leaflet, no live/browser claim.
+PASS seconds beyond midnight
+PASS service exception overrides weekday
+PASS date only calendar supported
+PASS missing calendar fails explicitly
+PASS Rome date around midnight
+PASS DST service day uses noon minus 12 hours
+PASS direct trip
+PASS one same-stop transfer
+PASS walking readiness excludes missed trip
+PASS reverse direction cannot board
+PASS all departures without selected-marker filters
+PASS pickup prohibition respected
+PASS fresh realtime overlay
+PASS stale realtime falls back to schedule
+PASS cancellation excludes trip
+PASS skipped stop excludes boarding
+PASS no data does not create prediction
+PASS wrong service date cannot override today
+PASS forbidden same-stop transfer
+PASS trip at 24 hours remains usable after midnight
+PASS search and nearby retain palina IDs
+PASS delay propagates to downstream arrival
+PASS line board lists routes independent of departures window
+PASS line filter never mixes departures
+PASS unknown line has no departures
+PASS egress walking time is included in arrival
+RESULT: 26 schedule tests passed.
+PASS lazy worker keeps map startup independent
+Schedule runtime non disponibile, uso GTFS legacy. TypeError: g.UVTransitProvider.loadRuntimeManifest is not a function
+    at evalmachine.<anonymous>:17:47
+    at ready (evalmachine.<anonymous>:36:4)
+    at openSearch (evalmachine.<anonymous>:56:75)
+    at HTMLButtonElement.openDetail (evalmachine.<anonymous>:64:104)
+    at dispatch (/workspace/scratch/d0454e017cfb/test-deps/node_modules/linkedom/cjs/interface/event-target.js:8:14)
+    at GlobalEvent.invokeListeners (/workspace/scratch/d0454e017cfb/test-deps/node_modules/linkedom/cjs/interface/event-target.js:29:11)
+    at Array.some (<anonymous>)
+    at HTMLButtonElement.dispatchEvent (/workspace/scratch/d0454e017cfb/test-deps/node_modules/linkedom/cjs/interface/event-target.js:81:17)
+    at HTMLButtonElement.click (/workspace/scratch/d0454e017cfb/test-deps/node_modules/linkedom/cjs/html/element.js:78:10)
+    at /workspace/scratch/d0454e017cfb/transit-v8-9-r1/tests/journey-ui.cjs:9:145
+PASS journey opens and loads
+PASS worker initialized once
+PASS origin suggestions
+PASS journey result with line and scheduled times
+PASS itinerary detail remains available
+PASS itinerary draws and fits while hiding live markers via class
+PASS return live restores map and removes itinerary layers
+PASS detail can be reopened after live
+PASS saves query without obsolete timetable
+PASS saved journey recalculates and preserves place choice
+PASS grouped origin offers physical boards
+PASS line board shows direction and times
+PASS editing clears obsolete journeys
+PASS GPS selects a point without manual palina choice
+PASS GPS does not ask arbitrary walking minutes
+Schedule runtime non disponibile, uso GTFS legacy. TypeError: g.UVTransitProvider.loadRuntimeManifest is not a function
+    at evalmachine.<anonymous>:17:47
+    at ready (evalmachine.<anonymous>:36:4)
+    at $.onchange (evalmachine.<anonymous>:71:582)
+    at dispatch (/workspace/scratch/d0454e017cfb/test-deps/node_modules/linkedom/cjs/interface/event-target.js:8:14)
+    at GlobalEvent.invokeListeners (/workspace/scratch/d0454e017cfb/test-deps/node_modules/linkedom/cjs/interface/event-target.js:29:11)
+    at Array.some (<anonymous>)
+    at HTMLSelectElement.dispatchEvent (/workspace/scratch/d0454e017cfb/test-deps/node_modules/linkedom/cjs/interface/event-target.js:81:17)
+    at /workspace/scratch/d0454e017cfb/transit-v8-9-r1/tests/journey-ui.cjs:17:53
+PASS network switch resets choices
+PASS network gets independent worker
+RESULT: 18 journey UI tests passed.
+PASS missing house number is not invented and request cached
+PASS walking rejects ferry
+PASS walking time distance and polyline decoding
+PASS worker date reload, line board and non-straight GTFS geometry
+PASS line 1 exposed from nav core
+PASS ferry requires line 17 plus Tronchetto/Lido metadata
+PASS near shape sample is snapped
+PASS far sample falls back instead of forced snapping
+PASS unmapped realtime vehicle is preserved but not invented
+PASS shape geometry available by selected route
+PASS P7 UI state flags are explicit
+RESULT: 7 water P7 checks passed.
+PASS network remains nav
+PASS water UI not rendered
+PASS movement engine not applied
+PASS static route/trip/shape indexed
+PASS vehicle trip mapping measured
+PASS shape snap measured
+PASS trip update mapping measured
+PASS freshness measured
+PASS nav websocket connected
+PASS diagnostic event published
+RESULT: 10 water realtime checks passed.
+PASS default endpoints remain automotive
+PASS nav endpoints exact
+PASS invalid network rejected
+PASS nav VP fetch uses nav namespace
+PASS nav TU fetch uses nav namespace
+PASS nav websocket uses nav namespace
+PASS legacy websocket defaults to aut
+RESULT: 7 provider network checks passed.
+RESULT: 5 provider chunked schedule checks passed.
+PASS chunked runtime dataset loads
+PASS same trip across chunks merges service dates
+PASS runtime departures preserve exact seconds
+PASS runtime search preserves stop IDs
+PASS runtime plan works without CSV
+PASS missing current-day chunk fails explicitly
+RESULT: 6 runtime schedule tests passed.
+RESULT: 6 runtime-index checks passed.
+PASS unknown bearing hides arrow
+PASS finite bearing shows exact arrow
+PASS vehicles are rehydrated when geometry arrives
+PASS startup no longer forces bearing zero
+PASS provider bearing hint accepted
+RESULT: 5 startup bearing tests passed.

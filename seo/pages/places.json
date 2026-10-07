@@ -1,0 +1,217 @@
+{
+  "schemaVersion": 1,
+  "kind": "place",
+  "locales": [
+    "it",
+    "en",
+    "fr",
+    "de"
+  ],
+  "pathSegments": {
+    "it": "luoghi",
+    "en": "places",
+    "fr": "lieux",
+    "de": "orte"
+  },
+  "internalLinking": {
+    "min": 2,
+    "max": 4,
+    "strategy": [
+      "route-topology",
+      "shared-hub",
+      "nearby-place"
+    ],
+    "sameLanguageOnly": true,
+    "crawlableAnchors": true,
+    "descriptiveAnchorText": true
+  },
+  "pages": [
+    {
+      "id": "seo-place-san-marco",
+      "entity": "poi:uv_venice_san_marco",
+      "enabled": true,
+      "contentState": "ready",
+      "languages": [
+        "it",
+        "en",
+        "fr",
+        "de"
+      ],
+      "priority": 1,
+      "copyKey": "san-marco",
+      "related": {
+        "limit": 6
+      }
+    },
+    {
+      "id": "seo-place-rialto",
+      "entity": "poi:uv_venice_rialto_bridge",
+      "enabled": true,
+      "contentState": "ready",
+      "languages": [
+        "it",
+        "en",
+        "fr",
+        "de"
+      ],
+      "priority": 0.98,
+      "copyKey": "rialto",
+      "related": {
+        "limit": 6
+      }
+    },
+    {
+      "id": "seo-place-scalzi",
+      "entity": "poi:uv_venice_scalzi_bridge",
+      "enabled": true,
+      "contentState": "ready",
+      "languages": [
+        "it",
+        "en",
+        "fr",
+        "de"
+      ],
+      "priority": 0.9,
+      "copyKey": "ponte-scalzi",
+      "related": {
+        "limit": 6
+      }
+    },
+    {
+      "id": "seo-place-santa-lucia",
+      "entity": "hub:uv_venice_santa_lucia",
+      "enabled": true,
+      "contentState": "ready",
+      "languages": [
+        "it",
+        "en",
+        "fr",
+        "de"
+      ],
+      "priority": 0.98,
+      "copyKey": "santa-lucia",
+      "related": {
+        "limit": 6
+      }
+    },
+    {
+      "id": "seo-place-piazzale-roma",
+      "entity": "hub:uv_venice_piazzale_roma",
+      "enabled": true,
+      "contentState": "ready",
+      "languages": [
+        "it",
+        "en",
+        "fr",
+        "de"
+      ],
+      "priority": 0.97,
+      "copyKey": "piazzale-roma",
+      "related": {
+        "limit": 6
+      }
+    },
+    {
+      "id": "seo-place-accademia",
+      "entity": "poi:uv_venice_accademia_bridge",
+      "enabled": true,
+      "contentState": "ready",
+      "languages": [
+        "it",
+        "en",
+        "fr",
+        "de"
+      ],
+      "priority": 0.86,
+      "copyKey": "ponte-accademia",
+      "related": {
+        "limit": 6
+      }
+    },
+    {
+      "id": "seo-place-marco-polo-airport",
+      "entity": "airport:uv_venice_marco_polo",
+      "enabled": true,
+      "contentState": "ready",
+      "languages": [
+        "it",
+        "en",
+        "fr",
+        "de"
+      ],
+      "priority": 1,
+      "copyKey": "aeroporto-marco-polo",
+      "related": {
+        "limit": 6
+      }
+    },
+    {
+      "id": "seo-place-mestre-station",
+      "entity": "hub:uv_mestre_station",
+      "enabled": true,
+      "contentState": "ready",
+      "languages": [
+        "it",
+        "en",
+        "fr",
+        "de"
+      ],
+      "priority": 1,
+      "copyKey": "stazione-mestre",
+      "related": {
+        "limit": 6
+      }
+    },
+    {
+      "id": "seo-place-piazza-ferretto",
+      "entity": "poi:uv_mestre_piazza_ferretto",
+      "enabled": true,
+      "contentState": "ready",
+      "languages": [
+        "it",
+        "en",
+        "fr",
+        "de"
+      ],
+      "priority": 0.82,
+      "copyKey": "piazza-ferretto",
+      "related": {
+        "limit": 6
+      }
+    },
+    {
+      "id": "seo-place-murano",
+      "entity": "poi:uv_venice_murano",
+      "enabled": true,
+      "contentState": "ready",
+      "languages": [
+        "it",
+        "en",
+        "fr",
+        "de"
+      ],
+      "priority": 0.9,
+      "copyKey": "murano",
+      "related": {
+        "limit": 6
+      }
+    },
+    {
+      "id": "seo-place-treviso-airport",
+      "entity": "airport:uv_treviso",
+      "enabled": true,
+      "contentState": "ready",
+      "languages": [
+        "it",
+        "en",
+        "fr",
+        "de"
+      ],
+      "priority": 0.96,
+      "copyKey": "aeroporto-treviso",
+      "related": {
+        "limit": 6
+      }
+    }
+  ]
+}

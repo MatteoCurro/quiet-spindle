@@ -1,0 +1,44 @@
+{
+  "outputDir": "/srv/data/web/vhosts/unlockvenice.com/htdocs/trasporti/runtime-data",
+  "workDir": "/srv/data/home/transit-builder/.builder-cache",
+  "networks": {
+    "aut": {
+      "url": "https://actv.avmspa.it/sites/default/files/attachments/opendata/automobilistico/actv_aut.zip",
+      "timeoutSeconds": 60,
+      "snapshotRetention": 6
+    },
+    "nav": {
+      "url": "https://actv.avmspa.it/sites/default/files/attachments/opendata/navigazione/actv_nav.zip",
+      "timeoutSeconds": 60,
+      "snapshotRetention": 6
+    },
+    "ali": {
+      "url": "http://www.alilaguna.it/attuale/alilaguna.zip",
+      "timeoutSeconds": 60,
+      "snapshotRetention": 6
+    },
+    "rail": {
+      "url": "https://www.cciss.it/nap/mmtis/public/api/v1/download/blob/Asset/1080596/checkedResource",
+      "envUrl": "UV_RAIL_NETEX_URL",
+      "format": "netex",
+      "optional": true,
+      "timeoutSeconds": 180,
+      "snapshotRetention": 6,
+      "agencyId": "TI",
+      "agencyName": "Trenitalia",
+      "agencyUrl": "https://www.trenitalia.com/"
+    },
+    "atvo": {
+      "envUrl": "UV_ATVO_NETEX_URL",
+      "format": "netex",
+      "optional": true,
+      "timeoutSeconds": 120,
+      "snapshotRetention": 4,
+      "agencyId": "ATVO",
+      "agencyName": "ATVO S.p.A.",
+      "agencyUrl": "https://www.atvo.it/",
+      "candidateCheckedResource": "https://www.cciss.it/nap/mmtis/public/api/v1/download/blob/Asset/180673/checkedResource",
+      "candidateStatus": "community-reference-not-independently-confirmed"
+    }
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "schemaVersion": 1,
+  "transportRoot": "trasporti",
+  "localePrefixes": {
+    "it": "",
+    "en": "/en",
+    "fr": "/fr",
+    "de": "/de"
+  },
+  "attribution": {
+    "ref": "seo_landing",
+    "campaignSource": "pageId"
+  },
+  "placeholders": {
+    "journey_cta": {
+      "requiredAttributes": [],
+      "allowedAttributes": [
+        "route",
+        "to",
+        "from",
+        "label"
+      ],
+      "rules": [
+        "Use either route, or to with optional from.",
+        "from defaults to current when to is used.",
+        "route must reference the stable route catalog.",
+        "to/from entity references must exist in the entity registry.",
+        "label may be explicit in copy; otherwise use a localized deterministic fallback.",
+        "href always contains lang, ref=seo_landing and campaign=<pageId>."
+      ]
+    },
+    "related_transport": {
+      "allowedAttributes": [],
+      "min": 2,
+      "max": 4,
+      "productionTargetState": "ready",
+      "previewMayIncludePlanned": true,
+      "sameLanguageOnly": true,
+      "selectionOrder": [
+        "route endpoints",
+        "routes sharing an endpoint/entity",
+        "places connected by those routes",
+        "nearby curated place landing as fallback"
+      ]
+    },
+    "related_reading": {
+      "allowedAttributes": [],
+      "min": 3,
+      "max": 6,
+      "sameLanguageOnly": true,
+      "placeStrategy": "rank the landing entity",
+      "routeStrategy": "rank origin and destination entities, merge by URL, deduplicate, add a small both-endpoints relevance bonus",
+      "manualOverrides": "seo/content-index/related-overrides.json"
+    },
+    "fare_table": {
+      "allowedAttributes": [
+        "group"
+      ],
+      "requiredAttributes": [
+        "group"
+      ],
+      "sameLanguageOnly": true,
+      "source": "seo/data/tourist-fares.json",
+      "rules": [
+        "group must exist in the tourist fare registry.",
+        "Only visitor-facing fares may be rendered.",
+        "Each item exposes priceType, lastVerified and sourceUrl.",
+        "Indicative third-party fares must be visibly labelled as indicative.",
+        "The renderer must show a verification date and avoid implying a guaranteed fare."
+      ]
+    }
+  },
+  "outputContract": {
+    "html": false,
+    "journey_cta": [
+      "type",
+      "href",
+      "label",
+      "lang",
+      "pageId",
+      "attribution"
+    ],
+    "related_transport": [
+      "type",
+      "lang",
+      "pageId",
+      "items"
+    ],
+    "related_reading": [
+      "type",
+      "lang",
+      "pageId",
+      "items"
+    ],
+    "fare_table": [
+      "type",
+      "lang",
+      "group",
+      "lastReviewed",
+      "items"
+    ]
+  }
+}

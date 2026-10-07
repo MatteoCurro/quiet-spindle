@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "entities": {
+    "airport:uv_venice_marco_polo": {
+      "it": {
+        "include": [
+          "venezia-con-il-trolley-ponti-calli-errori-arrivo",
+          "ultimo-giorno-venezia-bagagli-valigie-ponti",
+          "piazzale-roma-venezia-finiscono-auto"
+        ],
+        "exclude": []
+      },
+      "en": {
+        "include": [
+          "venice-with-wheeled-suitcase-bridges-calli-arrival-mistakes",
+          "last-day-venice-luggage-suitcases-bridges",
+          "piazzale-roma-venice-cars-end"
+        ],
+        "exclude": []
+      },
+      "fr": {
+        "include": [
+          "venise-avec-valise-a-roulettes-ponts-calli-erreurs-arrivee",
+          "dernier-jour-venise-bagages-valises-ponts",
+          "piazzale-roma-venise-finissent-voitures"
+        ],
+        "exclude": []
+      },
+      "de": {
+        "include": [
+          "erstes-mal-venedig",
+          "giardini-papadopoli-piazzale-roma-venedig",
+          "linie-1-vaporetto-canal-grande-langsames-museum"
+        ],
+        "exclude": []
+      }
+    },
+    "poi:uv_mestre_piazza_ferretto": {
+      "en": {
+        "include": [
+          "first-evening-central-mestre-arrive-late-venice",
+          "mestre-city-center-after-venice-piazza-ferretto-porticoes",
+          "m9-mestre-twentieth-century-museum-venice"
+        ],
+        "exclude": []
+      },
+      "de": {
+        "include": [
+          "zentrum-von-mestre-nach-venedig-piazza-ferretto-arkaden",
+          "m9-mestre-museum-20-jahrhundert-venedig",
+          "der-marzenego-mestre"
+        ],
+        "exclude": []
+      }
+    }
+  }
+}

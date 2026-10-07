@@ -1,0 +1,94 @@
+PASS release title
+PASS interactive viewport meta
+PASS all local js/css versioned
+PASS mobile toolbar has reserved height
+PASS app viewport variable
+PASS short viewport mode
+PASS visualViewport manager
+PASS iframe height belongs to host
+PASS explicit map grid placement
+PASS pageshow/orientation recovery
+PASS diagnostic report omits coordinates by construction
+PASS physical max remains 24 m/s
+PASS visual correction raised independently
+PASS large-gap snap configured
+PASS source timestamp duplicate handling
+PASS present-time projected anchor
+PASS elastic cadence state wired
+PASS stop-aware projection wired
+PASS real frame delta retained
+PASS long RAF pause reanchors
+PASS selectedByFilters contract preserved
+PASS vehicle layer contract preserved
+PASS direction id propagated into vehicle state
+PASS direction shades do not alter route polylines
+RESULT: 24 static checks passed.
+PASS physical max unchanged
+PASS visual catch-up separated
+PASS elastic lag follows fix cadence
+PASS elastic lag collapses then grows inside fix cycle
+PASS duplicate timestamp does not alter speed
+PASS older packet rejected
+PASS new fix updates speed and cadence from source time
+PASS fresh elastic anchor begins behind raw fix
+PASS elastic anchor crosses raw fix during normal interval
+PASS elastic anchor remains moving while feed is fresh
+PASS marker catches a real positive debt quickly
+PASS prediction never reverses marker
+PASS large debt snaps to elastic anchor
+PASS 5 FPS and 60 FPS stay close
+PASS resume reanchors to elastic estimate after RAF pause
+PASS elastic cycle visibly accelerates then eases off
+PASS periodic fixes create behind-then-ahead visual cycle
+PASS stale extrapolation decays instead of running forever
+PASS tram prediction slows materially near next stop
+PASS bus prediction also slows near next stop but uses bus profile
+PASS elastic projection itself respects stop slowdown
+PASS stopped vehicle anchors exactly to GPS stop
+RESULT: 22 motion checks passed.
+PASS direction colors { base: '#137a59', light: '#398f74', dark: '#10664b' }
+PASS portrait to keyboard and back retains typed text
+PASS resizes-content keyboard uses pre-focus height
+PASS short portrait remains valid without a forced minimum
+PASS landscape does not require width below 760
+PASS no parent iframe mutation
+PASS normal small iframe is not obscured by warning
+PASS unusable iframe exposes standalone link
+PASS keyboard suppresses iframe warning
+PASS resize events coalesce into one map invalidation
+PASS focused field restores internal scroll only
+PASS closed drawer does not scroll input
+PASS pinch zoom does not resize application
+RESULT: 12 simulated viewport checks passed.
+PASS runtime without errors
+PASS baseline startup self-test
+PASS embed mode
+PASS T1 and T2 markers
+PASS 9 available buses
+PASS lines opens
+PASS one panel at a time
+PASS close drawer
+PASS eight-bus limit
+PASS limit notice visible text
+PASS bus preferences persisted
+PASS empty search
+PASS favorite route persisted
+PASS nearby renders
+PASS reopening does not toggle GPS
+PASS nearby states straight-line distance
+PASS favorite stop persisted
+PASS vehicle detail
+PASS route focus
+PASS route focus restored
+PASS saved stop detail without search
+PASS feed warning persistent
+PASS success compact
+PASS explicit GPS stop
+PASS GPS denied retry
+PASS activate favorite route
+PASS T2 filtered from map
+PASS compact drawer
+PASS expand drawer
+PASS no asynchronous errors
+PASS 44px vehicle geometry
+RESULT: 31 checks passed. Simulated DOM and Leaflet, no live/browser claim.

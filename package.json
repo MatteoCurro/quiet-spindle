@@ -1,0 +1,30 @@
+{
+  "name": "unlock-venice-transit",
+  "version": "8.15.1",
+  "private": true,
+  "description": "Fast multimodal journey search with batched pedestrian matrices; static app",
+  "scripts": {
+    "test": "node tests/run-r1.cjs",
+    "seo:index": "node scripts/build_seo_content_index.cjs",
+    "seo:enrich": "node scripts/enrich_seo_content_index.cjs",
+    "seo:related": "node scripts/score_seo_related_content.cjs",
+    "seo:validate-pages": "node scripts/validate_seo_landing_manifest.cjs",
+    "seo:resolve-blocks": "node scripts/resolve_seo_placeholders.cjs",
+    "seo:build-preview": "node scripts/build_seo_landing_preview.cjs",
+    "seo:validate-copy": "node tests/seo-first-tranche-multilingual-copy.cjs",
+    "seo:build-sitemaps": "node scripts/build_seo_sitemaps.cjs",
+    "seo:quality": "node scripts/validate_seo_quality.cjs",
+    "seo:build-site": "node scripts/build_seo_site.cjs",
+    "seo:crawl": "node tests/seo-public-crawl.cjs",
+    "wp:build-artifact": "node scripts/build_wordpress_transport_artifact.cjs"
+  },
+  "devDependencies": {
+    "jszip": "3.10.1",
+    "linkedom": "0.18.12",
+    "maplibre-gl": "5.13.0",
+    "pmtiles": "4.5.0"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "2.117.2"
+  }
+}

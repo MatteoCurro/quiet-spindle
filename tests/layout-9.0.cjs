@@ -1,0 +1,17 @@
+const assert=require('assert');
+const fs=require('fs');
+const path=require('path');
+const root=path.join(__dirname,'..');
+const html=fs.readFileSync(path.join(root,'index.html'),'utf8');
+const css=fs.readFileSync(path.join(root,'assets','app-9.0.css'),'utf8');
+const nav=fs.readFileSync(path.join(root,'js','app','navigation-state.js'),'utf8');
+assert(html.includes('assets/app-9.0.css?v=8.15.1'),'9.0 layout stylesheet must be loaded');
+assert(css.includes('[data-presentation="fullscreen"]'),'fullscreen contract missing');
+assert(css.includes('height:100%!important'),'fullscreen workspace must fill its map workspace');
+assert(!/data-presentation=\\?\"fullscreen\\?\"\][^{}]*app-heading[^{}]*\{[^}]*display\s*:\s*none/s.test(css),'fullscreen must not hide the app heading');
+assert(css.includes('visibility:visible!important'),'fullscreen needs a persistent application chrome override against legacy Journey visibility rules');
+assert(css.includes('[data-presentation="context"]'),'context contract missing');
+assert(css.includes('[data-presentation="immersive"]'),'immersive contract missing');
+assert(css.includes('#compactBtn'),'legacy compact control must be suppressed by 9.0 presentation rules');
+assert(nav.includes("presentation:'immersive'"),'navigation state must reserve immersive presentation');
+process.stdout.write('9.0 layout contracts: fullscreen/context/immersive CSS loaded and declared OK\n');

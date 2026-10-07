@@ -1,0 +1,2648 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": null,
+  "locales": [
+    "it",
+    "en",
+    "fr",
+    "de"
+  ],
+  "entities": [
+    {
+      "id": "poi:uv_venice_san_marco",
+      "type": "poi",
+      "category": "square",
+      "priority": 100,
+      "location": {
+        "lat": 45.433889,
+        "lon": 12.338056
+      },
+      "names": {
+        "it": "Piazza San Marco",
+        "en": "St Mark's Square",
+        "fr": "Place Saint-Marc",
+        "de": "Markusplatz"
+      },
+      "aliases": {
+        "it": [
+          "San Marco",
+          "Piazza S. Marco"
+        ],
+        "en": [
+          "San Marco",
+          "Saint Mark's Square",
+          "St Marks Square"
+        ],
+        "fr": [
+          "San Marco",
+          "Place Saint Marc"
+        ],
+        "de": [
+          "San Marco",
+          "Piazza San Marco"
+        ]
+      },
+      "seo": {
+        "slugs": {
+          "it": "piazza-san-marco",
+          "en": "st-marks-square",
+          "fr": "place-saint-marc",
+          "de": "markusplatz"
+        }
+      },
+      "editorial": {
+        "queries": {
+          "it": [
+            "piazza san marco",
+            "san marco venezia"
+          ],
+          "en": [
+            "st mark's square",
+            "san marco venice"
+          ],
+          "fr": [
+            "place saint-marc",
+            "san marco venise"
+          ],
+          "de": [
+            "markusplatz",
+            "san marco venedig"
+          ]
+        }
+      },
+      "hubs": [],
+      "external": {
+        "wikidata": "Q217527"
+      }
+    },
+    {
+      "id": "poi:uv_venice_rialto_bridge",
+      "type": "poi",
+      "category": "bridge",
+      "priority": 98,
+      "location": {
+        "lat": 45.438011,
+        "lon": 12.335639
+      },
+      "names": {
+        "it": "Ponte di Rialto",
+        "en": "Rialto Bridge",
+        "fr": "Pont du Rialto",
+        "de": "Rialtobrücke"
+      },
+      "aliases": {
+        "it": [
+          "Rialto",
+          "Ponte Rialto"
+        ],
+        "en": [
+          "Rialto",
+          "Ponte di Rialto"
+        ],
+        "fr": [
+          "Rialto",
+          "Ponte di Rialto"
+        ],
+        "de": [
+          "Rialto",
+          "Ponte di Rialto"
+        ]
+      },
+      "seo": {
+        "slugs": {
+          "it": "ponte-di-rialto",
+          "en": "rialto-bridge",
+          "fr": "pont-du-rialto",
+          "de": "rialtobruecke"
+        }
+      },
+      "editorial": {
+        "queries": {
+          "it": [
+            "ponte di rialto",
+            "rialto venezia"
+          ],
+          "en": [
+            "rialto bridge",
+            "rialto venice"
+          ],
+          "fr": [
+            "pont du rialto",
+            "rialto venise"
+          ],
+          "de": [
+            "rialtobrücke",
+            "rialto venedig"
+          ]
+        }
+      },
+      "hubs": [],
+      "external": {
+        "wikidata": "Q52505"
+      }
+    },
+    {
+      "id": "poi:uv_venice_scalzi_bridge",
+      "type": "poi",
+      "category": "bridge",
+      "priority": 90,
+      "location": {
+        "lat": 45.44115,
+        "lon": 12.32273
+      },
+      "names": {
+        "it": "Ponte degli Scalzi",
+        "en": "Ponte degli Scalzi",
+        "fr": "Ponte degli Scalzi",
+        "de": "Ponte degli Scalzi"
+      },
+      "aliases": {
+        "it": [
+          "Ponte Scalzi",
+          "Ponte della stazione"
+        ],
+        "en": [
+          "Scalzi Bridge",
+          "Station bridge"
+        ],
+        "fr": [
+          "Pont des Scalzi",
+          "Pont de la gare"
+        ],
+        "de": [
+          "Scalzi-Brücke",
+          "Bahnhofsbrücke"
+        ]
+      },
+      "seo": {
+        "slugs": {
+          "it": "ponte-degli-scalzi",
+          "en": "ponte-degli-scalzi",
+          "fr": "ponte-degli-scalzi",
+          "de": "ponte-degli-scalzi"
+        }
+      },
+      "editorial": {
+        "queries": {
+          "it": [
+            "ponte degli scalzi",
+            "santa lucia",
+            "lista di spagna"
+          ],
+          "en": [
+            "ponte degli scalzi",
+            "santa lucia",
+            "lista di spagna"
+          ],
+          "fr": [
+            "ponte degli scalzi",
+            "santa lucia",
+            "lista di spagna"
+          ],
+          "de": [
+            "ponte degli scalzi",
+            "santa lucia",
+            "lista di spagna"
+          ]
+        }
+      },
+      "hubs": [
+        "hub:uv_venice_santa_lucia"
+      ],
+      "external": {
+        "osm": "way/556558558"
+      }
+    },
+    {
+      "id": "hub:uv_venice_santa_lucia",
+      "type": "transport_hub",
+      "category": "rail_station",
+      "priority": 99,
+      "location": {
+        "lat": 45.440975,
+        "lon": 12.321039
+      },
+      "names": {
+        "it": "Stazione Venezia Santa Lucia",
+        "en": "Venezia Santa Lucia Station",
+        "fr": "Gare de Venise-Santa-Lucia",
+        "de": "Bahnhof Venezia Santa Lucia"
+      },
+      "aliases": {
+        "it": [
+          "Venezia Santa Lucia",
+          "Santa Lucia",
+          "Ferrovia"
+        ],
+        "en": [
+          "Venice Santa Lucia",
+          "Santa Lucia",
+          "Ferrovia"
+        ],
+        "fr": [
+          "Venise Santa Lucia",
+          "Santa Lucia",
+          "Ferrovia"
+        ],
+        "de": [
+          "Venedig Santa Lucia",
+          "Santa Lucia",
+          "Ferrovia"
+        ]
+      },
+      "seo": {
+        "slugs": {
+          "it": "stazione-venezia-santa-lucia",
+          "en": "venice-santa-lucia-station",
+          "fr": "gare-venise-santa-lucia",
+          "de": "bahnhof-venezia-santa-lucia"
+        }
+      },
+      "editorial": {
+        "queries": {
+          "it": [
+            "stazione santa lucia",
+            "ferrovia venezia"
+          ],
+          "en": [
+            "venice santa lucia station",
+            "venice train station"
+          ],
+          "fr": [
+            "gare venise santa lucia",
+            "gare de venise"
+          ],
+          "de": [
+            "bahnhof venezia santa lucia",
+            "bahnhof venedig"
+          ]
+        }
+      },
+      "hubs": [],
+      "external": {
+        "wikidata": "Q801567"
+      }
+    },
+    {
+      "id": "hub:uv_venice_piazzale_roma",
+      "type": "transport_hub",
+      "category": "interchange",
+      "priority": 99,
+      "location": {
+        "lat": 45.437861,
+        "lon": 12.319019
+      },
+      "names": {
+        "it": "Piazzale Roma",
+        "en": "Piazzale Roma",
+        "fr": "Piazzale Roma",
+        "de": "Piazzale Roma"
+      },
+      "aliases": {
+        "it": [
+          "Venezia Piazzale Roma"
+        ],
+        "en": [
+          "Venice Piazzale Roma"
+        ],
+        "fr": [
+          "Venise Piazzale Roma"
+        ],
+        "de": [
+          "Venedig Piazzale Roma"
+        ]
+      },
+      "seo": {
+        "slugs": {
+          "it": "piazzale-roma",
+          "en": "piazzale-roma",
+          "fr": "piazzale-roma",
+          "de": "piazzale-roma"
+        }
+      },
+      "editorial": {
+        "queries": {
+          "it": [
+            "piazzale roma",
+            "arrivare a venezia"
+          ],
+          "en": [
+            "piazzale roma",
+            "getting to venice"
+          ],
+          "fr": [
+            "piazzale roma",
+            "arriver à venise"
+          ],
+          "de": [
+            "piazzale roma",
+            "nach venedig"
+          ]
+        }
+      },
+      "hubs": [],
+      "external": {
+        "wikidata": "Q113672029"
+      }
+    },
+    {
+      "id": "poi:uv_venice_accademia_bridge",
+      "type": "poi",
+      "category": "bridge",
+      "priority": 88,
+      "location": {
+        "lat": 45.431694,
+        "lon": 12.329
+      },
+      "names": {
+        "it": "Ponte dell'Accademia",
+        "en": "Accademia Bridge",
+        "fr": "Pont de l'Académie",
+        "de": "Accademia-Brücke"
+      },
+      "aliases": {
+        "it": [
+          "Accademia"
+        ],
+        "en": [
+          "Ponte dell'Accademia",
+          "Accademia"
+        ],
+        "fr": [
+          "Ponte dell'Accademia",
+          "Accademia"
+        ],
+        "de": [
+          "Ponte dell'Accademia",
+          "Accademia"
+        ]
+      },
+      "seo": {
+        "slugs": {
+          "it": "ponte-dell-accademia",
+          "en": "accademia-bridge",
+          "fr": "pont-de-l-academie",
+          "de": "accademia-bruecke"
+        }
+      },
+      "editorial": {
+        "queries": {
+          "it": [
+            "ponte dell'accademia",
+            "accademia venezia",
+            "dorsoduro"
+          ],
+          "en": [
+            "accademia bridge",
+            "dorsoduro"
+          ],
+          "fr": [
+            "pont de l'académie",
+            "dorsoduro"
+          ],
+          "de": [
+            "accademia-brücke",
+            "dorsoduro"
+          ]
+        }
+      },
+      "hubs": [],
+      "external": {
+        "wikidata": "Q52509"
+      }
+    },
+    {
+      "id": "poi:uv_venice_arsenale",
+      "type": "poi",
+      "category": "landmark",
+      "priority": 90,
+      "location": {
+        "lat": 45.435278,
+        "lon": 12.353056
+      },
+      "names": {
+        "it": "Arsenale di Venezia",
+        "en": "Venetian Arsenal",
+        "fr": "Arsenal de Venise",
+        "de": "Arsenal von Venedig"
+      },
+      "aliases": {
+        "it": [
+          "Arsenale"
+        ],
+        "en": [
+          "Arsenale",
+          "Venice Arsenal"
+        ],
+        "fr": [
+          "Arsenale"
+        ],
+        "de": [
+          "Arsenale"
+        ]
+      },
+      "seo": {
+        "slugs": {
+          "it": "arsenale-di-venezia",
+          "en": "venetian-arsenal",
+          "fr": "arsenal-de-venise",
+          "de": "arsenal-von-venedig"
+        }
+      },
+      "editorial": {
+        "queries": {
+          "it": [
+            "arsenale venezia",
+            "biennale arsenale"
+          ],
+          "en": [
+            "venetian arsenal",
+            "biennale arsenale"
+          ],
+          "fr": [
+            "arsenal de venise",
+            "biennale arsenale"
+          ],
+          "de": [
+            "arsenal von venedig",
+            "biennale arsenale"
+          ]
+        }
+      },
+      "hubs": [],
+      "external": {
+        "wikidata": "Q1262248"
+      }
+    },
+    {
+      "id": "poi:uv_venice_biennale_giardini",
+      "type": "poi",
+      "category": "attraction",
+      "priority": 91,
+      "location": {
+        "lat": 45.429017,
+        "lon": 12.357934
+      },
+      "names": {
+        "it": "Giardini della Biennale",
+        "en": "Giardini della Biennale",
+        "fr": "Giardini della Biennale",
+        "de": "Giardini della Biennale"
+      },
+      "aliases": {
+        "it": [
+          "Biennale Giardini",
+          "Giardini Biennale"
+        ],
+        "en": [
+          "Biennale Gardens",
+          "Giardini Biennale"
+        ],
+        "fr": [
+          "Jardins de la Biennale",
+          "Giardini Biennale"
+        ],
+        "de": [
+          "Biennale-Gärten",
+          "Giardini Biennale"
+        ]
+      },
+      "seo": {
+        "slugs": {
+          "it": "giardini-della-biennale",
+          "en": "biennale-gardens",
+          "fr": "jardins-de-la-biennale",
+          "de": "biennale-gaerten"
+        }
+      },
+      "editorial": {
+        "queries": {
+          "it": [
+            "giardini biennale",
+            "biennale venezia"
+          ],
+          "en": [
+            "biennale gardens",
+            "venice biennale"
+          ],
+          "fr": [
+            "jardins biennale",
+            "biennale venise"
+          ],
+          "de": [
+            "biennale gärten",
+            "biennale venedig"
+          ]
+        }
+      },
+      "hubs": [],
+      "external": {
+        "wikidata": "Q724170"
+      }
+    },
+    {
+      "id": "poi:uv_venice_peggy_guggenheim",
+      "type": "poi",
+      "category": "museum",
+      "priority": 86,
+      "location": {
+        "lat": 45.43082,
+        "lon": 12.33151
+      },
+      "names": {
+        "it": "Collezione Peggy Guggenheim",
+        "en": "Peggy Guggenheim Collection",
+        "fr": "Collection Peggy Guggenheim",
+        "de": "Peggy Guggenheim Collection"
+      },
+      "aliases": {
+        "it": [
+          "Peggy Guggenheim",
+          "Guggenheim Venezia"
+        ],
+        "en": [
+          "Peggy Guggenheim",
+          "Guggenheim Venice"
+        ],
+        "fr": [
+          "Peggy Guggenheim",
+          "Guggenheim Venise"
+        ],
+        "de": [
+          "Peggy Guggenheim",
+          "Guggenheim Venedig"
+        ]
+      },
+      "seo": {
+        "slugs": {
+          "it": "collezione-peggy-guggenheim",
+          "en": "peggy-guggenheim-collection",
+          "fr": "collection-peggy-guggenheim",
+          "de": "peggy-guggenheim-collection"
+        }
+      },
+      "editorial": {
+        "queries": {
+          "it": [
+            "peggy guggenheim venezia",
+            "dorsoduro"
+          ],
+          "en": [
+            "peggy guggenheim venice",
+            "dorsoduro"
+          ],
+          "fr": [
+            "peggy guggenheim venise",
+            "dorsoduro"
+          ],
+          "de": [
+            "peggy guggenheim venedig",
+            "dorsoduro"
+          ]
+        }
+      },
+      "hubs": [],
+      "external": {
+        "wikidata": "Q1049033"
+      }
+    },
+    {
+      "id": "airport:uv_venice_marco_polo",
+      "type": "airport",
+      "category": "airport",
+      "priority": 100,
+      "location": {
+        "lat": 45.505278,
+        "lon": 12.351944
+      },
+      "names": {
+        "it": "Aeroporto Marco Polo di Venezia",
+        "en": "Venice Marco Polo Airport",
+        "fr": "Aéroport de Venise-Marco-Polo",
+        "de": "Flughafen Venedig-Tessera"
+      },
+      "aliases": {
+        "it": [
+          "Aeroporto Venezia",
+          "Marco Polo",
+          "VCE"
+        ],
+        "en": [
+          "Venice Airport",
+          "Marco Polo Airport",
+          "VCE"
+        ],
+        "fr": [
+          "Aéroport de Venise",
+          "Marco Polo",
+          "VCE"
+        ],
+        "de": [
+          "Flughafen Venedig",
+          "Marco Polo",
+          "VCE"
+        ]
+      },
+      "seo": {
+        "slugs": {
+          "it": "aeroporto-marco-polo-venezia",
+          "en": "venice-marco-polo-airport",
+          "fr": "aeroport-venise-marco-polo",
+          "de": "flughafen-venedig-marco-polo"
+        }
+      },
+      "editorial": {
+        "queries": {
+          "it": [
+            "aeroporto marco polo venezia",
+            "aeroporto venezia trasporti"
+          ],
+          "en": [
+            "venice marco polo airport",
+            "venice airport transport"
+          ],
+          "fr": [
+            "aéroport venise marco polo",
+            "transport aéroport venise"
+          ],
+          "de": [
+            "flughafen venedig marco polo",
+            "transfer flughafen venedig"
+          ]
+        }
+      },
+      "hubs": [],
+      "external": {
+        "wikidata": "Q849347",
+        "iata": "VCE"
+      }
+    },
+    {
+      "id": "hub:uv_mestre_station",
+      "type": "transport_hub",
+      "category": "rail_station",
+      "priority": 99,
+      "location": {
+        "lat": 45.48245,
+        "lon": 12.232039
+      },
+      "names": {
+        "it": "Stazione Venezia Mestre",
+        "en": "Venezia Mestre Station",
+        "fr": "Gare de Venezia Mestre",
+        "de": "Bahnhof Venezia Mestre"
+      },
+      "aliases": {
+        "it": [
+          "Mestre FS",
+          "Venezia Mestre",
+          "Stazione Mestre"
+        ],
+        "en": [
+          "Mestre Station",
+          "Mestre FS",
+          "Venezia Mestre"
+        ],
+        "fr": [
+          "Gare de Mestre",
+          "Mestre FS",
+          "Venezia Mestre"
+        ],
+        "de": [
+          "Bahnhof Mestre",
+          "Mestre FS",
+          "Venezia Mestre"
+        ]
+      },
+      "seo": {
+        "slugs": {
+          "it": "stazione-venezia-mestre",
+          "en": "venezia-mestre-station",
+          "fr": "gare-venezia-mestre",
+          "de": "bahnhof-venezia-mestre"
+        }
+      },
+      "editorial": {
+        "queries": {
+          "it": [
+            "stazione mestre",
+            "mestre venezia treno"
+          ],
+          "en": [
+            "mestre station",
+            "mestre to venice"
+          ],
+          "fr": [
+            "gare mestre",
+            "mestre venise"
+          ],
+          "de": [
+            "bahnhof mestre",
+            "mestre venedig"
+          ]
+        }
+      },
+      "hubs": [],
+      "external": {
+        "wikidata": "Q520844"
+      }
+    },
+    {
+      "id": "poi:uv_mestre_piazza_ferretto",
+      "type": "poi",
+      "category": "square",
+      "priority": 78,
+      "location": {
+        "lat": 45.493689,
+        "lon": 12.241039
+      },
+      "names": {
+        "it": "Piazza Ferretto",
+        "en": "Piazza Ferretto",
+        "fr": "Piazza Ferretto",
+        "de": "Piazza Ferretto"
+      },
+      "aliases": {
+        "it": [
+          "Piazza Erminio Ferretto",
+          "Centro Mestre"
+        ],
+        "en": [
+          "Piazza Erminio Ferretto",
+          "Mestre city centre"
+        ],
+        "fr": [
+          "Piazza Erminio Ferretto",
+          "Centre de Mestre"
+        ],
+        "de": [
+          "Piazza Erminio Ferretto",
+          "Zentrum Mestre"
+        ]
+      },
+      "seo": {
+        "slugs": {
+          "it": "piazza-ferretto",
+          "en": "piazza-ferretto",
+          "fr": "piazza-ferretto",
+          "de": "piazza-ferretto"
+        }
+      },
+      "editorial": {
+        "queries": {
+          "it": [
+            "piazza ferretto",
+            "mestre centro"
+          ],
+          "en": [
+            "piazza ferretto",
+            "mestre centre"
+          ],
+          "fr": [
+            "piazza ferretto",
+            "centre mestre"
+          ],
+          "de": [
+            "piazza ferretto",
+            "zentrum mestre"
+          ]
+        }
+      },
+      "hubs": [
+        "hub:uv_mestre_station"
+      ],
+      "external": {
+        "wikidata": "Q3902198"
+      }
+    },
+    {
+      "id": "poi:uv_venice_st_marks_basilica",
+      "type": "poi",
+      "category": "church",
+      "priority": 97,
+      "location": {
+        "lat": 45.434444,
+        "lon": 12.339722
+      },
+      "names": {
+        "it": "Basilica di San Marco",
+        "en": "St Mark's Basilica",
+        "fr": "Basilique Saint-Marc",
+        "de": "Markusdom"
+      },
+      "aliases": {
+        "it": [
+          "Basilica San Marco",
+          "San Marco basilica"
+        ],
+        "en": [
+          "Saint Mark's Basilica",
+          "St Marks Basilica",
+          "Basilica San Marco"
+        ],
+        "fr": [
+          "Basilique de Saint-Marc",
+          "Basilica San Marco"
+        ],
+        "de": [
+          "Basilika San Marco",
+          "Basilica San Marco"
+        ]
+      },
+      "seo": {
+        "slugs": {
+          "it": "basilica-di-san-marco",
+          "en": "st-marks-basilica",
+          "fr": "basilique-saint-marc",
+          "de": "markusdom"
+        }
+      },
+      "editorial": {
+        "queries": {
+          "it": [
+            "basilica san marco",
+            "basilica di san marco"
+          ],
+          "en": [
+            "st mark's basilica",
+            "saint mark basilica venice"
+          ],
+          "fr": [
+            "basilique saint-marc venise",
+            "basilique san marco"
+          ],
+          "de": [
+            "markusdom venedig",
+            "basilika san marco"
+          ]
+        }
+      },
+      "hubs": [],
+      "external": {
+        "wikidata": "Q172988"
+      }
+    },
+    {
+      "id": "poi:uv_venice_doges_palace",
+      "type": "poi",
+      "category": "museum",
+      "priority": 97,
+      "location": {
+        "lat": 45.433667,
+        "lon": 12.340417
+      },
+      "names": {
+        "it": "Palazzo Ducale",
+        "en": "Doge's Palace",
+        "fr": "Palais des Doges",
+        "de": "Dogenpalast"
+      },
+      "aliases": {
+        "it": [
+          "Palazzo dei Dogi"
+        ],
+        "en": [
+          "Palazzo Ducale",
+          "Ducal Palace"
+        ],
+        "fr": [
+          "Palazzo Ducale",
+          "Palais ducal"
+        ],
+        "de": [
+          "Palazzo Ducale",
+          "Dogenpalast Venedig"
+        ]
+      },
+      "seo": {
+        "slugs": {
+          "it": "palazzo-ducale",
+          "en": "doges-palace",
+          "fr": "palais-des-doges",
+          "de": "dogenpalast"
+        }
+      },
+      "editorial": {
+        "queries": {
+          "it": [
+            "palazzo ducale venezia",
+            "palazzo dei dogi"
+          ],
+          "en": [
+            "doge's palace venice",
+            "palazzo ducale"
+          ],
+          "fr": [
+            "palais des doges venise",
+            "palazzo ducale"
+          ],
+          "de": [
+            "dogenpalast venedig",
+            "palazzo ducale"
+          ]
+        }
+      },
+      "hubs": [],
+      "external": {
+        "wikidata": "Q189883"
+      }
+    },
+    {
+      "id": "poi:uv_venice_la_fenice",
+      "type": "poi",
+      "category": "theatre",
+      "priority": 91,
+      "location": {
+        "lat": 45.433694,
+        "lon": 12.333889
+      },
+      "names": {
+        "it": "Teatro La Fenice",
+        "en": "La Fenice Opera House",
+        "fr": "Opéra La Fenice",
+        "de": "Teatro La Fenice"
+      },
+      "aliases": {
+        "it": [
+          "La Fenice",
+          "Gran Teatro La Fenice"
+        ],
+        "en": [
+          "La Fenice",
+          "Teatro La Fenice"
+        ],
+        "fr": [
+          "La Fenice",
+          "Teatro La Fenice"
+        ],
+        "de": [
+          "La Fenice",
+          "Opernhaus La Fenice"
+        ]
+      },
+      "seo": {
+        "slugs": {
+          "it": "teatro-la-fenice",
+          "en": "la-fenice-opera-house",
+          "fr": "opera-la-fenice",
+          "de": "teatro-la-fenice"
+        }
+      },
+      "editorial": {
+        "queries": {
+          "it": [
+            "teatro la fenice",
+            "la fenice venezia"
+          ],
+          "en": [
+            "la fenice venice",
+            "opera house venice"
+          ],
+          "fr": [
+            "la fenice venise",
+            "opera venise"
+          ],
+          "de": [
+            "la fenice venedig",
+            "oper venedig"
+          ]
+        }
+      },
+      "hubs": [],
+      "external": {
+        "wikidata": "Q223942"
+      }
+    },
+    {
+      "id": "poi:uv_venice_accademia_galleries",
+      "type": "poi",
+      "category": "museum",
+      "priority": 90,
+      "location": {
+        "lat": 45.431078,
+        "lon": 12.328139
+      },
+      "names": {
+        "it": "Gallerie dell'Accademia",
+        "en": "Gallerie dell'Accademia",
+        "fr": "Galeries de l'Académie de Venise",
+        "de": "Gallerie dell'Accademia"
+      },
+      "aliases": {
+        "it": [
+          "Accademia Venezia",
+          "Museo Accademia"
+        ],
+        "en": [
+          "Accademia Galleries",
+          "Accademia Venice"
+        ],
+        "fr": [
+          "Accademia Venise",
+          "Musée de l'Accademia"
+        ],
+        "de": [
+          "Accademia Venedig",
+          "Accademia-Galerien"
+        ]
+      },
+      "seo": {
+        "slugs": {
+          "it": "gallerie-dell-accademia",
+          "en": "gallerie-dell-accademia",
+          "fr": "galeries-academie-venise",
+          "de": "gallerie-dell-accademia"
+        }
+      },
+      "editorial": {
+        "queries": {
+          "it": [
+            "gallerie accademia venezia",
+            "museo accademia venezia"
+          ],
+          "en": [
+            "gallerie dell'accademia venice",
+            "accademia galleries"
+          ],
+          "fr": [
+            "galeries de l'academie venise",
+            "accademia venise"
+          ],
+          "de": [
+            "gallerie dell'accademia venedig",
+            "accademia galerie"
+          ]
+        }
+      },
+      "hubs": [],
+      "external": {
+        "wikidata": "Q338330"
+      }
+    },
+    {
+      "id": "poi:uv_venice_santa_maria_salute",
+      "type": "poi",
+      "category": "church",
+      "priority": 89,
+      "location": {
+        "lat": 45.430806,
+        "lon": 12.334389
+      },
+      "names": {
+        "it": "Basilica di Santa Maria della Salute",
+        "en": "Basilica of Santa Maria della Salute",
+        "fr": "Basilique Santa Maria della Salute",
+        "de": "Basilika Santa Maria della Salute"
+      },
+      "aliases": {
+        "it": [
+          "Santa Maria della Salute",
+          "La Salute"
+        ],
+        "en": [
+          "Santa Maria della Salute",
+          "Salute Church"
+        ],
+        "fr": [
+          "Santa Maria della Salute",
+          "La Salute"
+        ],
+        "de": [
+          "Santa Maria della Salute",
+          "Salute-Kirche"
+        ]
+      },
+      "seo": {
+        "slugs": {
+          "it": "santa-maria-della-salute",
+          "en": "santa-maria-della-salute",
+          "fr": "santa-maria-della-salute",
+          "de": "santa-maria-della-salute"
+        }
+      },
+      "editorial": {
+        "queries": {
+          "it": [
+            "santa maria della salute",
+            "salute venezia"
+          ],
+          "en": [
+            "santa maria della salute venice",
+            "salute church venice"
+          ],
+          "fr": [
+            "santa maria della salute venise",
+            "basilique salute"
+          ],
+          "de": [
+            "santa maria della salute venedig",
+            "salute kirche"
+          ]
+        }
+      },
+      "hubs": [],
+      "external": {
+        "wikidata": "Q52531"
+      }
+    },
+    {
+      "id": "poi:uv_venice_ca_doro",
+      "type": "poi",
+      "category": "museum",
+      "priority": 84,
+      "location": {
+        "lat": 45.440556,
+        "lon": 12.333889
+      },
+      "names": {
+        "it": "Ca' d'Oro",
+        "en": "Ca' d'Oro",
+        "fr": "Ca' d'Oro",
+        "de": "Ca' d'Oro"
+      },
+      "aliases": {
+        "it": [
+          "Galleria Giorgio Franchetti",
+          "Palazzo Santa Sofia"
+        ],
+        "en": [
+          "Ca d'Oro",
+          "Galleria Giorgio Franchetti"
+        ],
+        "fr": [
+          "Ca d'Oro",
+          "Galleria Giorgio Franchetti"
+        ],
+        "de": [
+          "Ca d'Oro",
+          "Galleria Giorgio Franchetti"
+        ]
+      },
+      "seo": {
+        "slugs": {
+          "it": "ca-d-oro",
+          "en": "ca-d-oro",
+          "fr": "ca-d-oro",
+          "de": "ca-d-oro"
+        }
+      },
+      "editorial": {
+        "queries": {
+          "it": [
+            "ca d'oro venezia",
+            "galleria franchetti"
+          ],
+          "en": [
+            "ca d'oro venice",
+            "franchetti gallery"
+          ],
+          "fr": [
+            "ca d'oro venise",
+            "galleria franchetti"
+          ],
+          "de": [
+            "ca d'oro venedig",
+            "galleria franchetti"
+          ]
+        }
+      },
+      "hubs": [],
+      "external": {
+        "wikidata": "Q820872"
+      }
+    },
+    {
+      "id": "poi:uv_venice_san_rocco",
+      "type": "poi",
+      "category": "museum",
+      "priority": 83,
+      "location": {
+        "lat": 45.436571,
+        "lon": 12.325309
+      },
+      "names": {
+        "it": "Scuola Grande di San Rocco",
+        "en": "Scuola Grande di San Rocco",
+        "fr": "Scuola Grande di San Rocco",
+        "de": "Scuola Grande di San Rocco"
+      },
+      "aliases": {
+        "it": [
+          "San Rocco",
+          "Scuola San Rocco"
+        ],
+        "en": [
+          "San Rocco",
+          "Scuola San Rocco"
+        ],
+        "fr": [
+          "San Rocco",
+          "Scuola San Rocco"
+        ],
+        "de": [
+          "San Rocco",
+          "Scuola San Rocco"
+        ]
+      },
+      "seo": {
+        "slugs": {
+          "it": "scuola-grande-di-san-rocco",
+          "en": "scuola-grande-di-san-rocco",
+          "fr": "scuola-grande-di-san-rocco",
+          "de": "scuola-grande-di-san-rocco"
+        }
+      },
+      "editorial": {
+        "queries": {
+          "it": [
+            "scuola grande san rocco",
+            "tintoretto san rocco"
+          ],
+          "en": [
+            "scuola grande di san rocco",
+            "tintoretto venice"
+          ],
+          "fr": [
+            "scuola grande san rocco",
+            "tintoret venise"
+          ],
+          "de": [
+            "scuola grande san rocco",
+            "tintoretto venedig"
+          ]
+        }
+      },
+      "hubs": [],
+      "external": {
+        "wikidata": "Q1270723"
+      }
+    },
+    {
+      "id": "poi:uv_venice_frari",
+      "type": "poi",
+      "category": "church",
+      "priority": 86,
+      "location": {
+        "lat": 45.436931,
+        "lon": 12.326489
+      },
+      "names": {
+        "it": "Basilica dei Frari",
+        "en": "Frari Basilica",
+        "fr": "Basilique des Frari",
+        "de": "Frari-Kirche"
+      },
+      "aliases": {
+        "it": [
+          "Santa Maria Gloriosa dei Frari",
+          "Frari"
+        ],
+        "en": [
+          "Santa Maria Gloriosa dei Frari",
+          "Frari Church"
+        ],
+        "fr": [
+          "Santa Maria Gloriosa dei Frari",
+          "Église des Frari"
+        ],
+        "de": [
+          "Santa Maria Gloriosa dei Frari",
+          "Frarikirche"
+        ]
+      },
+      "seo": {
+        "slugs": {
+          "it": "basilica-dei-frari",
+          "en": "frari-basilica",
+          "fr": "basilique-des-frari",
+          "de": "frari-kirche"
+        }
+      },
+      "editorial": {
+        "queries": {
+          "it": [
+            "basilica dei frari",
+            "santa maria gloriosa dei frari"
+          ],
+          "en": [
+            "frari basilica venice",
+            "frari church"
+          ],
+          "fr": [
+            "basilique des frari venise",
+            "eglise des frari"
+          ],
+          "de": [
+            "frari kirche venedig",
+            "frarikirche"
+          ]
+        }
+      },
+      "hubs": [],
+      "external": {
+        "wikidata": "Q224961"
+      }
+    },
+    {
+      "id": "poi:uv_venice_san_giorgio_maggiore",
+      "type": "poi",
+      "category": "church",
+      "priority": 87,
+      "location": {
+        "lat": 45.429167,
+        "lon": 12.343333
+      },
+      "names": {
+        "it": "Basilica di San Giorgio Maggiore",
+        "en": "Church of San Giorgio Maggiore",
+        "fr": "Église San Giorgio Maggiore",
+        "de": "Kirche San Giorgio Maggiore"
+      },
+      "aliases": {
+        "it": [
+          "San Giorgio Maggiore",
+          "Basilica San Giorgio"
+        ],
+        "en": [
+          "San Giorgio Maggiore",
+          "San Giorgio Church"
+        ],
+        "fr": [
+          "San Giorgio Maggiore",
+          "Basilique San Giorgio"
+        ],
+        "de": [
+          "San Giorgio Maggiore",
+          "Basilika San Giorgio"
+        ]
+      },
+      "seo": {
+        "slugs": {
+          "it": "san-giorgio-maggiore",
+          "en": "san-giorgio-maggiore",
+          "fr": "san-giorgio-maggiore",
+          "de": "san-giorgio-maggiore"
+        }
+      },
+      "editorial": {
+        "queries": {
+          "it": [
+            "san giorgio maggiore venezia",
+            "basilica san giorgio"
+          ],
+          "en": [
+            "san giorgio maggiore venice",
+            "san giorgio church"
+          ],
+          "fr": [
+            "san giorgio maggiore venise",
+            "eglise san giorgio"
+          ],
+          "de": [
+            "san giorgio maggiore venedig",
+            "kirche san giorgio"
+          ]
+        }
+      },
+      "hubs": [],
+      "external": {
+        "wikidata": "Q713558"
+      }
+    },
+    {
+      "id": "poi:uv_venice_jewish_ghetto",
+      "type": "poi",
+      "category": "historic_area",
+      "priority": 88,
+      "location": {
+        "lat": 45.445278,
+        "lon": 12.326389
+      },
+      "names": {
+        "it": "Ghetto Ebraico di Venezia",
+        "en": "Venetian Ghetto",
+        "fr": "Ghetto de Venise",
+        "de": "Jüdisches Ghetto von Venedig"
+      },
+      "aliases": {
+        "it": [
+          "Ghetto di Venezia",
+          "Ghetto Nuovo"
+        ],
+        "en": [
+          "Venice Ghetto",
+          "Jewish Ghetto Venice",
+          "Ghetto Nuovo"
+        ],
+        "fr": [
+          "Ghetto juif de Venise",
+          "Ghetto Nuovo"
+        ],
+        "de": [
+          "Jüdisches Viertel Venedig",
+          "Ghetto Nuovo"
+        ]
+      },
+      "seo": {
+        "slugs": {
+          "it": "ghetto-ebraico-venezia",
+          "en": "venetian-ghetto",
+          "fr": "ghetto-de-venise",
+          "de": "juedisches-ghetto-venedig"
+        }
+      },
+      "editorial": {
+        "queries": {
+          "it": [
+            "ghetto ebraico venezia",
+            "ghetto nuovo"
+          ],
+          "en": [
+            "venetian ghetto",
+            "jewish ghetto venice"
+          ],
+          "fr": [
+            "ghetto de venise",
+            "ghetto juif venise"
+          ],
+          "de": [
+            "judisches ghetto venedig",
+            "ghetto nuovo"
+          ]
+        }
+      },
+      "hubs": [],
+      "external": {
+        "wikidata": "Q199533"
+      }
+    },
+    {
+      "id": "poi:uv_venice_murano",
+      "type": "poi",
+      "category": "island",
+      "priority": 94,
+      "location": {
+        "lat": 45.452625,
+        "lon": 12.354618
+      },
+      "names": {
+        "it": "Murano",
+        "en": "Murano",
+        "fr": "Murano",
+        "de": "Murano"
+      },
+      "aliases": {
+        "it": [
+          "Isola di Murano",
+          "Vetro di Murano"
+        ],
+        "en": [
+          "Murano Island",
+          "Murano glass"
+        ],
+        "fr": [
+          "Île de Murano",
+          "verre de Murano"
+        ],
+        "de": [
+          "Insel Murano",
+          "Murano-Glas"
+        ]
+      },
+      "seo": {
+        "slugs": {
+          "it": "murano",
+          "en": "murano",
+          "fr": "murano",
+          "de": "murano"
+        }
+      },
+      "editorial": {
+        "queries": {
+          "it": [
+            "murano venezia",
+            "isola di murano"
+          ],
+          "en": [
+            "murano venice",
+            "murano island"
+          ],
+          "fr": [
+            "murano venise",
+            "ile de murano"
+          ],
+          "de": [
+            "murano venedig",
+            "insel murano"
+          ]
+        }
+      },
+      "hubs": [
+        "hub:uv_murano_faro"
+      ],
+      "external": {
+        "wikidata": "Q52437"
+      }
+    },
+    {
+      "id": "poi:uv_venice_burano",
+      "type": "poi",
+      "category": "island",
+      "priority": 93,
+      "location": {
+        "lat": 45.487701,
+        "lon": 12.415233
+      },
+      "names": {
+        "it": "Burano",
+        "en": "Burano",
+        "fr": "Burano",
+        "de": "Burano"
+      },
+      "aliases": {
+        "it": [
+          "Isola di Burano",
+          "Case colorate Burano"
+        ],
+        "en": [
+          "Burano Island",
+          "colourful houses Burano"
+        ],
+        "fr": [
+          "Île de Burano",
+          "maisons colorées Burano"
+        ],
+        "de": [
+          "Insel Burano",
+          "bunte Häuser Burano"
+        ]
+      },
+      "seo": {
+        "slugs": {
+          "it": "burano",
+          "en": "burano",
+          "fr": "burano",
+          "de": "burano"
+        }
+      },
+      "editorial": {
+        "queries": {
+          "it": [
+            "burano venezia",
+            "isola di burano"
+          ],
+          "en": [
+            "burano venice",
+            "burano island"
+          ],
+          "fr": [
+            "burano venise",
+            "ile de burano"
+          ],
+          "de": [
+            "burano venedig",
+            "insel burano"
+          ]
+        }
+      },
+      "hubs": [
+        "hub:uv_burano"
+      ],
+      "external": {
+        "wikidata": "Q18502918"
+      }
+    },
+    {
+      "id": "poi:uv_venice_lido",
+      "type": "poi",
+      "category": "island",
+      "priority": 91,
+      "location": {
+        "lat": 45.417544,
+        "lon": 12.368676
+      },
+      "names": {
+        "it": "Lido di Venezia",
+        "en": "Venice Lido",
+        "fr": "Lido de Venise",
+        "de": "Lido von Venedig"
+      },
+      "aliases": {
+        "it": [
+          "Lido",
+          "Lido Venezia"
+        ],
+        "en": [
+          "Lido",
+          "Lido Venice"
+        ],
+        "fr": [
+          "Lido",
+          "Lido Venise"
+        ],
+        "de": [
+          "Lido",
+          "Lido Venedig"
+        ]
+      },
+      "seo": {
+        "slugs": {
+          "it": "lido-di-venezia",
+          "en": "venice-lido",
+          "fr": "lido-de-venise",
+          "de": "lido-von-venedig"
+        }
+      },
+      "editorial": {
+        "queries": {
+          "it": [
+            "lido di venezia",
+            "lido venezia"
+          ],
+          "en": [
+            "venice lido",
+            "lido island venice"
+          ],
+          "fr": [
+            "lido de venise",
+            "lido venise"
+          ],
+          "de": [
+            "lido von venedig",
+            "lido venedig"
+          ]
+        }
+      },
+      "hubs": [
+        "hub:uv_lido_sme"
+      ],
+      "external": {}
+    },
+    {
+      "id": "poi:uv_venice_giudecca",
+      "type": "poi",
+      "category": "island",
+      "priority": 89,
+      "location": {
+        "lat": 45.425,
+        "lon": 12.328611
+      },
+      "names": {
+        "it": "Giudecca",
+        "en": "Giudecca",
+        "fr": "Giudecca",
+        "de": "Giudecca"
+      },
+      "aliases": {
+        "it": [
+          "Isola della Giudecca"
+        ],
+        "en": [
+          "Giudecca Island"
+        ],
+        "fr": [
+          "Île de la Giudecca"
+        ],
+        "de": [
+          "Insel Giudecca"
+        ]
+      },
+      "seo": {
+        "slugs": {
+          "it": "giudecca",
+          "en": "giudecca",
+          "fr": "giudecca",
+          "de": "giudecca"
+        }
+      },
+      "editorial": {
+        "queries": {
+          "it": [
+            "giudecca venezia",
+            "isola giudecca"
+          ],
+          "en": [
+            "giudecca venice",
+            "giudecca island"
+          ],
+          "fr": [
+            "giudecca venise",
+            "ile giudecca"
+          ],
+          "de": [
+            "giudecca venedig",
+            "insel giudecca"
+          ]
+        }
+      },
+      "hubs": [],
+      "external": {
+        "wikidata": "Q52435"
+      }
+    },
+    {
+      "id": "poi:uv_venice_torcello",
+      "type": "poi",
+      "category": "island",
+      "priority": 85,
+      "location": {
+        "lat": 45.498333,
+        "lon": 12.418333
+      },
+      "names": {
+        "it": "Torcello",
+        "en": "Torcello",
+        "fr": "Torcello",
+        "de": "Torcello"
+      },
+      "aliases": {
+        "it": [
+          "Isola di Torcello"
+        ],
+        "en": [
+          "Torcello Island"
+        ],
+        "fr": [
+          "Île de Torcello"
+        ],
+        "de": [
+          "Insel Torcello"
+        ]
+      },
+      "seo": {
+        "slugs": {
+          "it": "torcello",
+          "en": "torcello",
+          "fr": "torcello",
+          "de": "torcello"
+        }
+      },
+      "editorial": {
+        "queries": {
+          "it": [
+            "torcello venezia",
+            "isola torcello"
+          ],
+          "en": [
+            "torcello venice",
+            "torcello island"
+          ],
+          "fr": [
+            "torcello venise",
+            "ile torcello"
+          ],
+          "de": [
+            "torcello venedig",
+            "insel torcello"
+          ]
+        }
+      },
+      "hubs": [],
+      "external": {
+        "wikidata": "Q52441"
+      }
+    },
+    {
+      "id": "airport:uv_treviso",
+      "type": "airport",
+      "category": "airport",
+      "priority": 86,
+      "location": {
+        "lat": 45.650833,
+        "lon": 12.197778
+      },
+      "names": {
+        "it": "Aeroporto di Treviso Antonio Canova",
+        "en": "Treviso Airport",
+        "fr": "Aéroport de Trévise",
+        "de": "Flughafen Treviso"
+      },
+      "aliases": {
+        "it": [
+          "Aeroporto Treviso",
+          "Canova",
+          "TSF"
+        ],
+        "en": [
+          "Treviso Canova Airport",
+          "TSF"
+        ],
+        "fr": [
+          "Aéroport Treviso",
+          "Canova",
+          "TSF"
+        ],
+        "de": [
+          "Flughafen Treviso Canova",
+          "TSF"
+        ]
+      },
+      "seo": {
+        "slugs": {
+          "it": "aeroporto-treviso",
+          "en": "treviso-airport",
+          "fr": "aeroport-trevise",
+          "de": "flughafen-treviso"
+        }
+      },
+      "editorial": {
+        "queries": {
+          "it": [
+            "aeroporto treviso venezia",
+            "aeroporto canova tsf"
+          ],
+          "en": [
+            "treviso airport venice",
+            "tsf airport"
+          ],
+          "fr": [
+            "aeroport trevise venise",
+            "aeroport tsf"
+          ],
+          "de": [
+            "flughafen treviso venedig",
+            "tsf flughafen"
+          ]
+        }
+      },
+      "hubs": [
+        "hub:uv_mestre_station"
+      ],
+      "external": {
+        "wikidata": "Q513474",
+        "iata": "TSF"
+      }
+    },
+    {
+      "id": "hub:uv_murano_faro",
+      "type": "transport_hub",
+      "category": "water_stop_group",
+      "priority": 91,
+      "location": {
+        "lat": 45.452625,
+        "lon": 12.354618
+      },
+      "names": {
+        "it": "Murano Faro",
+        "en": "Murano Faro",
+        "fr": "Murano Faro",
+        "de": "Murano Faro"
+      },
+      "aliases": {
+        "it": [
+          "Faro Murano"
+        ],
+        "en": [
+          "Murano Faro stop"
+        ],
+        "fr": [
+          "Arrêt Murano Faro"
+        ],
+        "de": [
+          "Haltestelle Murano Faro"
+        ]
+      },
+      "seo": {
+        "slugs": {
+          "it": "murano-faro",
+          "en": "murano-faro",
+          "fr": "murano-faro",
+          "de": "murano-faro"
+        }
+      },
+      "editorial": {
+        "queries": {
+          "it": [
+            "murano faro vaporetto"
+          ],
+          "en": [
+            "murano faro vaporetto"
+          ],
+          "fr": [
+            "murano faro vaporetto"
+          ],
+          "de": [
+            "murano faro vaporetto"
+          ]
+        }
+      },
+      "hubs": [],
+      "external": {
+        "wikidata": "Q63384606"
+      }
+    },
+    {
+      "id": "hub:uv_burano",
+      "type": "transport_hub",
+      "category": "water_stop_group",
+      "priority": 92,
+      "location": {
+        "lat": 45.487701,
+        "lon": 12.415233
+      },
+      "names": {
+        "it": "Burano · fermata vaporetti",
+        "en": "Burano vaporetto stop",
+        "fr": "Burano · arrêt vaporetto",
+        "de": "Burano · Vaporetto-Haltestelle"
+      },
+      "aliases": {
+        "it": [
+          "Burano A",
+          "Burano fermata"
+        ],
+        "en": [
+          "Burano A",
+          "Burano stop"
+        ],
+        "fr": [
+          "Burano A",
+          "Arrêt Burano"
+        ],
+        "de": [
+          "Burano A",
+          "Haltestelle Burano"
+        ]
+      },
+      "seo": {
+        "slugs": {
+          "it": "burano-fermata-vaporetti",
+          "en": "burano-vaporetto-stop",
+          "fr": "burano-arret-vaporetto",
+          "de": "burano-vaporetto-haltestelle"
+        }
+      },
+      "editorial": {
+        "queries": {
+          "it": [
+            "fermata burano vaporetto"
+          ],
+          "en": [
+            "burano vaporetto stop"
+          ],
+          "fr": [
+            "arret vaporetto burano"
+          ],
+          "de": [
+            "vaporetto haltestelle burano"
+          ]
+        }
+      },
+      "hubs": [],
+      "external": {
+        "wikidata": "Q113728205"
+      }
+    },
+    {
+      "id": "hub:uv_lido_sme",
+      "type": "transport_hub",
+      "category": "interchange",
+      "priority": 94,
+      "location": {
+        "lat": 45.417544,
+        "lon": 12.368676
+      },
+      "names": {
+        "it": "Lido Santa Maria Elisabetta",
+        "en": "Lido Santa Maria Elisabetta",
+        "fr": "Lido Santa Maria Elisabetta",
+        "de": "Lido Santa Maria Elisabetta"
+      },
+      "aliases": {
+        "it": [
+          "Lido S.M.E.",
+          "Lido SME"
+        ],
+        "en": [
+          "Lido S.M.E.",
+          "Lido SME"
+        ],
+        "fr": [
+          "Lido S.M.E.",
+          "Lido SME"
+        ],
+        "de": [
+          "Lido S.M.E.",
+          "Lido SME"
+        ]
+      },
+      "seo": {
+        "slugs": {
+          "it": "lido-santa-maria-elisabetta",
+          "en": "lido-santa-maria-elisabetta",
+          "fr": "lido-santa-maria-elisabetta",
+          "de": "lido-santa-maria-elisabetta"
+        }
+      },
+      "editorial": {
+        "queries": {
+          "it": [
+            "lido santa maria elisabetta",
+            "lido sme"
+          ],
+          "en": [
+            "lido santa maria elisabetta",
+            "lido sme"
+          ],
+          "fr": [
+            "lido santa maria elisabetta",
+            "lido sme"
+          ],
+          "de": [
+            "lido santa maria elisabetta",
+            "lido sme"
+          ]
+        }
+      },
+      "hubs": [],
+      "external": {
+        "wikidata": "Q113811931"
+      }
+    },
+    {
+      "id": "hub:uv_fondamente_nove",
+      "type": "transport_hub",
+      "category": "water_stop_group",
+      "priority": 93,
+      "location": {
+        "lat": 45.44396,
+        "lon": 12.33916
+      },
+      "names": {
+        "it": "Fondamente Nove",
+        "en": "Fondamente Nove",
+        "fr": "Fondamente Nove",
+        "de": "Fondamente Nove"
+      },
+      "aliases": {
+        "it": [
+          "Fondamenta Nuove",
+          "F.te Nove"
+        ],
+        "en": [
+          "Fondamenta Nuove",
+          "F.te Nove"
+        ],
+        "fr": [
+          "Fondamenta Nuove",
+          "F.te Nove"
+        ],
+        "de": [
+          "Fondamenta Nuove",
+          "F.te Nove"
+        ]
+      },
+      "seo": {
+        "slugs": {
+          "it": "fondamente-nove",
+          "en": "fondamente-nove",
+          "fr": "fondamente-nove",
+          "de": "fondamente-nove"
+        }
+      },
+      "editorial": {
+        "queries": {
+          "it": [
+            "fondamente nove vaporetto",
+            "fondamenta nuove"
+          ],
+          "en": [
+            "fondamente nove vaporetto",
+            "fondamenta nuove"
+          ],
+          "fr": [
+            "fondamente nove vaporetto",
+            "fondamenta nuove"
+          ],
+          "de": [
+            "fondamente nove vaporetto",
+            "fondamenta nuove"
+          ]
+        }
+      },
+      "hubs": [],
+      "external": {
+        "wikidata": "Q113841111"
+      }
+    },
+    {
+      "id": "poi:uv_venice_museo_correr",
+      "type": "poi",
+      "category": "museum",
+      "priority": 91,
+      "location": {
+        "lat": 45.4336,
+        "lon": 12.33718
+      },
+      "names": {
+        "it": "Museo Correr",
+        "en": "Museo Correr",
+        "fr": "Musée Correr",
+        "de": "Museo Correr"
+      },
+      "aliases": {
+        "it": [
+          "Correr",
+          "Museo Civico Correr"
+        ],
+        "en": [
+          "Correr Museum"
+        ],
+        "fr": [
+          "Musée Correr Venise"
+        ],
+        "de": [
+          "Correr Museum Venedig"
+        ]
+      },
+      "seo": {
+        "slugs": {
+          "it": "museo-correr",
+          "en": "museo-correr",
+          "fr": "musee-correr",
+          "de": "museo-correr"
+        }
+      },
+      "editorial": {
+        "queries": {
+          "it": [
+            "museo correr venezia",
+            "correr san marco"
+          ],
+          "en": [
+            "museo correr venice",
+            "correr museum"
+          ],
+          "fr": [
+            "musee correr venise",
+            "correr san marco"
+          ],
+          "de": [
+            "museo correr venedig",
+            "correr museum"
+          ]
+        }
+      },
+      "hubs": [],
+      "external": {
+        "wikidata": "Q1470912"
+      }
+    },
+    {
+      "id": "poi:uv_venice_ca_rezzonico",
+      "type": "poi",
+      "category": "museum",
+      "priority": 89,
+      "location": {
+        "lat": 45.434089,
+        "lon": 12.32435
+      },
+      "names": {
+        "it": "Ca' Rezzonico",
+        "en": "Ca' Rezzonico",
+        "fr": "Ca' Rezzonico",
+        "de": "Ca' Rezzonico"
+      },
+      "aliases": {
+        "it": [
+          "Museo del Settecento veneziano",
+          "Ca Rezzonico"
+        ],
+        "en": [
+          "Museum of 18th-century Venice",
+          "Ca Rezzonico"
+        ],
+        "fr": [
+          "Musée du XVIIIe siècle vénitien",
+          "Ca Rezzonico"
+        ],
+        "de": [
+          "Museum des venezianischen 18. Jahrhunderts",
+          "Ca Rezzonico"
+        ]
+      },
+      "seo": {
+        "slugs": {
+          "it": "ca-rezzonico",
+          "en": "ca-rezzonico",
+          "fr": "ca-rezzonico",
+          "de": "ca-rezzonico"
+        }
+      },
+      "editorial": {
+        "queries": {
+          "it": [
+            "ca rezzonico venezia",
+            "museo settecento veneziano"
+          ],
+          "en": [
+            "ca rezzonico venice",
+            "18th century venice museum"
+          ],
+          "fr": [
+            "ca rezzonico venise",
+            "musee xviiie venise"
+          ],
+          "de": [
+            "ca rezzonico venedig",
+            "museum 18 jahrhundert"
+          ]
+        }
+      },
+      "hubs": [],
+      "external": {
+        "wikidata": "Q1052171"
+      }
+    },
+    {
+      "id": "poi:uv_venice_ca_pesaro",
+      "type": "poi",
+      "category": "museum",
+      "priority": 87,
+      "location": {
+        "lat": 45.441,
+        "lon": 12.33146
+      },
+      "names": {
+        "it": "Ca' Pesaro",
+        "en": "Ca' Pesaro",
+        "fr": "Ca' Pesaro",
+        "de": "Ca' Pesaro"
+      },
+      "aliases": {
+        "it": [
+          "Galleria Internazionale d'Arte Moderna",
+          "Ca Pesaro"
+        ],
+        "en": [
+          "International Gallery of Modern Art",
+          "Ca Pesaro"
+        ],
+        "fr": [
+          "Galerie internationale d'art moderne",
+          "Ca Pesaro"
+        ],
+        "de": [
+          "Internationale Galerie für Moderne Kunst",
+          "Ca Pesaro"
+        ]
+      },
+      "seo": {
+        "slugs": {
+          "it": "ca-pesaro",
+          "en": "ca-pesaro",
+          "fr": "ca-pesaro",
+          "de": "ca-pesaro"
+        }
+      },
+      "editorial": {
+        "queries": {
+          "it": [
+            "ca pesaro venezia",
+            "galleria arte moderna venezia"
+          ],
+          "en": [
+            "ca pesaro venice",
+            "modern art gallery venice"
+          ],
+          "fr": [
+            "ca pesaro venise",
+            "galerie art moderne venise"
+          ],
+          "de": [
+            "ca pesaro venedig",
+            "moderne kunst venedig"
+          ]
+        }
+      },
+      "hubs": [],
+      "external": {
+        "wikidata": "Q53638801"
+      }
+    },
+    {
+      "id": "poi:uv_venice_punta_dogana",
+      "type": "poi",
+      "category": "museum",
+      "priority": 88,
+      "location": {
+        "lat": 45.4308,
+        "lon": 12.336181
+      },
+      "names": {
+        "it": "Punta della Dogana",
+        "en": "Punta della Dogana",
+        "fr": "Punta della Dogana",
+        "de": "Punta della Dogana"
+      },
+      "aliases": {
+        "it": [
+          "Dogana da Mar"
+        ],
+        "en": [
+          "Dogana da Mar",
+          "Punta Dogana"
+        ],
+        "fr": [
+          "Dogana da Mar",
+          "Punta Dogana"
+        ],
+        "de": [
+          "Dogana da Mar",
+          "Punta Dogana"
+        ]
+      },
+      "seo": {
+        "slugs": {
+          "it": "punta-della-dogana",
+          "en": "punta-della-dogana",
+          "fr": "punta-della-dogana",
+          "de": "punta-della-dogana"
+        }
+      },
+      "editorial": {
+        "queries": {
+          "it": [
+            "punta della dogana venezia",
+            "dogana da mar"
+          ],
+          "en": [
+            "punta della dogana venice",
+            "dogana da mar"
+          ],
+          "fr": [
+            "punta della dogana venise",
+            "dogana da mar"
+          ],
+          "de": [
+            "punta della dogana venedig",
+            "dogana da mar"
+          ]
+        }
+      },
+      "hubs": [],
+      "external": {
+        "wikidata": "Q2931413"
+      }
+    },
+    {
+      "id": "poi:uv_venice_libreria_acqua_alta",
+      "type": "poi",
+      "category": "attraction",
+      "priority": 90,
+      "location": {
+        "lat": 45.43806,
+        "lon": 12.34227
+      },
+      "names": {
+        "it": "Libreria Acqua Alta",
+        "en": "Libreria Acqua Alta",
+        "fr": "Librairie Acqua Alta",
+        "de": "Libreria Acqua Alta"
+      },
+      "aliases": {
+        "it": [
+          "Acqua Alta libreria"
+        ],
+        "en": [
+          "Acqua Alta Bookstore"
+        ],
+        "fr": [
+          "Librairie Acqua Alta Venise"
+        ],
+        "de": [
+          "Acqua Alta Buchhandlung"
+        ]
+      },
+      "seo": {
+        "slugs": {
+          "it": "libreria-acqua-alta",
+          "en": "libreria-acqua-alta",
+          "fr": "librairie-acqua-alta",
+          "de": "libreria-acqua-alta"
+        }
+      },
+      "editorial": {
+        "queries": {
+          "it": [
+            "libreria acqua alta venezia",
+            "acqua alta libreria"
+          ],
+          "en": [
+            "libreria acqua alta venice",
+            "acqua alta bookstore"
+          ],
+          "fr": [
+            "librairie acqua alta venise",
+            "acqua alta librairie"
+          ],
+          "de": [
+            "libreria acqua alta venedig",
+            "acqua alta buchhandlung"
+          ]
+        }
+      },
+      "hubs": [],
+      "external": {
+        "wikidata": "Q105701848",
+        "osm": "node/676820117"
+      }
+    },
+    {
+      "id": "poi:uv_venice_scala_bovolo",
+      "type": "poi",
+      "category": "landmark",
+      "priority": 86,
+      "location": {
+        "lat": 45.43485,
+        "lon": 12.33456
+      },
+      "names": {
+        "it": "Scala Contarini del Bovolo",
+        "en": "Scala Contarini del Bovolo",
+        "fr": "Escalier Contarini del Bovolo",
+        "de": "Scala Contarini del Bovolo"
+      },
+      "aliases": {
+        "it": [
+          "Scala del Bovolo",
+          "Palazzo Contarini del Bovolo"
+        ],
+        "en": [
+          "Bovolo Staircase",
+          "Palazzo Contarini del Bovolo"
+        ],
+        "fr": [
+          "Escalier du Bovolo",
+          "Palazzo Contarini del Bovolo"
+        ],
+        "de": [
+          "Bovolo-Treppe",
+          "Palazzo Contarini del Bovolo"
+        ]
+      },
+      "seo": {
+        "slugs": {
+          "it": "scala-contarini-del-bovolo",
+          "en": "scala-contarini-del-bovolo",
+          "fr": "escalier-contarini-del-bovolo",
+          "de": "scala-contarini-del-bovolo"
+        }
+      },
+      "editorial": {
+        "queries": {
+          "it": [
+            "scala contarini bovolo",
+            "scala bovolo venezia"
+          ],
+          "en": [
+            "scala contarini del bovolo",
+            "bovolo staircase venice"
+          ],
+          "fr": [
+            "scala contarini del bovolo",
+            "escalier bovolo venise"
+          ],
+          "de": [
+            "scala contarini del bovolo",
+            "bovolo treppe venedig"
+          ]
+        }
+      },
+      "hubs": [],
+      "external": {}
+    },
+    {
+      "id": "poi:uv_venice_santi_giovanni_paolo",
+      "type": "poi",
+      "category": "church",
+      "priority": 87,
+      "location": {
+        "lat": 45.439217,
+        "lon": 12.342397
+      },
+      "names": {
+        "it": "Basilica dei Santi Giovanni e Paolo",
+        "en": "Basilica of Santi Giovanni e Paolo",
+        "fr": "Basilique Santi Giovanni e Paolo",
+        "de": "Basilika Santi Giovanni e Paolo"
+      },
+      "aliases": {
+        "it": [
+          "San Zanipolo",
+          "Santi Giovanni e Paolo"
+        ],
+        "en": [
+          "San Zanipolo",
+          "Saints John and Paul Venice"
+        ],
+        "fr": [
+          "San Zanipolo",
+          "Saints Jean et Paul Venise"
+        ],
+        "de": [
+          "San Zanipolo",
+          "Santi Giovanni e Paolo Venedig"
+        ]
+      },
+      "seo": {
+        "slugs": {
+          "it": "santi-giovanni-e-paolo",
+          "en": "santi-giovanni-e-paolo",
+          "fr": "santi-giovanni-e-paolo",
+          "de": "santi-giovanni-e-paolo"
+        }
+      },
+      "editorial": {
+        "queries": {
+          "it": [
+            "santi giovanni paolo venezia",
+            "san zanipolo"
+          ],
+          "en": [
+            "santi giovanni e paolo venice",
+            "san zanipolo"
+          ],
+          "fr": [
+            "santi giovanni e paolo venise",
+            "san zanipolo"
+          ],
+          "de": [
+            "santi giovanni e paolo venedig",
+            "san zanipolo"
+          ]
+        }
+      },
+      "hubs": [],
+      "external": {
+        "wikidata": "Q155225"
+      }
+    },
+    {
+      "id": "poi:uv_murano_glass_museum",
+      "type": "poi",
+      "category": "museum",
+      "priority": 88,
+      "location": {
+        "lat": 45.45689,
+        "lon": 12.357711
+      },
+      "names": {
+        "it": "Museo del Vetro di Murano",
+        "en": "Murano Glass Museum",
+        "fr": "Musée du Verre de Murano",
+        "de": "Glasmuseum Murano"
+      },
+      "aliases": {
+        "it": [
+          "Museo del Vetro",
+          "Museo Vetro Murano"
+        ],
+        "en": [
+          "Glass Museum Murano",
+          "Museo del Vetro"
+        ],
+        "fr": [
+          "Musée du Verre",
+          "Museo del Vetro"
+        ],
+        "de": [
+          "Glasmuseum",
+          "Museo del Vetro"
+        ]
+      },
+      "seo": {
+        "slugs": {
+          "it": "museo-del-vetro-murano",
+          "en": "murano-glass-museum",
+          "fr": "musee-verre-murano",
+          "de": "glasmuseum-murano"
+        }
+      },
+      "editorial": {
+        "queries": {
+          "it": [
+            "museo vetro murano",
+            "museo del vetro venezia"
+          ],
+          "en": [
+            "murano glass museum",
+            "glass museum venice"
+          ],
+          "fr": [
+            "musee verre murano",
+            "musee du verre venise"
+          ],
+          "de": [
+            "glasmuseum murano",
+            "glasmuseum venedig"
+          ]
+        }
+      },
+      "hubs": [],
+      "external": [
+        "hub:uv_murano_faro"
+      ]
+    }
+  ]
+}

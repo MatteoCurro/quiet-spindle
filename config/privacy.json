@@ -1,0 +1,8 @@
+{
+  "version": "privacy-2026-10-07-draft1",
+  "policyUrl": "privacy.html",
+  "cookieConsent": {
+    "analytics": true,
+    "marketing": false
+  }
+}

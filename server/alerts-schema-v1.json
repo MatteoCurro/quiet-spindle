@@ -1,0 +1,303 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://www.unlockvenice.com/schemas/service-alerts-v1.json",
+  "title": "Unlock Venice transport service alerts",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "generatedAt",
+    "revision",
+    "sourceHealth",
+    "alerts"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "generatedAt": {
+      "type": "string"
+    },
+    "revision": {
+      "type": "string",
+      "minLength": 8
+    },
+    "sourceHealth": {
+      "type": "object"
+    },
+    "alerts": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/alert"
+      }
+    }
+  },
+  "$defs": {
+    "alert": {
+      "type": "object",
+      "required": [
+        "id",
+        "version",
+        "provider",
+        "source",
+        "category",
+        "cause",
+        "lifecycle",
+        "severity",
+        "planned",
+        "impact",
+        "scope",
+        "validity",
+        "title",
+        "body",
+        "effects",
+        "tags",
+        "audience"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        },
+        "provider": {
+          "type": "string"
+        },
+        "source": {
+          "type": "object",
+          "required": [
+            "channel",
+            "sourceId",
+            "messageUrl",
+            "url",
+            "publishedAt",
+            "fetchedAt"
+          ],
+          "properties": {
+            "channel": {
+              "type": "string"
+            },
+            "sourceId": {
+              "type": "string"
+            },
+            "messageUrl": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "url": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "publishedAt": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "fetchedAt": {
+              "type": "string"
+            },
+            "articleEnriched": {
+              "type": "boolean"
+            },
+            "alternates": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "channel": {
+                    "type": "string"
+                  },
+                  "url": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  },
+                  "publishedAt": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "category": {
+          "enum": [
+            "service_interruption",
+            "service_restriction",
+            "replacement_service",
+            "service_restored",
+            "route_diversion",
+            "stop_change",
+            "schedule_change",
+            "planned_service_change",
+            "service_enhancement",
+            "general_service_info"
+          ]
+        },
+        "cause": {
+          "enum": [
+            "breakdown",
+            "maintenance",
+            "road_closure",
+            "event",
+            "weather",
+            "strike",
+            "operational",
+            "unspecified"
+          ]
+        },
+        "lifecycle": {
+          "enum": [
+            "active",
+            "planned",
+            "resolved",
+            "informational"
+          ]
+        },
+        "severity": {
+          "enum": [
+            "info",
+            "minor",
+            "major",
+            "critical"
+          ]
+        },
+        "planned": {
+          "type": "boolean"
+        },
+        "impact": {
+          "enum": [
+            "partial",
+            "full"
+          ]
+        },
+        "scope": {
+          "type": "object",
+          "required": [
+            "networks",
+            "lines",
+            "stops",
+            "areas"
+          ],
+          "properties": {
+            "networks": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "lines": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "stops": {
+              "type": "array"
+            },
+            "areas": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "directions": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "segments": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": [
+                  "from",
+                  "to"
+                ],
+                "properties": {
+                  "from": {
+                    "type": "string"
+                  },
+                  "to": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "validity": {
+          "type": "object",
+          "required": [
+            "startsAt",
+            "endsAt",
+            "label"
+          ]
+        },
+        "title": {
+          "type": "string"
+        },
+        "body": {
+          "type": "string"
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "audience": {
+          "type": "object",
+          "required": [
+            "topics",
+            "pushEligible"
+          ],
+          "properties": {
+            "topics": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "pushEligible": {
+              "type": "boolean"
+            }
+          }
+        },
+        "effects": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "service_interruption",
+              "service_restriction",
+              "replacement_service",
+              "service_restored",
+              "route_diversion",
+              "stop_change",
+              "schedule_change",
+              "planned_service_change",
+              "service_enhancement",
+              "general_service_info"
+            ]
+          }
+        },
+        "officialDetail": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    }
+  }
+}

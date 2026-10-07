@@ -1,0 +1,214 @@
+{
+  "schemaVersion": 1,
+  "kind": "route",
+  "locales": [
+    "it",
+    "en",
+    "fr",
+    "de"
+  ],
+  "pathSegments": {
+    "it": "percorsi",
+    "en": "routes",
+    "fr": "itineraires",
+    "de": "routen"
+  },
+  "internalLinking": {
+    "min": 2,
+    "max": 4,
+    "strategy": [
+      "endpoint-pages",
+      "alternative-route",
+      "shared-endpoint"
+    ],
+    "sameLanguageOnly": true,
+    "crawlableAnchors": true,
+    "descriptiveAnchorText": true
+  },
+  "pages": [
+    {
+      "id": "seo-route-mestre-san-marco",
+      "route": "uv_mestre_station_san_marco",
+      "enabled": true,
+      "contentState": "ready",
+      "languages": [
+        "it",
+        "en",
+        "fr",
+        "de"
+      ],
+      "priority": 1,
+      "copyKey": "mestre-san-marco",
+      "slugs": {
+        "it": "stazione-mestre-piazza-san-marco",
+        "en": "mestre-station-st-marks-square",
+        "fr": "gare-de-mestre-place-saint-marc",
+        "de": "bahnhof-mestre-markusplatz"
+      },
+      "related": {
+        "limit": 6
+      }
+    },
+    {
+      "id": "seo-route-marco-polo-san-marco",
+      "route": "uv_marco_polo_san_marco",
+      "enabled": true,
+      "contentState": "ready",
+      "languages": [
+        "it",
+        "en",
+        "fr",
+        "de"
+      ],
+      "priority": 1,
+      "copyKey": "marco-polo-san-marco",
+      "slugs": {
+        "it": "aeroporto-marco-polo-piazza-san-marco",
+        "en": "marco-polo-airport-st-marks-square",
+        "fr": "aeroport-marco-polo-place-saint-marc",
+        "de": "flughafen-marco-polo-markusplatz"
+      },
+      "related": {
+        "limit": 6
+      }
+    },
+    {
+      "id": "seo-route-piazzale-roma-san-marco",
+      "route": "uv_piazzale_roma_san_marco",
+      "enabled": true,
+      "contentState": "ready",
+      "languages": [
+        "it",
+        "en",
+        "fr",
+        "de"
+      ],
+      "priority": 0.96,
+      "copyKey": "piazzale-roma-san-marco",
+      "slugs": {
+        "it": "piazzale-roma-piazza-san-marco",
+        "en": "piazzale-roma-st-marks-square",
+        "fr": "piazzale-roma-place-saint-marc",
+        "de": "piazzale-roma-markusplatz"
+      },
+      "related": {
+        "limit": 6
+      }
+    },
+    {
+      "id": "seo-route-santa-lucia-san-marco",
+      "route": "uv_santa_lucia_san_marco",
+      "enabled": true,
+      "contentState": "ready",
+      "languages": [
+        "it",
+        "en",
+        "fr",
+        "de"
+      ],
+      "priority": 0.98,
+      "copyKey": "santa-lucia-san-marco",
+      "slugs": {
+        "it": "stazione-santa-lucia-piazza-san-marco",
+        "en": "venice-santa-lucia-st-marks-square",
+        "fr": "gare-santa-lucia-place-saint-marc",
+        "de": "bahnhof-santa-lucia-markusplatz"
+      },
+      "related": {
+        "limit": 6
+      }
+    },
+    {
+      "id": "seo-route-san-marco-rialto",
+      "route": "uv_san_marco_rialto",
+      "enabled": true,
+      "contentState": "ready",
+      "languages": [
+        "it",
+        "en",
+        "fr",
+        "de"
+      ],
+      "priority": 0.94,
+      "copyKey": "san-marco-rialto",
+      "slugs": {
+        "it": "piazza-san-marco-ponte-di-rialto",
+        "en": "st-marks-square-rialto-bridge",
+        "fr": "place-saint-marc-pont-du-rialto",
+        "de": "markusplatz-rialtobruecke"
+      },
+      "related": {
+        "limit": 6
+      }
+    },
+    {
+      "id": "seo-route-marco-polo-mestre",
+      "route": "uv_marco_polo_mestre_station",
+      "enabled": true,
+      "contentState": "ready",
+      "languages": [
+        "it",
+        "en",
+        "fr",
+        "de"
+      ],
+      "priority": 0.98,
+      "copyKey": "marco-polo-mestre",
+      "slugs": {
+        "it": "aeroporto-marco-polo-stazione-mestre",
+        "en": "marco-polo-airport-mestre-station",
+        "fr": "aeroport-marco-polo-gare-mestre",
+        "de": "flughafen-marco-polo-bahnhof-mestre"
+      },
+      "related": {
+        "limit": 6
+      }
+    },
+    {
+      "id": "seo-route-treviso-mestre",
+      "route": "uv_treviso_mestre_station",
+      "enabled": true,
+      "contentState": "ready",
+      "languages": [
+        "it",
+        "en",
+        "fr",
+        "de"
+      ],
+      "priority": 0.98,
+      "copyKey": "treviso-mestre",
+      "slugs": {
+        "it": "aeroporto-treviso-stazione-mestre",
+        "en": "treviso-airport-mestre-station",
+        "fr": "aeroport-trevise-gare-mestre",
+        "de": "flughafen-treviso-bahnhof-mestre"
+      },
+      "related": {
+        "limit": 6
+      }
+    },
+    {
+      "id": "seo-route-treviso-san-marco",
+      "route": "uv_treviso_san_marco",
+      "enabled": true,
+      "contentState": "ready",
+      "languages": [
+        "it",
+        "en",
+        "fr",
+        "de"
+      ],
+      "priority": 1,
+      "copyKey": "treviso-san-marco",
+      "slugs": {
+        "it": "aeroporto-treviso-piazza-san-marco",
+        "en": "treviso-airport-st-marks-square",
+        "fr": "aeroport-trevise-place-saint-marc",
+        "de": "flughafen-treviso-markusplatz"
+      },
+      "related": {
+        "limit": 6
+      }
+    }
+  ]
+}

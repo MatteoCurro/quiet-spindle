@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "baseUrl": "https://www.unlockvenice.com/",
+  "locales": ["it", "en", "fr", "de"],
+  "defaultLocale": "it",
+  "output": "seo/content-index/articles.json",
+  "timeoutMs": 15000,
+  "concurrency": 6,
+  "maxArticles": 2000,
+  "rest": {
+    "enabled": true,
+    "path": "/wp-json/wp/v2/posts",
+    "perPage": 100
+  },
+  "sitemapCandidates": [
+    "/wp-sitemap.xml",
+    "/sitemap_index.xml",
+    "/post-sitemap.xml"
+  ],
+  "excludeUrlPatterns": [
+    "/category/",
+    "/tag/",
+    "/author/",
+    "/page/",
+    "/feed/"
+  ]
+}

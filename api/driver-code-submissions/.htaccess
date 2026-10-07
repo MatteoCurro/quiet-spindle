@@ -1,0 +1,3 @@
+# Driver-code photo submissions are review-only and must never be served directly.
+Require all denied
+Deny from all

@@ -1,0 +1,303 @@
+{
+  "schemaVersion": 1,
+  "locales": [
+    "it",
+    "en",
+    "fr",
+    "de"
+  ],
+  "storagePattern": "seo/content/{kind}/{copyKey}/{lang}.md",
+  "principles": {
+    "peopleFirst": true,
+    "mobilityFirst": true,
+    "uniquePerLanding": true,
+    "noHistoricalDuplication": true,
+    "noKeywordStuffing": true,
+    "noQueryVariantPages": true,
+    "noAiOnlyMarkup": true,
+    "sameLanguageLinksOnly": true
+  },
+  "seo": {
+    "seoTitle": {
+      "required": true,
+      "recommendedChars": {
+        "min": 38,
+        "max": 65
+      },
+      "rules": [
+        "Lead with the actual mobility intent and entity/route name.",
+        "Keep every landing title unique.",
+        "Do not append repetitive keyword variants."
+      ]
+    },
+    "metaDescription": {
+      "required": true,
+      "recommendedChars": {
+        "min": 120,
+        "max": 165
+      },
+      "rules": [
+        "Summarize the practical answer and user benefit.",
+        "Mention the origin/destination or place naturally.",
+        "Do not promise live timings unless rendered from live data."
+      ]
+    },
+    "h1": {
+      "required": true,
+      "count": 1,
+      "rules": [
+        "Use the natural localized name and primary intent.",
+        "Do not mechanically repeat the SEO title."
+      ]
+    },
+    "headings": {
+      "semanticHierarchy": true,
+      "questionHeadingsAllowed": true,
+      "rules": [
+        "Use H2/H3 to make each section understandable in isolation.",
+        "Prefer headings that reflect real visitor decisions or questions."
+      ]
+    }
+  },
+  "aiSearchReadability": {
+    "directAnswerNearTop": true,
+    "selfContainedAnswers": true,
+    "explicitEntityNaming": true,
+    "useListsForComparableOptions": true,
+    "useShortParagraphs": true,
+    "rules": [
+      "Answer the primary mobility question before background context.",
+      "Each Q&A answer must make sense if extracted without the rest of the page.",
+      "State entities, hubs and modes explicitly instead of relying on pronouns.",
+      "Do not create content solely to target AI systems."
+    ]
+  },
+  "volatileData": {
+    "mustNotBeHardcoded": [
+      "live arrival times",
+      "temporary disruptions",
+      "service frequencies that can change",
+      "temporary stop closures"
+    ],
+    "renderDynamicallyWhenNeeded": true
+  },
+  "internalLinking": {
+    "transportLandingLinks": {
+      "required": true,
+      "min": 2,
+      "max": 4,
+      "sameLanguageOnly": true,
+      "crawlableHtmlAnchors": true,
+      "descriptiveAnchorText": true,
+      "selection": [
+        "route landing that starts or ends at this entity",
+        "endpoint place pages for a route landing",
+        "nearby or operationally connected hubs",
+        "one genuinely useful alternative route or nearby destination"
+      ],
+      "avoid": [
+        "sitewide dense link blocks",
+        "linking every page in the same category",
+        "generic anchors such as click here or learn more",
+        "repeating the same target multiple times without user value"
+      ]
+    },
+    "editorialArticleLinks": {
+      "required": true,
+      "min": 3,
+      "max": 6,
+      "source": "editorial scoring + manual overrides",
+      "sameLanguageOnly": true
+    }
+  },
+  "questionsAndAnswers": {
+    "visibleOnPage": true,
+    "structuredDataRequired": false,
+    "rules": [
+      "Use questions a traveller could genuinely ask before or during the trip.",
+      "Do not create multiple near-identical keyword variants of the same question.",
+      "Start each answer with the useful conclusion, then add context.",
+      "Keep answers factual and stable; volatile information belongs to dynamic components."
+    ]
+  },
+  "place": {
+    "recommendedBodyWords": {
+      "min": 320,
+      "max": 650
+    },
+    "sections": [
+      {
+        "id": "direct_answer",
+        "required": true,
+        "recommendedWords": {
+          "min": 45,
+          "max": 90
+        },
+        "purpose": "Identify the place and immediately answer how a visitor should think about reaching it."
+      },
+      {
+        "id": "transport_options",
+        "required": true,
+        "type": "bullets_or_compact_list",
+        "recommendedItems": {
+          "min": 2,
+          "max": 5
+        },
+        "purpose": "Summarize meaningful modes/hubs and when each option is useful without freezing live timetable data."
+      },
+      {
+        "id": "practical_tips",
+        "required": true,
+        "type": "bullets",
+        "recommendedItems": {
+          "min": 2,
+          "max": 5
+        },
+        "purpose": "Stable orientation, luggage, accessibility, walking or transfer advice."
+      },
+      {
+        "id": "prices",
+        "required": false,
+        "type": "verified_fare_table",
+        "purpose": "Show relevant visitor fares from the central verified fare registry when price materially affects the choice."
+      },
+      {
+        "id": "faq",
+        "required": true,
+        "type": "question_answer",
+        "recommendedItems": {
+          "min": 3,
+          "max": 5
+        },
+        "answerWords": {
+          "min": 35,
+          "max": 85
+        },
+        "purpose": "Answer distinct high-intent visitor questions that are not already fully answered by the main blocks."
+      },
+      {
+        "id": "local_context",
+        "required": false,
+        "recommendedWords": {
+          "min": 40,
+          "max": 100
+        },
+        "purpose": "Only mobility-adjacent local context. Cultural/history depth stays in Unlock Venice editorial articles."
+      },
+      {
+        "id": "related_transport",
+        "required": true,
+        "type": "generated_internal_links",
+        "purpose": "Link 2–4 genuinely connected transport landing pages."
+      },
+      {
+        "id": "related_reading",
+        "required": true,
+        "type": "generated_editorial_links",
+        "purpose": "Link 3–6 same-language Unlock Venice articles selected by editorial scoring."
+      }
+    ]
+  },
+  "route": {
+    "recommendedBodyWords": {
+      "min": 380,
+      "max": 760
+    },
+    "sections": [
+      {
+        "id": "direct_answer",
+        "required": true,
+        "recommendedWords": {
+          "min": 50,
+          "max": 100
+        },
+        "purpose": "State the origin/destination pair and immediately explain the main practical choices."
+      },
+      {
+        "id": "options",
+        "required": true,
+        "type": "bullets_table_or_compact_list",
+        "recommendedItems": {
+          "min": 2,
+          "max": 5
+        },
+        "purpose": "Compare meaningful transport modes by use case, transfers, walking and operational simplicity."
+      },
+      {
+        "id": "which_option",
+        "required": true,
+        "recommendedWords": {
+          "min": 60,
+          "max": 130
+        },
+        "purpose": "Give decision guidance for common traveller profiles without inventing a universally best option."
+      },
+      {
+        "id": "practical_tips",
+        "required": true,
+        "type": "bullets",
+        "recommendedItems": {
+          "min": 2,
+          "max": 6
+        },
+        "purpose": "Stable luggage, transfer, accessibility, boarding or orientation advice."
+      },
+      {
+        "id": "prices",
+        "required": false,
+        "type": "verified_fare_table",
+        "purpose": "Show relevant visitor fares from the central verified fare registry when price materially affects the choice."
+      },
+      {
+        "id": "faq",
+        "required": true,
+        "type": "question_answer",
+        "recommendedItems": {
+          "min": 4,
+          "max": 6
+        },
+        "answerWords": {
+          "min": 35,
+          "max": 90
+        },
+        "purpose": "Answer distinct route-specific questions such as transfers, walking, luggage or arrival point."
+      },
+      {
+        "id": "arrival_context",
+        "required": false,
+        "recommendedWords": {
+          "min": 40,
+          "max": 100
+        },
+        "purpose": "Explain the destination/interchange context only where it helps the onward journey."
+      },
+      {
+        "id": "related_transport",
+        "required": true,
+        "type": "generated_internal_links",
+        "purpose": "Link endpoint landing pages plus 0–2 genuinely useful adjacent/alternative route pages."
+      },
+      {
+        "id": "related_reading",
+        "required": true,
+        "type": "generated_editorial_links",
+        "purpose": "Link 3–6 same-language Unlock Venice articles selected by editorial scoring."
+      }
+    ]
+  },
+  "fareGuidance": {
+    "requiredWhenUseful": true,
+    "audience": "visitor",
+    "source": "seo/data/tourist-fares.json",
+    "lastVerifiedRequired": true,
+    "officialSourcePreferred": true,
+    "rules": [
+      "Show ordinary visitor fares when they materially help the travel decision.",
+      "Never copy fare numbers directly into narrative prose when the same value can come from the central fare registry.",
+      "Use 'da' for priceType=from and label third-party values as indicative.",
+      "Do not surface resident-only Venezia Unica fares in tourist guidance unless explicitly explained.",
+      "Display the last verification date and link to the source used for each fare group.",
+      "Price information is guidance, not a guarantee; users should verify before purchase."
+    ]
+  }
+}

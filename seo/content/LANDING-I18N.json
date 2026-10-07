@@ -1,0 +1,281 @@
+{
+  "schemaVersion": 1,
+  "locales": {
+    "it": {
+      "htmlLang": "it",
+      "skip": "Vai al contenuto",
+      "previewBar": "ANTEPRIMA SEO · pagina non indicizzata",
+      "nav": {
+        "about": "Cos’è Unlock Venice",
+        "transport": "Trasporti",
+        "stay": "Dormire a Mestre",
+        "homeUrl": "https://www.unlockvenice.com/",
+        "aboutUrl": "https://www.unlockvenice.com/matteo-venezia-e-unlock-venice/",
+        "transportUrl": "/trasporti/?lang=it",
+        "stayUrl": "https://www.unlockvenice.com/dormire-a-mestre-per-visitare-venezia/"
+      },
+      "route": {
+        "eyebrow": "Trasporti · Percorsi",
+        "kicker": "Percorso"
+      },
+      "place": {
+        "eyebrow": "Trasporti · Luoghi",
+        "kicker": "Destinazione",
+        "hint": "Destinazione · percorso dalla tua posizione"
+      },
+      "journey": {
+        "heading": "Percorso aggiornato",
+        "helper": "Apri U.Venice Transport e confronta le combinazioni disponibili adesso."
+      },
+      "fares": {
+        "aria": "Prezzi indicativi",
+        "eyebrow": "Tariffe per visitatori",
+        "heading": "Quanto costa",
+        "verified": "Verificate il {date}",
+        "indicative": "indicativo",
+        "source": "Fonte {operator}",
+        "note": "Prezzi utili per orientarsi: verifica sempre la tariffa al momento dell’acquisto."
+      },
+      "relatedTransport": {
+        "heading": "Continua a muoverti",
+        "placeDescription": "Percorsi e luoghi utili collegati a questa destinazione.",
+        "routeDescription": "Altri percorsi e luoghi utili collegati a questo viaggio.",
+        "planned": "Landing in preparazione"
+      },
+      "relatedReading": {
+        "heading": "Guide utili su Unlock Venice",
+        "label": "Da Unlock Venice",
+        "placeDescription": "Approfondimenti selezionati perché pertinenti a questo luogo.",
+        "routeDescription": "Approfondimenti selezionati perché pertinenti alla partenza e alla destinazione."
+      },
+      "reason": {
+        "route-origin": "Partenza",
+        "route-destination": "Destinazione",
+        "shared-endpoint-route": "Percorso collegato",
+        "entity-route": "Percorso collegato",
+        "connected-place": "Luogo collegato",
+        "nearby-place": "Nelle vicinanze",
+        "fallback": "Trasporti"
+      },
+      "sections": {
+        "faq": "Domande frequenti",
+        "relatedTransport": "Pagine trasporti collegate",
+        "relatedReading": "Guide utili su Unlock Venice"
+      },
+      "pageNote": "Servizio indipendente di Unlock Venice. Orari, frequenze, prezzi e condizioni operative possono cambiare: verifica sempre il percorso e le tariffe aggiornate prima di partire.",
+      "footer": {
+        "description": "Una guida indipendente per capire Venezia con più calma, muoversi meglio e usare Mestre come una base urbana pratica per il viaggio.",
+        "discover": "Scopri Venezia",
+        "project": "Il progetto",
+        "stay": "Dormire a Mestre"
+      }
+    },
+    "en": {
+      "htmlLang": "en",
+      "skip": "Skip to content",
+      "previewBar": "SEO PREVIEW · page not indexed",
+      "nav": {
+        "about": "About Unlock Venice",
+        "transport": "Transport",
+        "stay": "Stay in Mestre",
+        "homeUrl": "https://www.unlockvenice.com/en/",
+        "aboutUrl": "https://www.unlockvenice.com/en/matteo-venice-and-unlock-venice/",
+        "transportUrl": "/trasporti/?lang=en",
+        "stayUrl": "https://www.unlockvenice.com/en/staying-in-mestre-to-visit-venice/"
+      },
+      "route": {
+        "eyebrow": "Transport · Routes",
+        "kicker": "Route"
+      },
+      "place": {
+        "eyebrow": "Transport · Places",
+        "kicker": "Destination",
+        "hint": "Destination · route from your current location"
+      },
+      "journey": {
+        "heading": "Live route",
+        "helper": "Open U.Venice Transport and compare the options available now."
+      },
+      "fares": {
+        "aria": "Indicative prices",
+        "eyebrow": "Visitor fares",
+        "heading": "How much it costs",
+        "verified": "Checked on {date}",
+        "indicative": "indicative",
+        "source": "Source: {operator}",
+        "note": "Use these prices as a planning guide and always check the current fare before buying."
+      },
+      "relatedTransport": {
+        "heading": "Keep moving",
+        "placeDescription": "Useful routes and places connected to this destination.",
+        "routeDescription": "Other useful routes and places connected to this journey.",
+        "planned": "Landing page in preparation"
+      },
+      "relatedReading": {
+        "heading": "Useful guides from Unlock Venice",
+        "label": "From Unlock Venice",
+        "placeDescription": "Reading selected because it is relevant to this place.",
+        "routeDescription": "Reading selected because it is relevant to the origin and destination."
+      },
+      "reason": {
+        "route-origin": "Origin",
+        "route-destination": "Destination",
+        "shared-endpoint-route": "Connected route",
+        "entity-route": "Connected route",
+        "connected-place": "Connected place",
+        "nearby-place": "Nearby",
+        "fallback": "Transport"
+      },
+      "sections": {
+        "faq": "Frequently asked questions",
+        "relatedTransport": "Related transport pages",
+        "relatedReading": "Useful guides from Unlock Venice"
+      },
+      "pageNote": "Unlock Venice is an independent service. Timetables, frequencies, fares and operating conditions can change: always check the current route and prices before travelling.",
+      "footer": {
+        "description": "An independent guide to understanding Venice at a slower pace, moving around more easily and using Mestre as a practical urban base for your trip.",
+        "discover": "Explore Venice",
+        "project": "The project",
+        "stay": "Stay in Mestre"
+      }
+    },
+    "fr": {
+      "htmlLang": "fr",
+      "skip": "Aller au contenu",
+      "previewBar": "APERÇU SEO · page non indexée",
+      "nav": {
+        "about": "À propos d’Unlock Venice",
+        "transport": "Transports",
+        "stay": "Dormir à Mestre",
+        "homeUrl": "https://www.unlockvenice.com/fr/",
+        "aboutUrl": "https://www.unlockvenice.com/fr/matteo-venise-et-unlock-venice/",
+        "transportUrl": "/trasporti/?lang=fr",
+        "stayUrl": "https://www.unlockvenice.com/fr/dormir-mestre-visiter-venise/"
+      },
+      "route": {
+        "eyebrow": "Transports · Itinéraires",
+        "kicker": "Itinéraire"
+      },
+      "place": {
+        "eyebrow": "Transports · Lieux",
+        "kicker": "Destination",
+        "hint": "Destination · itinéraire depuis votre position"
+      },
+      "journey": {
+        "heading": "Itinéraire à jour",
+        "helper": "Ouvrez U.Venice Transport et comparez les options disponibles maintenant."
+      },
+      "fares": {
+        "aria": "Prix indicatifs",
+        "eyebrow": "Tarifs visiteurs",
+        "heading": "Combien ça coûte",
+        "verified": "Vérifiés le {date}",
+        "indicative": "indicatif",
+        "source": "Source : {operator}",
+        "note": "Ces prix servent de repère : vérifiez toujours le tarif en vigueur avant l’achat."
+      },
+      "relatedTransport": {
+        "heading": "Continuez votre trajet",
+        "placeDescription": "Itinéraires et lieux utiles liés à cette destination.",
+        "routeDescription": "Autres itinéraires et lieux utiles liés à ce trajet.",
+        "planned": "Page en préparation"
+      },
+      "relatedReading": {
+        "heading": "Guides utiles sur Unlock Venice",
+        "label": "Sur Unlock Venice",
+        "placeDescription": "Lectures sélectionnées pour leur pertinence avec ce lieu.",
+        "routeDescription": "Lectures sélectionnées pour leur pertinence avec le départ et l’arrivée."
+      },
+      "reason": {
+        "route-origin": "Départ",
+        "route-destination": "Destination",
+        "shared-endpoint-route": "Itinéraire lié",
+        "entity-route": "Itinéraire lié",
+        "connected-place": "Lieu lié",
+        "nearby-place": "À proximité",
+        "fallback": "Transports"
+      },
+      "sections": {
+        "faq": "Questions fréquentes",
+        "relatedTransport": "Pages transport liées",
+        "relatedReading": "Guides utiles sur Unlock Venice"
+      },
+      "pageNote": "Unlock Venice est un service indépendant. Horaires, fréquences, tarifs et conditions d’exploitation peuvent changer : vérifiez toujours l’itinéraire et les prix à jour avant de partir.",
+      "footer": {
+        "description": "Un guide indépendant pour comprendre Venise plus calmement, mieux se déplacer et utiliser Mestre comme base urbaine pratique pour le voyage.",
+        "discover": "Découvrir Venise",
+        "project": "Le projet",
+        "stay": "Dormir à Mestre"
+      }
+    },
+    "de": {
+      "htmlLang": "de",
+      "skip": "Zum Inhalt springen",
+      "previewBar": "SEO-VORSCHAU · Seite nicht indexiert",
+      "nav": {
+        "about": "Über Unlock Venice",
+        "transport": "Verkehr",
+        "stay": "In Mestre übernachten",
+        "homeUrl": "https://www.unlockvenice.com/de/",
+        "aboutUrl": "https://www.unlockvenice.com/de/",
+        "transportUrl": "/trasporti/?lang=de",
+        "stayUrl": "https://www.unlockvenice.com/de/in-mestre-uebernachten-venedig-besuchen/"
+      },
+      "route": {
+        "eyebrow": "Verkehr · Routen",
+        "kicker": "Route"
+      },
+      "place": {
+        "eyebrow": "Verkehr · Orte",
+        "kicker": "Ziel",
+        "hint": "Ziel · Route von deinem aktuellen Standort"
+      },
+      "journey": {
+        "heading": "Aktuelle Route",
+        "helper": "Öffne U.Venice Transport und vergleiche die aktuell verfügbaren Verbindungen."
+      },
+      "fares": {
+        "aria": "Richtpreise",
+        "eyebrow": "Tarife für Besucher",
+        "heading": "Was es kostet",
+        "verified": "Geprüft am {date}",
+        "indicative": "Richtpreis",
+        "source": "Quelle: {operator}",
+        "note": "Diese Preise dienen zur Orientierung. Prüfe vor dem Kauf immer den aktuellen Tarif."
+      },
+      "relatedTransport": {
+        "heading": "Weiter unterwegs",
+        "placeDescription": "Nützliche Routen und Orte, die mit diesem Ziel verbunden sind.",
+        "routeDescription": "Weitere nützliche Routen und Orte für diese Verbindung.",
+        "planned": "Landingpage in Vorbereitung"
+      },
+      "relatedReading": {
+        "heading": "Nützliche Guides auf Unlock Venice",
+        "label": "Von Unlock Venice",
+        "placeDescription": "Ausgewählte Beiträge, die zu diesem Ort passen.",
+        "routeDescription": "Ausgewählte Beiträge, die zu Start und Ziel dieser Route passen."
+      },
+      "reason": {
+        "route-origin": "Start",
+        "route-destination": "Ziel",
+        "shared-endpoint-route": "Verbundene Route",
+        "entity-route": "Verbundene Route",
+        "connected-place": "Verbundener Ort",
+        "nearby-place": "In der Nähe",
+        "fallback": "Verkehr"
+      },
+      "sections": {
+        "faq": "Häufige Fragen",
+        "relatedTransport": "Verwandte Verkehrsseiten",
+        "relatedReading": "Nützliche Guides auf Unlock Venice"
+      },
+      "pageNote": "Unlock Venice ist ein unabhängiger Service. Fahrpläne, Takte, Preise und Betriebsbedingungen können sich ändern: Prüfe vor der Fahrt immer die aktuellen Verbindungen und Tarife.",
+      "footer": {
+        "description": "Ein unabhängiger Guide, um Venedig in ruhigerem Tempo zu verstehen, sich leichter zu bewegen und Mestre als praktische urbane Basis für die Reise zu nutzen.",
+        "discover": "Venedig entdecken",
+        "project": "Das Projekt",
+        "stay": "In Mestre übernachten"
+      }
+    }
+  }
+}
