@@ -51,7 +51,7 @@ function harness({ runs = [], events = {}, admin = {user_id:'admin'} } = {}) {
     removeChannel(){return Promise.resolve();},
   };
   let code = moduleCode[1]
-    .replace(/^import \{ createClient \} from "[^"]+";\s*/,'')
+    .replace(/^\s*import \{ createClient \} from "[^"]+";\s*/,'')
     .replace(/const supabase=createClient\([^;]+\);/,'const supabase=globalThis.__db;')
     .replace(/const \{data:\{session\},error:sessionError\}=await supabase\.auth\.getSession\(\);[\s\S]*$/,'');
   code += '\n;globalThis.__api={totalTokens,runIsStale,refreshRuns,selectRun,enter,renderRun};';
