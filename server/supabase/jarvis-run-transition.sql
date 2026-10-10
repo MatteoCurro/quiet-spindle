@@ -14,7 +14,7 @@ DECLARE
   requested_phase text := p_patch->>'phase';
   steps text[] := ARRAY[
     'queued','setup','planning','architecture','implementation',
-    'testing','qa','delivery','done'
+    'testing','qa','repair','delivery','done'
   ];
 BEGIN
   IF jsonb_typeof(p_patch) <> 'object'
@@ -81,7 +81,17 @@ BEGIN
     cached_tokens = GREATEST(previous.cached_tokens,EXCLUDED.cached_tokens),
     reasoning_tokens = GREATEST(previous.reasoning_tokens,EXCLUDED.reasoning_tokens),
     estimated_cost_usd = GREATEST(previous.estimated_cost_usd,EXCLUDED.estimated_cost_usd),
-    pr_urls = COALESCE(EXCLUDED.pr_urls,previous.pr_urls),
+    pr_urls = CASE WHEN p_patch ? 'pr_urls' THEN (
+      SELECT COALESCE(jsonb_agg(to_jsonb(unique_url)), '[]'::jsonb)
+      FROM (
+        SELECT DISTINCT value AS unique_url
+        FROM (
+          SELECT jsonb_array_elements_text(previous.pr_urls) AS value
+          UNION ALL
+          SELECT jsonb_array_elements_text(EXCLUDED.pr_urls) AS value
+        ) links
+      ) deduplicated
+    ) ELSE previous.pr_urls END,
     started_at = COALESCE(previous.started_at,EXCLUDED.started_at),
     completed_at = CASE
       WHEN previous.status IN ('success','failure','cancelled')
