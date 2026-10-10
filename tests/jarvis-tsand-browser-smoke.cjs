@@ -65,6 +65,33 @@ const {chromium} = require('/tmp/jarvis-playwright/node_modules/playwright-core'
       await page.screenshot({path:path.join('output','jarvis-tsand-'+v.name+'.png'),fullPage:true});
       console.log(JSON.stringify({viewport:v.name,width:v.width,layout_ok:true,
         anonymous_dashboard_hidden:true,page_exceptions:exceptions}));
+      // VISUAL FIXTURE ONLY. This locally reveals the dashboard DOM; it does not
+      // authenticate, read live run records, or alter the deployed frontend.
+      await page.evaluate(()=>{
+        const $=id=>document.getElementById(id);
+        $('login').classList.add('hidden');
+        $('app').classList.remove('hidden');
+        $('runTitle').textContent='Run di test · Jarvis TSAND';
+        $('runStatus').textContent='success';
+        $('runStatus').className='status success';
+        $('phase').textContent='done';
+        $('activeCount').textContent='0';
+        $('tokens').textContent='220';
+        $('cost').textContent='$0,00';
+        $('updated').textContent='Ultimo evento: 10/10/2026, 19:00';
+        $('interaction').textContent='Nessuna azione richiesta';
+        $('agents').innerHTML='<div class="agent"><span class="dot"></span>Engineering</div><div class="agent"><span class="dot"></span>UX Critic</div><div class="agent"><span class="dot"></span>Release Reviewer</div>';
+        $('timeline').innerHTML='<div class="event"><time>19:00:00</time><span class="who">Reviewer</span><span class="msg">Verifica completata</span></div><div class="event"><time>18:59:50</time><span class="who">UX Critic</span><span class="msg">Interazione e accessibilità verificate</span></div>';
+        $('runs').innerHTML='<div class="run"><b>#38073982335</b><span class="status success">success</span></div>';
+      });
+      const dashboardMetrics=await page.evaluate(()=>({
+        viewportWidth:document.documentElement.clientWidth,
+        scrollWidth:document.documentElement.scrollWidth
+      }));
+      assert.ok(dashboardMetrics.scrollWidth<=dashboardMetrics.viewportWidth+2,
+        'Synthetic dashboard overflow: '+JSON.stringify(dashboardMetrics));
+      await page.screenshot({path:path.join('output','jarvis-tsand-'+v.name+'-synthetic-dashboard.png'),fullPage:true});
+      console.log(JSON.stringify({viewport:v.name,synthetic_dashboard_layout_ok:true}));
       assert.equal(exceptions.length,0,'Browser module produced uncaught errors');
       await context.close();
     }
