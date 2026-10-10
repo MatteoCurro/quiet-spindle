@@ -1,11 +1,25 @@
 /** Read-only browser-level smoke for the PUBLIC login page of TSAND Jarvis preview. */
 const assert = require('node:assert/strict');
-const {mkdirSync} = require('node:fs');
+const {mkdirSync,readFileSync} = require('node:fs');
+const http = require('node:http');
 const path = require('node:path');
 const {chromium} = require('/tmp/jarvis-playwright/node_modules/playwright-core');
 
 (async()=>{
-  const url = 'https://xiiexzvuvzsiacbmwras.supabase.co/functions/v1/jarvis-preview';
+  // Supabase intentionally rewrites HTML served on its shared domains to
+  // text/plain. Test the SAME PR HTML in an ephemeral local HTTP server.
+  const edgeSource=readFileSync(path.join(__dirname,'../supabase/functions/jarvis/index.ts'),'utf8');
+  const encoded=edgeSource.match(/^const HTML=("(?:[^"\\]|\\.)*");/s);
+  assert.ok(encoded,'Expected embedded frontend HTML in TSAND PR source');
+  const html=JSON.parse(encoded[1]);
+  const server=http.createServer((req,res)=>{
+    if(req.url!=='/'){res.writeHead(404);res.end();return}
+    res.writeHead(200,{'Content-Type':'text/html; charset=utf-8',
+      'Cache-Control':'no-store','X-Content-Type-Options':'nosniff'});
+    res.end(html);
+  });
+  await new Promise(resolve=>server.listen(0,'127.0.0.1',resolve));
+  const url='http://127.0.0.1:'+server.address().port+'/';
   const browser = await chromium.launch({
     executablePath:process.env.GOOGLE_CHROME || '/usr/bin/google-chrome',
     headless:true,
@@ -54,5 +68,5 @@ const {chromium} = require('/tmp/jarvis-playwright/node_modules/playwright-core'
       assert.equal(exceptions.length,0,'Browser module produced uncaught errors');
       await context.close();
     }
-  } finally {await browser.close();}
+  } finally {await browser.close();await new Promise(resolve=>server.close(resolve));}
 })().catch(e=>{console.error(e);process.exitCode=1});
