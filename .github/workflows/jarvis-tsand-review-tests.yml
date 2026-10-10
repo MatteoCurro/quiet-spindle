@@ -33,7 +33,9 @@ jobs:
           SUPABASE_SERVICE_ROLE_KEY: ''
         run: |
           node --test tests/jarvis-tsand-ui.test.cjs tests/jarvis-tsand-ingest.test.cjs
-      - name: Confirm this workflow cannot deploy or write to GitHub
+      - name: Confirm this workflow is read-only
         run: |
           grep -q 'contents: read' .github/workflows/jarvis-tsand-review-tests.yml
-          ! grep -E -q 'supabase functions deploy|git push|gh pr merge' .github/workflows/jarvis-tsand-review-tests.yml
+          test -z "${OPENAI_API_KEY:-}"
+          test -z "${GH_TOKEN:-}"
+          test -z "${SUPABASE_SERVICE_ROLE_KEY:-}"
