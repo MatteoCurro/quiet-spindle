@@ -37,7 +37,9 @@ function harness({ runs = [], events = {}, admin = {user_id:'admin'} } = {}) {
         order(){return this;}, limit(){
           if(table==='agent_runs')return Promise.resolve({data:runs,error:null});
           const supplied=events[this.key];
-          return supplied?.promise || Promise.resolve({data:supplied || [],error:null});
+          if (supplied?.promise) return supplied.promise;
+          if (supplied && 'data' in supplied && 'error' in supplied) return Promise.resolve(supplied);
+          return Promise.resolve({data:supplied || [],error:null});
         },
         maybeSingle(){return Promise.resolve({data:admin,error:null})},
       };
