@@ -9,6 +9,7 @@ on:
       - 'supabase/functions/jarvis-ingest/**'
       - 'server/supabase/jarvis-run-transition.sql'
       - 'tests/jarvis-tsand-*.test.cjs'
+      - 'tests/jarvis-tsand-browser-smoke.cjs'
       - '.github/workflows/jarvis-tsand-review-tests.yml'
   workflow_dispatch:
 
