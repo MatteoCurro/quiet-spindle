@@ -27,6 +27,16 @@ const {chromium} = require('/tmp/jarvis-playwright/node_modules/playwright-core'
       page.on('pageerror',error=>exceptions.push(String(error.message).slice(0,260)));
       const response=await page.goto(url,{waitUntil:'domcontentloaded',timeout:30000});
       assert.equal(response?.status(),200,'preview must be accessible');
+      const debug=await page.evaluate(()=>({
+        title:document.title,
+        contentType:document.contentType,
+        url:location.href,
+        buttonCount:document.querySelectorAll('#githubLogin').length,
+        visibleText:(document.body?.innerText||'').slice(0,220),
+        htmlStart:document.documentElement?.outerHTML.slice(0,140),
+      }));
+      console.log('BROWSER_DIAGNOSTIC',v.name,JSON.stringify(debug));
+      await page.screenshot({path:path.join('output','jarvis-tsand-'+v.name+'-initial.png'),fullPage:true});
       await page.locator('#githubLogin').waitFor({state:'visible',timeout:10000});
       assert.equal(await page.locator('#app').isVisible(),false,'private dashboard cannot appear anonymously');
       const metrics=await page.evaluate(()=>({
