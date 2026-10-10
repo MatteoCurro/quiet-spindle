@@ -1,0 +1,62 @@
+name: Jarvis TSAND review — offline tests
+
+on:
+  push:
+    branches:
+      - agent/jarvis-tsand-review-20261010
+    paths:
+      - 'supabase/functions/jarvis/**'
+      - 'supabase/functions/jarvis-ingest/**'
+      - 'server/supabase/jarvis-run-transition.sql'
+      - 'tests/jarvis-tsand-*.test.cjs'
+      - 'tests/jarvis-tsand-browser-smoke.cjs'
+      - '.github/workflows/jarvis-tsand-review-tests.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  static-and-behavior:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate Jarvis UI and ingestion without external services
+        env:
+          OPENAI_API_KEY: ''
+          GH_TOKEN: ''
+          SUPABASE_SERVICE_ROLE_KEY: ''
+        run: |
+          node --test tests/jarvis-tsand-ui.test.cjs tests/jarvis-tsand-ingest.test.cjs
+      - name: Prepare real-browser checks (system Chrome, no product changes)
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -x /usr/bin/google-chrome || { echo "System Chrome unavailable"; exit 2; }
+          npm install --prefix /tmp/jarvis-playwright --no-audit --no-fund --ignore-scripts --no-save playwright-core@1.56.1
+      - name: Check TSAND login on desktop and mobile with real Chromium
+        env:
+          OPENAI_API_KEY: ''
+          GH_TOKEN: ''
+          SUPABASE_SERVICE_ROLE_KEY: ''
+        run: node tests/jarvis-tsand-browser-smoke.cjs
+      - name: Store unauthenticated Jarvis preview screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: jarvis-tsand-browser-preview
+          path: output/jarvis-tsand-*.png
+          if-no-files-found: warn
+          retention-days: 7
+      - name: Confirm this workflow is read-only
+        run: |
+          grep -q 'contents: read' .github/workflows/jarvis-tsand-review-tests.yml
+          test -z "${OPENAI_API_KEY:-}"
+          test -z "${GH_TOKEN:-}"
+          test -z "${SUPABASE_SERVICE_ROLE_KEY:-}"
