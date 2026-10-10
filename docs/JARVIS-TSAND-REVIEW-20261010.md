@@ -56,3 +56,15 @@
 - `jarvis-dashboard` remains a separate legacy UI and should be consolidated after identifying its users; do not silently replace it.
 - Consider using a last-event timer/refetch to update a stale warning while an admin keeps the page open (current warning updates when the run card re-renders).
 - Assess stronger event/run atomicity if it becomes necessary to require event and state update in the same transaction; the current idempotent outbox allows safe retries but the two writes are not one DB transaction.
+
+## TSAND acceptance test executed 2026-10-10
+
+**Target verified:** Supabase project `u-venice-transport-tsand` (`xiiexzvuvzsiacbmwras`). This test deliberately used parallel, version-1 functions `jarvis-preview` and `jarvis-ingest-preview` and did **not** replace the active `jarvis` or `jarvis-ingest` version 4 functions.
+
+- Applied `public.jarvis_ingest_run(jsonb)` to TSAND only. Checked `service_role` EXECUTE = true, `anon` and `authenticated` EXECUTE = false.
+- For the preview ingestion function only, required GitHub OIDC `repository_id=1409141984`, `workflow_ref=MatteoCurro/paper-kestrel/.github/workflows/jarvis-tsand-ingest-smoke.yml@refs/heads/infra/transactional-v2`, workflow name `Jarvis TSAND ingest smoke`, and event keys starting `smoke:`. Those smoke-specific auth changes were **not** applied to the draft production-path `jarvis-ingest` source.
+- **[GitHub Actions #38073982335](https://github.com/MatteoCurro/paper-kestrel/actions/runs/38073982335)**: OIDC GET/POST tests succeeded, HTTP 401 without token, HTTP 403 for mismatch with signed run identity, started → finished → late event → duplicate finish. PostgreSQL verifies final `success/done`, 180 input + 40 output tokens, 3 unique events. No LLM cost or deployment.
+- Real Chromium mobile (390px) and desktop (1280px) browser layout tests run on the PR's standalone public Actions workflow, with actual frontend HTML extracted from the Edge source and served by an ephemeral local HTTP server. Login UI and a **synthetic** dashboard were checked without user records or admin credentials. Screenshots are attached to Actions as `jarvis-tsand-browser-preview`.
+- **Critical platform discovery:** Supabase shared domains intentionally rewrite `text/html` responses from Edge Functions to `text/plain`. The `jarvis-preview` URL is an API/source endpoint, **not a directly usable browser UI**, despite HTTP 200. This is documented by [Supabase](https://supabase.com/docs/guides/functions/http-methods). Do not circumvent the MIME restriction. The Jarvis frontend requires a separate approved static host (ideally a dedicated staging origin, not the production website) before live OAuth/browser-login acceptance.
+- No real administrator session was used; therefore the authenticated dashboard display, OAuth redirect and private realtime subscription remain pending. Node UI behavior and SQL RLS policies were verified separately.
+- Public test function/source is isolated to TSAND; no production servers, code branches or deployment secrets were changed.
