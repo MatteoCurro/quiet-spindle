@@ -63,6 +63,12 @@ Deno.serve(async (req: Request) => {
     const body = await req.json();
     const nestedRun = body?.run && typeof body.run === "object" ? body.run : {};
     const nestedEvent = body?.event && typeof body.event === "object" ? body.event : null;
+    const eventMessage = text(nestedEvent?.message ?? body.message, 4000);
+    const eventKey = text(nestedEvent?.event_key ?? body.event_key, 260);
+    // Reject non-idempotent events *before* the run RPC can mutate state.
+    if (eventMessage && !eventKey) {
+      return response({ error: "idempotent event_key required" }, 400);
+    }
 
     // IDs must originate from signed GitHub OIDC claims, not caller JSON.
     const githubRunId = Number(payload.run_id);
@@ -158,12 +164,9 @@ Deno.serve(async (req: Request) => {
       throw new Error("atomic Jarvis run update failed");
     }
 
-    const message = text(nestedEvent?.message ?? body.message, 4000);
+    const message = eventMessage;
     if (message) {
-      const eventKeyLocal = text(nestedEvent?.event_key ?? body.event_key, 260);
-      if (!eventKeyLocal) {
-        return response({ error: "idempotent event_key required" }, 400);
-      }
+      const eventKeyLocal = eventKey;
       const eventRow = {
         run_id: runId,
         event_key: eventKeyLocal ? `${githubRunId}:${runAttempt}:${eventKeyLocal}` : null,
